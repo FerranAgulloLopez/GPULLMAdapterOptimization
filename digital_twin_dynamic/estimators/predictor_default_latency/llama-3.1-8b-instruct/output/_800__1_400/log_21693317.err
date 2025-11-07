@@ -1,0 +1,2 @@
+load SINGULARITY/3.11.5 (PATH)
+slurmstepd: error: *** JOB 21693317 ON as06r3b15 CANCELLED AT 2025-05-29T16:49:00 ***
