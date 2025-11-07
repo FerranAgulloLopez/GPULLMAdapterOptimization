@@ -102,6 +102,9 @@ class GPUExecutor(ExecutorBase):
     def list_loras(self) -> Set[int]:
         return self.driver_worker.list_loras()
 
+    def check_lora_adding_time(self) -> float:
+        return self.driver_worker.check_lora_adding_time()
+
     def check_health(self) -> None:
         # GPUExecutor will always be healthy as long as
         # it's running.

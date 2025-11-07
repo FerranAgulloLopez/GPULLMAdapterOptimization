@@ -1,126 +1,218 @@
-from abc import ABC, abstractmethod
-from typing import (TYPE_CHECKING, Callable, Dict, Generic, Optional, Type,
-                    TypeVar)
+# SPDX-License-Identifier: Apache-2.0
 
-from vllm.config import ModelConfig, VisionLanguageConfig
-from vllm.logger import init_logger
+from abc import ABC, abstractmethod
+from collections.abc import Sequence
+from pathlib import Path
+from typing import TYPE_CHECKING, Generic, NamedTuple, TypeVar
 
 if TYPE_CHECKING:
-    import torch
-    from torch import nn
+    from vllm.sequence import SequenceGroupMetadata
 
-logger = init_logger(__name__)
+from .inputs import MultiModalKwargs, PlaceholderRange
+
+_T = TypeVar("_T")
 
 
-class MultiModalData:
+class MultiModalPlaceholderMap:
     """
-    Base class that contains multi-modal data.
+    Relates multi-modal embeddings to their corresponding placeholders.
 
-    To add a new modality, add a new file under ``multimodal`` directory.
-
-    In this new file, subclass :class:`~MultiModalData` and
-    :class:`~MultiModalPlugin`.
-
-    Finally, register the new plugin to
-    :const:`vllm.multimodal.MULTIMODAL_REGISTRY`.
-    This enables models to call :meth:`MultiModalRegistry.register_input` for
-    the new modality.
+    Note: This is only used in V0.
     """
-    pass
 
+    class IndexMap(NamedTuple):
+        src: list[int]
+        dest: list[int]
 
-D = TypeVar("D", bound=MultiModalData)
-N = TypeVar("N", bound=Type["nn.Module"])
-
-MultiModalInputProcessor = Callable[[D, ModelConfig, VisionLanguageConfig],
-                                    Dict[str, "torch.Tensor"]]
-"""Return a dictionary to be passed as keyword arguments to
-:meth:`torch.nn.Module.forward`. This is similar in concept to tokenizers
-and processors in HuggingFace Transformers."""
-
-
-class MultiModalPlugin(ABC, Generic[D]):
+    src_ranges: list[range]
     """
-    Base class that defines data processing logic for a specific modality.
-
-    In particular, we adopt a registry pattern to dispatch data processing
-    according to the model being used (considering that different models may
-    process the same data differently). This registry is in turn used by
-    :class:`~MultiModalRegistry` which acts at a higher level
-    (i.e., the modality of the data).
+    The indices of the multi-modal embeddings that will replace the
+    corresponding placeholder embeddings pointed to by ``dest_ranges``.
     """
+
+    src_len: int
+    """
+    The total number of flattened multi-modal embeddings.
+    """
+
+    dest_ranges: list[range]
+    """
+    The indices of the placeholder embeddings that will be replaced by the
+    multimodal embeddings.
+    """
+
+    dest_len: int
+    """
+    The total number of embeddings in the destination tensor.
+    """
+
+    def __init__(self):
+        self.src_ranges = []
+        self.src_len = 0
+        self.dest_ranges = []
+        self.dest_len = 0
 
     @classmethod
-    def get_model_cls(cls, model_config: ModelConfig) -> Type["nn.Module"]:
-        # Avoid circular import
-        from vllm.model_executor.model_loader import get_model_architecture
+    def from_seq_group(
+        cls, seq_group: "SequenceGroupMetadata", positions: range
+    ) -> tuple[MultiModalKwargs, dict[str, "MultiModalPlaceholderMap"]]:
+        """
+        Returns the multi-modal items that intersect with the portion of a
+        prompt (``seq_group``) represented by ``positions``, as well as a
+        ``MultiModalPlaceholderMap`` that relates the multi-modal embedding
+        vectors to their corresponding placeholders.
 
-        return get_model_architecture(model_config)[0]
+        Examples:
 
-    def __init__(self) -> None:
-        self._input_processors: Dict[Type["nn.Module"],
-                                     MultiModalInputProcessor[D]] = {}
+        .. code-block::
+
+            Prompt:    |AAAA BBBB What's in these images?|
+            Positions: |.................................|
+
+                images      = [A, B]
+                src_ranges  = [(0, 4), (4, 8)]
+                dest_ranges = [(0, 4), (5, 9)]
+
+            Prompt:    |AAAA BBBB What's in these images?|
+            Positions: |  .....                          |
+
+                images      = [A, B]
+                src_ranges  = [(2, 4), (4, 6)]
+                dest_ranges = [(0, 2), (3, 5)]
+
+            Prompt:    |AAAA BBBB What's in these images?|
+            Positions: |     .........                   |
+
+                images      = [B]
+                src_ranges  = [(0, 4)]
+                dest_ranges = [(0, 4)]
+
+            Prompt:    |AAAA BBBB What's in these images?|
+            Positions: |          .......................|
+
+                images      = []
+                src_ranges  = []
+                dest_ranges = []
+        """
+        seq_mm_data = seq_group.multi_modal_data
+        seq_mm_placeholders = seq_group.multi_modal_placeholders
+
+        if not seq_mm_data or not seq_mm_placeholders:
+            return MultiModalKwargs({}), {}
+
+        placeholder_maps = dict[str, MultiModalPlaceholderMap]()
+
+        for modality, placeholders in seq_mm_placeholders.items():
+            placeholder_map = MultiModalPlaceholderMap()
+
+            if positions:
+                placeholder_map.append_items_from_seq_group(
+                    positions,
+                    # Dummy, since we don't care about intersecting items
+                    [None] * len(placeholders),
+                    placeholders,
+                )
+
+            placeholder_maps[modality] = placeholder_map
+
+        return seq_mm_data, placeholder_maps
+
+    def append_items_from_seq_group(
+        self,
+        positions: range,
+        multi_modal_items: list[_T],
+        multi_modal_placeholders: Sequence[PlaceholderRange],
+    ) -> list[_T]:
+        """
+        Adds the multi-modal items that intersect ```positions`` to this
+        placeholder map and returns the intersecting items.
+        """
+        intersecting_items = []
+
+        if len(multi_modal_items) != len(multi_modal_placeholders):
+            raise ValueError(
+                "Multi-modal placeholders and items must have the same length."
+            )
+        for placeholder_dict, mm_item in zip(multi_modal_placeholders,
+                                             multi_modal_items):
+            placeholder = range(
+                placeholder_dict.offset,
+                placeholder_dict.offset + placeholder_dict.length,
+            )
+            intersection = range(
+                max(positions.start, placeholder.start),
+                min(positions.stop, placeholder.stop),
+            )
+
+            if not intersection:
+                # Skip this multi-modal item.
+                continue
+
+            token_embedding_range = range(
+                intersection.start - positions.start,
+                intersection.stop - positions.start,
+            )
+
+            multimodal_embedding_range = range(
+                intersection.start - placeholder.start + self.src_len,
+                intersection.stop - placeholder.start + self.src_len,
+            )
+
+            intersecting_items.append(mm_item)
+            self.dest_ranges.append(token_embedding_range)
+            self.src_ranges.append(multimodal_embedding_range)
+            self.src_len += len(placeholder)
+
+        self.dest_len += len(positions)
+        return intersecting_items
+
+    def extend(self, other: "MultiModalPlaceholderMap"):
+        """
+        Adds the placeholders from another ``MultiModalPlaceholderMap`` to this
+        instance based on the source and destination tensors being
+        concatenated.
+        """
+
+        self.src_ranges.extend(
+            range(self.src_len + r.start, self.src_len + r.stop)
+            for r in other.src_ranges)
+        self.src_len += other.src_len
+        self.dest_ranges.extend(
+            range(self.dest_len + r.start, self.dest_len + r.stop)
+            for r in other.dest_ranges)
+        self.dest_len += other.dest_len
+
+    def index_map(self) -> "IndexMap":
+        """
+        Finalizes the placeholder map into lists of indices that can be used to
+        index the source and destination tensors.
+        """
+
+        src_indices = [i for r in self.src_ranges for i in r]
+        dest_indices = [i for r in self.dest_ranges for i in r]
+
+        if len(src_indices) != len(dest_indices):
+            raise ValueError(
+                f"The number of source ({len(src_indices)}) and destination "
+                f"indices ({len(dest_indices)}) must be the same.")
+
+        return self.IndexMap(src=src_indices, dest=dest_indices)
+
+
+class MediaIO(ABC, Generic[_T]):
 
     @abstractmethod
-    def get_data_type(self) -> Type[D]:
+    def load_bytes(self, data: bytes) -> _T:
+        raise NotImplementedError
+
+    @abstractmethod
+    def load_base64(self, media_type: str, data: str) -> _T:
         """
-        Get the modality (subclass of :class:`~MultiModalData`) served by
-        this plugin.
+        List of media types:
+        https://www.iana.org/assignments/media-types/media-types.xhtml
         """
         raise NotImplementedError
 
     @abstractmethod
-    def _default_input_processor(
-            self, data: D, model_config: ModelConfig,
-            vlm_config: VisionLanguageConfig) -> Dict[str, "torch.Tensor"]:
-        """Return a dictionary to be passed as keyword arguments to
-        :meth:`torch.nn.Module.forward`. This is similar in concept to
-        tokenizers and processors in HuggingFace Transformers.
-        """
+    def load_file(self, filepath: Path) -> _T:
         raise NotImplementedError
-
-    def register_input_processor(self,
-                                 processor: Optional[
-                                     MultiModalInputProcessor[D]] = None):
-        """
-        Register an input processor to a model class.
-        
-        When the model receives input data that matches the modality served by
-        this plugin (see :meth:`get_data_type`), the provided input processor is
-        applied to preprocess the data. If `None` is provided, then the default
-        input processor is applied instead.
-        """
-
-        def wrapper(model_cls: N) -> N:
-            if model_cls in self._input_processors:
-                logger.warning(
-                    "Model class %s already has an input processor "
-                    "registered to %s. It is overwritten by the new one.",
-                    model_cls, self)
-
-            self._input_processors[model_cls] = processor \
-                or self._default_input_processor
-
-            return model_cls
-
-        return wrapper
-
-    def process_input(
-            self, data: D, model_config: ModelConfig,
-            vlm_config: VisionLanguageConfig) -> Dict[str, "torch.Tensor"]:
-        """
-        Apply an input processor to a :class:`~MultiModalData` instance passed
-        to the model.
-        
-        The model is identified by ``model_config``. ``vlm_config`` is
-        for compatibility purposes and may be merged into ``model_config``
-        in the near future.
-        """
-        model_cls = self.get_model_cls(model_config)
-
-        processor = self._input_processors.get(model_cls)
-        if processor is None:
-            raise KeyError(f"No input processor in {self} is registered for "
-                           f"model class {model_cls.__name__}.")
-
-        return processor(data, model_config, vlm_config)

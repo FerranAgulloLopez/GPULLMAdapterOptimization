@@ -36,9 +36,19 @@ class FCFS(Policy):
         return now - seq_group.metrics.arrival_time
 
 
+class LostWork(Policy):
+
+    def get_priority(
+            self,
+            now: float,
+            seq_group: SequenceGroup,
+    ) -> float:
+        return sum([seq.data.get_num_computed_tokens() + seq.get_output_len() for seq in seq_group.get_seqs()])
+
+
 class PolicyFactory:
 
-    _POLICY_REGISTRY = {'fcfs': FCFS}
+    _POLICY_REGISTRY = {'fcfs': FCFS, 'lost_work': LostWork}
 
     @classmethod
     def get_policy(cls, policy_name: str, **kwargs) -> Policy:

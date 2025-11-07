@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # Weight Shapes are in the format
 # ([K, N], TP_SPLIT_DIM)
 # Example:
@@ -21,6 +23,12 @@ WEIGHT_SHAPES = {
         ([4096, 4096], 0),
         ([4096, 22016], 1),
         ([11008, 4096], 0),
+    ],
+    "meta-llama/Llama-3-8b": [
+        ([4096, 6144], 1),
+        ([4096, 4096], 0),
+        ([4096, 28672], 1),
+        ([14336, 4096], 0),
     ],
     "meta-llama/Llama-2-13b-hf": [
         ([5120, 15360], 1),
