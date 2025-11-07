@@ -125,6 +125,12 @@ def make_arg_parser(parser: FlexibleArgumentParser) -> FlexibleArgumentParser:
         "``{\"name\": \"name\", \"path\": \"lora_path\", "
         "\"base_model_name\": \"id\"}``")
     parser.add_argument(
+        "--dummy-lora-modules",
+        type=str,
+        default=None,
+        help="Use dummy LORAs with input LORA, number will be equal to --max-cpu-loras or max-loras if the first not available"
+    )
+    parser.add_argument(
         "--prompt-adapters",
         type=optional_type(str),
         default=None,

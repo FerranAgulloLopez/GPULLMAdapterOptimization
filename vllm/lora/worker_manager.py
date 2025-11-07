@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from contextlib import contextmanager
-from typing import Any, Dict, List, Literal, Optional, Set, Type, Union
+from typing import Any, Dict, List, Literal, Optional, Set, Type, Union, Tuple
 
+import time
 import torch
 
 from vllm.adapter_commons.utils import (add_adapter_worker,
@@ -50,6 +51,12 @@ class WorkerLoRAManager(AbstractWorkerManager):
         self.vocab_size = vocab_size
         self.lora_config = lora_config
         self.max_position_embeddings = max_position_embeddings
+
+        self.total_loads_from_disk = 0
+        self.total_loads_from_memory = 0
+        self.total_loading_time_from_disk = 0
+        self.total_loading_time_from_memory = 0
+
         super().__init__(device)
         # Lazily initialized by create_lora_manager.
         self._adapter_manager: LoRAModelManager
@@ -187,6 +194,13 @@ class WorkerLoRAManager(AbstractWorkerManager):
     def list_adapters(self) -> Set[int]:
         return list_adapters_worker(self._adapter_manager.list_adapters)
 
+    def check_adapter_times(self) -> Tuple[float, float, float, float]:
+        return \
+            self.total_loads_from_disk, \
+            self.total_loads_from_memory,\
+            self.total_loading_time_from_disk, \
+            self.total_loading_time_from_memory
+
 
 class LRUCacheWorkerLoRAManager(WorkerLoRAManager):
     """WorkerLoRAManager that manages LoRA models on the worker side.
@@ -232,6 +246,7 @@ class LRUCacheWorkerLoRAManager(WorkerLoRAManager):
             # evicting any existing adapters.
             # This may cause the # of loaded lora adapters to very temporarily
             # exceed `--max-cpu-loras`.
+            init_time = time.perf_counter()
             lora = self._load_adapter(lora_request)
 
             # Loading succeeded, now check if we will exceed cache capacity and
@@ -242,10 +257,26 @@ class LRUCacheWorkerLoRAManager(WorkerLoRAManager):
                 self._adapter_manager.remove_oldest_adapter()
             # Then add the new adapter to the cache
             loaded = self._adapter_manager.add_adapter(lora)
+
+            if loaded and 'warmup' not in lora_request.lora_name:  # avoid counting warmup loads as well
+                self.total_loads_from_disk += 1
+                self.total_loading_time_from_disk += time.perf_counter() - init_time
+                logger.info(f''
+                            f'Total loads from disk: {self.total_loads_from_disk}. '
+                            f'Total loading time from disk: {self.total_loading_time_from_disk} seconds.'
+                            )  # TODO refactor, properly log
         else:
             # If the lora is already loaded, just touch it to
             # update its position in the caches
             loaded = self._adapter_manager.get_adapter(
                 lora_request.lora_int_id) is not None
-        self._adapter_manager.activate_adapter(lora_request.lora_int_id)
+        init_time = time.perf_counter()
+        activated = self._adapter_manager.activate_adapter(lora_request.lora_int_id)
+        if activated and 'warmup' not in lora_request.lora_name:  # avoid counting warmup loads as well
+            self.total_loads_from_memory += 1
+            self.total_loading_time_from_memory += time.perf_counter() - init_time
+            logger.info(f''
+                        f'Total loads from memory: {self.total_loads_from_memory}. '
+                        f'Total loading time from memory: {self.total_loading_time_from_memory} seconds.'
+                        )  # TODO refactor, properly log
         return loaded

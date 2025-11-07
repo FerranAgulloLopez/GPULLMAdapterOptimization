@@ -1842,6 +1842,10 @@ class LLMEngine:
         else:
             spec_decode_metrics = None
 
+        total_loads_from_disk, total_loads_from_memory, total_loading_time_from_disk, total_loading_time_from_memory = self.model_executor.check_adapter_times()[0] if self.scheduler[0].lora_enabled else (0, 0, 0, 0)
+
+        mean_loras_by_batch = self.scheduler[0].count_loras_by_batch/self.scheduler[0].count_batches if self.scheduler[0].count_batches > 0 else 0
+
         return Stats(
             now=now,
             # System stats
@@ -1849,9 +1853,15 @@ class LLMEngine:
             num_running_sys=num_running_sys,
             num_swapped_sys=num_swapped_sys,
             num_waiting_sys=num_waiting_sys,
+            total_scheduling_time=self.scheduler[0].total_scheduling_time,
+
             #   KV Cache Usage in %
             gpu_cache_usage_sys=gpu_cache_usage_sys,
             cpu_cache_usage_sys=cpu_cache_usage_sys,
+            #   Prefix Cache Hit Rate
+            cpu_prefix_cache_hit_rate=cpu_prefix_cache_hit_rate,
+            gpu_prefix_cache_hit_rate=gpu_prefix_cache_hit_rate,
+
             #   Prefix Cache Hit Rate
             cpu_prefix_cache_hit_rate=cpu_prefix_cache_hit_rate,
             gpu_prefix_cache_hit_rate=gpu_prefix_cache_hit_rate,
@@ -1883,6 +1893,11 @@ class LLMEngine:
             n_requests=n_requests,
             max_tokens_requests=max_tokens_requests,
             finished_reason_requests=finished_reason_requests,
+            total_loads_from_disk=total_loads_from_disk,
+            total_loads_from_memory=total_loads_from_memory,
+            total_loading_time_from_disk=total_loading_time_from_disk,
+            total_loading_time_from_memory=total_loading_time_from_memory,
+            mean_loras_by_batch=mean_loras_by_batch,
             max_lora=str(max_lora_stat),
             waiting_lora_adapters=list(waiting_lora_adapters.keys()),
             running_lora_adapters=list(running_lora_adapters.keys()))

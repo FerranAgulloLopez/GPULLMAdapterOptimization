@@ -535,6 +535,13 @@ class Scheduler:
             self.partial_prefill_budget_lookup_list[i] = (
                 scheduler_config.max_num_batched_tokens // i)
 
+        # count total scheduling time
+        self.total_scheduling_time: float = 0
+
+        # count mean of LoRAs by batch
+        self.count_loras_by_batch: int = 0
+        self.count_batches: int = 0
+
     @property
     def next_cache_id(self):
         return (self.cache_id + 1) % self.num_cache_iters
@@ -548,7 +555,8 @@ class Scheduler:
         """The number of new tokens."""
         return 1
 
-    def add_seq_group(self, seq_group: SequenceGroup) -> None:
+    def add_seq_group(self, seq_group: SequenceGroup, user_id: Optional[str] = None) -> None:
+        logger.debug(f"Received new seq group {seq_group.request_id} from user {user_id}")
         # Add sequence groups to the waiting queue.
         self.waiting.append(seq_group)
 
@@ -1288,6 +1296,13 @@ class Scheduler:
         preempted = len(running_scheduled.preempted) + len(
             running_scheduled.swapped_out)
 
+        # count mean LoRAs running by batch
+        self.count_batches += 1
+        curr_loras = set(
+            seq_group.lora_int_id for seq_group in self.running
+            if seq_group.lora_int_id > 0) if self.lora_enabled else 0
+        self.count_loras_by_batch += len(curr_loras) if self.lora_enabled else 0
+
         # There should be no prefill from running queue because this policy
         # doesn't allow chunked prefills.
         assert len(running_scheduled.prefill_seq_groups) == 0
@@ -1499,6 +1514,7 @@ class Scheduler:
         scheduler_start_time = time.perf_counter()
 
         scheduler_outputs: SchedulerOutputs = self._schedule()
+        self.total_scheduling_time += time.perf_counter() - scheduler_start_time
         now = time.time()
 
         if not self.cache_config.enable_prefix_caching:

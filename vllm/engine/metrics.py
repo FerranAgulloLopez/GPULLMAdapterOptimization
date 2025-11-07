@@ -488,7 +488,13 @@ class LoggingStatLogger(StatLoggerBase):
                 "Avg generation throughput: %.1f tokens/s, "
                 "Running: %d reqs, Swapped: %d reqs, "
                 "Pending: %d reqs, GPU KV cache usage: %.1f%%, "
-                "CPU KV cache usage: %.1f%%.",
+                "CPU KV cache usage: %.1f%%, "
+                "Total scheduling time: %.1f seconds, "
+                "Total LoRA loads from disk: %.1f, "
+                "Total LoRA loads from memory: %.1f, "
+                "Total LoRA loading time from disk: %.6f seconds, "
+                "Total LoRA loading time from memory: %.6f seconds, "
+                "Mean LoRAs by batch: %.1f.",
                 prompt_throughput,
                 generation_throughput,
                 stats.num_running_sys,
@@ -496,6 +502,12 @@ class LoggingStatLogger(StatLoggerBase):
                 stats.num_waiting_sys,
                 stats.gpu_cache_usage_sys * 100,
                 stats.cpu_cache_usage_sys * 100,
+                stats.total_scheduling_time,
+                stats.total_loads_from_disk,
+                stats.total_loads_from_memory,
+                stats.total_loading_time_from_disk,
+                stats.total_loading_time_from_memory,
+                stats.mean_loras_by_batch
             )
             if (stats.cpu_prefix_cache_hit_rate >= 0
                     or stats.gpu_prefix_cache_hit_rate >= 0):

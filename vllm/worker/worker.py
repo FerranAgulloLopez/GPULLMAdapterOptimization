@@ -496,6 +496,9 @@ class Worker(LocalOrDistributedWorkerBase):
     def list_prompt_adapters(self) -> Set[int]:
         return self.model_runner.list_prompt_adapters()
 
+    def check_adapter_times(self) -> Tuple[float, float, float, float]:
+        return self.model_runner.check_adapter_times()
+
     @property
     def max_model_len(self) -> int:
         return self.model_config.max_model_len

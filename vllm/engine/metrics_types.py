@@ -31,6 +31,7 @@ class Stats:
     num_running_sys: int
     num_waiting_sys: int
     num_swapped_sys: int
+    total_scheduling_time: float
     #   KV Cache Usage in %
     gpu_cache_usage_sys: float
     cpu_cache_usage_sys: float
@@ -66,6 +67,12 @@ class Stats:
     waiting_lora_adapters: List[str]
     running_lora_adapters: List[str]
     max_lora: str
+
+    total_loads_from_disk: float
+    total_loads_from_memory: float
+    total_loading_time_from_disk: float
+    total_loading_time_from_memory: float
+    mean_loras_by_batch: float
 
     spec_decode_metrics: Optional["SpecDecodeWorkerMetrics"] = None
 

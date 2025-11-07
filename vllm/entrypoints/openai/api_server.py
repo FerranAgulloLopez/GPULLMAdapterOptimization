@@ -953,6 +953,9 @@ async def init_app_state(
         model_config=model_config,
         base_model_paths=base_model_paths,
         lora_modules=args.lora_modules,
+        dummy_lora_modules=args.dummy_lora_modules,
+        max_loras=args.max_loras,
+        max_cpu_loras=args.max_cpu_loras,
         prompt_adapters=args.prompt_adapters,
     )
     await state.openai_serving_models.init_static_loras()

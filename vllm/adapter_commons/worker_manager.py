@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from abc import ABC, abstractmethod
-from typing import Any, Optional, Set
+from typing import Any, Optional, Set, Tuple
 
 import torch
 
@@ -35,4 +35,8 @@ class AbstractWorkerManager(ABC):
 
     @abstractmethod
     def list_adapters(self) -> Set[int]:
+        raise NotImplementedError
+
+    @abstractmethod
+    def check_adapter_times(self) -> Tuple[float, float, float, float]:
         raise NotImplementedError

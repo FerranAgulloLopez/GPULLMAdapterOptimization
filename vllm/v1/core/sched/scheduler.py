@@ -134,7 +134,22 @@ class Scheduler(SchedulerInterface):
             use_eagle=self.use_eagle,
             log_stats=self.log_stats)
 
+        # DEBUG
+        '''self.last_total_num_scheduled_tokens = None
+        self.last_step_init_time = None'''
+
+
     def schedule(self) -> SchedulerOutput:
+        '''if self.last_total_num_scheduled_tokens is not None and self.last_step_init_time is not None:
+            logger.info(f''
+                        f'Timestamp: {time.perf_counter()}. '
+                        f'Step time: {time.perf_counter() - self.last_step_init_time} seconds. '
+                        f'Batched tokens: {self.last_total_num_scheduled_tokens}'
+                        )
+        self.last_step_init_time = time.perf_counter()'''
+
+        scheduler_init_time: float = time.perf_counter()
+
         # NOTE(woosuk) on the scheduling algorithm:
         # There's no "decoding phase" nor "prefill phase" in the scheduler.
         # Each request just has the num_computed_tokens and
@@ -506,6 +521,16 @@ class Scheduler(SchedulerInterface):
             self.requests[req_id].num_computed_tokens += num_scheduled_token
 
         self.finished_req_ids = set()
+
+        # logging  # TODO refactor
+        logger.info(f''
+                    f'Timestamp: {time.perf_counter()}. '
+                    f'Scheduler time: {time.perf_counter() - scheduler_init_time} seconds. '
+                    f'Unique adapters by batch: {len(scheduled_loras)}. '
+                    f'Batched tokens: {total_num_scheduled_tokens}'
+                    )
+        '''self.last_total_num_scheduled_tokens = total_num_scheduled_tokens'''
+
         return scheduler_output
 
     def _make_cached_request_data(

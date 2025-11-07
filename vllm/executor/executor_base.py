@@ -274,6 +274,9 @@ class ExecutorBase(ABC):
         exception."""
         self.check_health()
 
+    def check_adapter_times(self) -> List[Tuple[float, float, float, float]]:
+        return self.collective_rpc("check_adapter_times")
+
 
 class DistributedExecutorBase(ExecutorBase):
     """Abstract superclass of distributed executor implementations."""

@@ -1,12 +1,13 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import json
+import random
 import pathlib
 from asyncio import Lock
 from collections import defaultdict
 from dataclasses import dataclass
 from http import HTTPStatus
-from typing import Optional, Union
+from typing import Optional, Union, List
 
 from vllm.config import ModelConfig
 from vllm.engine.protocol import EngineClient
@@ -59,6 +60,9 @@ class OpenAIServingModels:
         base_model_paths: list[BaseModelPath],
         *,
         lora_modules: Optional[list[LoRAModulePath]] = None,
+        dummy_lora_modules: Optional[str] = None,
+        max_loras: Optional[int] = None,
+        max_cpu_loras: Optional[int] = None,
         prompt_adapters: Optional[list[PromptAdapterPath]] = None,
     ):
         super().__init__()
@@ -69,6 +73,9 @@ class OpenAIServingModels:
         self.model_config = model_config
 
         self.static_lora_modules = lora_modules
+        self.dummy_lora_modules = dummy_lora_modules
+        self.max_loras = max_loras
+        self.max_cpu_loras = max_cpu_loras
         self.lora_requests: list[LoRARequest] = []
         self.lora_id_counter = AtomicCounter(0)
 
@@ -97,6 +104,34 @@ class OpenAIServingModels:
         """Loads all static LoRA modules.
         Raises if any fail to load"""
         if self.static_lora_modules is None:
+            if self.dummy_lora_modules is not None:
+                # get available loras
+                available_loras: List[str] = self.dummy_lora_modules.split(' ')
+
+                # determine number of loras to create
+                loras_to_create: int = self.max_cpu_loras if self.max_cpu_loras is not None else self.max_loras
+                assert loras_to_create >= len(available_loras)
+
+                # distribute available loras in the total number to create
+                self.lora_requests = []
+                index = 0
+                lora_id: int = 0
+                while len(self.lora_requests) < loras_to_create:
+                    load_request = LoadLoRAAdapterRequest(
+                        lora_path=available_loras[index],
+                        lora_name=f'dummy-{lora_id}'
+                    )
+                    lora_id += 1
+                    load_result = await self.load_lora_adapter(
+                        request=load_request,
+                        base_model_name=self.base_model_paths[0].name
+                    )
+                    if isinstance(load_result, ErrorResponse):
+                        raise ValueError(load_result.message)
+                    index += 1
+                    if index >= len(available_loras):
+                        index = 0
+                random.shuffle(self.lora_requests)
             return
         for lora in self.static_lora_modules:
             load_request = LoadLoRAAdapterRequest(lora_path=lora.path,
