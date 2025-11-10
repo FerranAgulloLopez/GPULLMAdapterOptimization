@@ -1,0 +1,12 @@
+Namespace(backend='openai', base_url=None, host='localhost', port=10608, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_with_offloading/example_maximum_variance/llama-2-7b/loaded_adapters_rate_0.0125/_192_256_16_', launch_server=True, server_args='--port=10608 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/" --max-num-seqs="4096" --max-loras=192 --max-cpu-loras=256 --max-lora-rank=16', disable_log_stats=False, total_time=300, adapter_rates=[0.0125], aggregated_rate=None, use_extended_metric_checker=False)
+Server started
+Number of adapters: 256
+Adapter rates. Values: [0.0125]. Counts: [256]
+Adapter prompts. [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+Prompts retrieved: 3072 . Total input tokens: 768000 . Total output tokens: 706560
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Concurrent checker terminated
+Server terminated

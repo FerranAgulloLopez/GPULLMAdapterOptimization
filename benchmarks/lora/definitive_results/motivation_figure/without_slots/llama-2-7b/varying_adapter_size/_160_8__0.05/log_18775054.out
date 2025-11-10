@@ -1,0 +1,80 @@
+WARNING 04-09 06:10:33 _custom_ops.py:14] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+Namespace(backend='openai', base_url=None, host='localhost', port=47890, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=4096, sharegpt_output_len=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, request_rate=inf, request_rate_by_lora=0.05, seed=0, trust_remote_code=False, disable_tqdm=True, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_without_offloading/example_maximum_variance/llama-2-7b/varying_adapter_size/_160_8__0.05', launch_server=True, server_args='--port=47890 --disable-log-requests --model=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b --enable-lora --dummy-lora-modules=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_8/ --max-num-seqs=4096 --max-loras=160 --max-lora-rank=8', disable_log_stats=False, disable_loras_users=False, user_lora_request_relation=None, infinite_behaviour=True, restrict_loras=None, lora_pre_loading=False)
+Server started
+Requests users. Values: ['0' '1' '10' '100' '101' '102' '103' '104' '105' '106' '107' '108' '109'
+ '11' '110' '111' '112' '113' '114' '115' '116' '117' '118' '119' '12'
+ '120' '121' '122' '123' '124' '125' '126' '127' '128' '129' '13' '130'
+ '131' '132' '133' '134' '135' '136' '137' '138' '139' '14' '140' '141'
+ '142' '143' '144' '145' '146' '147' '148' '149' '15' '150' '151' '152'
+ '153' '154' '155' '156' '157' '158' '159' '16' '17' '18' '19' '2' '20'
+ '21' '22' '23' '24' '25' '26' '27' '28' '29' '3' '30' '31' '32' '33' '34'
+ '35' '36' '37' '38' '39' '4' '40' '41' '42' '43' '44' '45' '46' '47' '48'
+ '49' '5' '50' '51' '52' '53' '54' '55' '56' '57' '58' '59' '6' '60' '61'
+ '62' '63' '64' '65' '66' '67' '68' '69' '7' '70' '71' '72' '73' '74' '75'
+ '76' '77' '78' '79' '8' '80' '81' '82' '83' '84' '85' '86' '87' '88' '89'
+ '9' '90' '91' '92' '93' '94' '95' '96' '97' '98' '99']. Counts: [26 26 26 25 25 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25
+ 26 25 25 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25 26 25
+ 25 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 25 25 25 25]
+Requests loras. Values: ['dummy-1' 'dummy-10' 'dummy-100' 'dummy-101' 'dummy-102' 'dummy-103'
+ 'dummy-104' 'dummy-105' 'dummy-106' 'dummy-107' 'dummy-108' 'dummy-109'
+ 'dummy-11' 'dummy-110' 'dummy-111' 'dummy-112' 'dummy-113' 'dummy-114'
+ 'dummy-115' 'dummy-116' 'dummy-117' 'dummy-118' 'dummy-119' 'dummy-12'
+ 'dummy-120' 'dummy-121' 'dummy-122' 'dummy-123' 'dummy-124' 'dummy-125'
+ 'dummy-126' 'dummy-127' 'dummy-128' 'dummy-129' 'dummy-13' 'dummy-130'
+ 'dummy-131' 'dummy-132' 'dummy-133' 'dummy-134' 'dummy-135' 'dummy-136'
+ 'dummy-137' 'dummy-138' 'dummy-139' 'dummy-14' 'dummy-140' 'dummy-141'
+ 'dummy-142' 'dummy-143' 'dummy-144' 'dummy-145' 'dummy-146' 'dummy-147'
+ 'dummy-148' 'dummy-149' 'dummy-15' 'dummy-150' 'dummy-151' 'dummy-152'
+ 'dummy-153' 'dummy-154' 'dummy-155' 'dummy-156' 'dummy-157' 'dummy-158'
+ 'dummy-159' 'dummy-16' 'dummy-160' 'dummy-17' 'dummy-18' 'dummy-19'
+ 'dummy-2' 'dummy-20' 'dummy-21' 'dummy-22' 'dummy-23' 'dummy-24'
+ 'dummy-25' 'dummy-26' 'dummy-27' 'dummy-28' 'dummy-29' 'dummy-3'
+ 'dummy-30' 'dummy-31' 'dummy-32' 'dummy-33' 'dummy-34' 'dummy-35'
+ 'dummy-36' 'dummy-37' 'dummy-38' 'dummy-39' 'dummy-4' 'dummy-40'
+ 'dummy-41' 'dummy-42' 'dummy-43' 'dummy-44' 'dummy-45' 'dummy-46'
+ 'dummy-47' 'dummy-48' 'dummy-49' 'dummy-5' 'dummy-50' 'dummy-51'
+ 'dummy-52' 'dummy-53' 'dummy-54' 'dummy-55' 'dummy-56' 'dummy-57'
+ 'dummy-58' 'dummy-59' 'dummy-6' 'dummy-60' 'dummy-61' 'dummy-62'
+ 'dummy-63' 'dummy-64' 'dummy-65' 'dummy-66' 'dummy-67' 'dummy-68'
+ 'dummy-69' 'dummy-7' 'dummy-70' 'dummy-71' 'dummy-72' 'dummy-73'
+ 'dummy-74' 'dummy-75' 'dummy-76' 'dummy-77' 'dummy-78' 'dummy-79'
+ 'dummy-8' 'dummy-80' 'dummy-81' 'dummy-82' 'dummy-83' 'dummy-84'
+ 'dummy-85' 'dummy-86' 'dummy-87' 'dummy-88' 'dummy-89' 'dummy-9'
+ 'dummy-90' 'dummy-91' 'dummy-92' 'dummy-93' 'dummy-94' 'dummy-95'
+ 'dummy-96' 'dummy-97' 'dummy-98' 'dummy-99']. Counts: [26 26 25 25 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25 26
+ 25 25 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25 26 25 25
+ 25 25 25 25 25 25 25 25 26 25 25 25 25 25 25 25 25 25 25 26 25 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26 26
+ 26 26 26 26 26 26 26 26 26 26 26 26 26 25 25 25]
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: 8.0
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     3944      
+Benchmark duration (s):                  520.32    
+Total input tokens:                      986000    
+Total generated tokens:                  911064    
+Request throughput (req/s):              7.58      
+Input token throughput (tok/s):          1894.98   
+Output token throughput (tok/s):         1750.96   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          19946.68  
+Median TTFT (ms):                        59.76     
+P99 TTFT (ms):                           520321.46 
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          59.44     
+Median TPOT (ms):                        51.62     
+P99 TPOT (ms):                           125.84    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           59.69     
+Median ITL (ms):                         44.18     
+P99 ITL (ms):                            252.67    
+==================================================
+Concurrent checker terminated
+Server terminated

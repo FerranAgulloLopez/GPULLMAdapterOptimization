@@ -1,0 +1,33 @@
+Namespace(backend='openai', base_url=None, host='localhost', port=36297, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_with_offloading/example_maximum_variance/llama-2-7b/loaded_adapters_rate_0.0125/_384_512_16_', launch_server=True, server_args='--port=36297 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/" --max-num-seqs="4096" --max-loras=384 --max-cpu-loras=512 --max-lora-rank=16', disable_log_stats=False, total_time=300, adapter_rates=[0.0125], aggregated_rate=None, use_extended_metric_checker=False)
+Server started
+Number of adapters: 512
+Adapter rates. Values: [0.0125]. Counts: [512]
+Adapter prompts. [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
+Prompts retrieved: 6144 . Total input tokens: 1536000 . Total output tokens: 1413120
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     1100      
+Benchmark duration (s):                  300.05    
+Total input tokens:                      275000    
+Total generated tokens:                  254100    
+Request throughput (req/s):              3.67      
+Input token throughput (tok/s):          916.50    
+Output token throughput (tok/s):         846.85    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          80142.81  
+Median TTFT (ms):                        86377.58  
+P99 TTFT (ms):                           116883.80 
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          45.97     
+Median TPOT (ms):                        38.70     
+P99 TPOT (ms):                           90.07     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           46.17     
+Median ITL (ms):                         26.89     
+P99 ITL (ms):                            181.82    
+==================================================
+Concurrent checker terminated
+Server terminated

@@ -1,0 +1,33 @@
+Namespace(backend='openai', base_url=None, host='localhost', port=58125, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_with_offloading/example_maximum_variance/llama-2-7b/loaded_adapters/_96_192_16_', launch_server=True, server_args='--port=58125 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/" --max-num-seqs="4096" --max-loras=96 --max-cpu-loras=192 --max-lora-rank=16', disable_log_stats=False, total_time=300, adapter_rates=[0.025], aggregated_rate=None, use_extended_metric_checker=False)
+Server started
+Number of adapters: 192
+Adapter rates. Values: [0.025]. Counts: [192]
+Adapter prompts. [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24]
+Prompts retrieved: 4608 . Total input tokens: 1152000 . Total output tokens: 1059840
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     1374      
+Benchmark duration (s):                  300.01    
+Total input tokens:                      343500    
+Total generated tokens:                  317394    
+Request throughput (req/s):              4.58      
+Input token throughput (tok/s):          1144.97   
+Output token throughput (tok/s):         1057.95   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          183.60    
+Median TTFT (ms):                        58.58     
+P99 TTFT (ms):                           2102.10   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          46.58     
+Median TPOT (ms):                        29.83     
+P99 TPOT (ms):                           114.40    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           46.78     
+Median ITL (ms):                         24.87     
+P99 ITL (ms):                            390.61    
+==================================================
+Concurrent checker terminated
+Server terminated

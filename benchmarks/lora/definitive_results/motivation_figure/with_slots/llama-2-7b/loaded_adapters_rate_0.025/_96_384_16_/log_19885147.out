@@ -1,0 +1,33 @@
+Namespace(backend='openai', base_url=None, host='localhost', port=13217, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_with_offloading/example_maximum_variance/llama-2-7b/loaded_adapters/_96_384_16_', launch_server=True, server_args='--port=13217 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/" --max-num-seqs="4096" --max-loras=96 --max-cpu-loras=384 --max-lora-rank=16', disable_log_stats=False, total_time=300, adapter_rates=[0.025], aggregated_rate=None, use_extended_metric_checker=False)
+Server started
+Number of adapters: 384
+Adapter rates. Values: [0.025]. Counts: [384]
+Adapter prompts. [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24]
+Prompts retrieved: 9216 . Total input tokens: 2304000 . Total output tokens: 2119680
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     1723      
+Benchmark duration (s):                  300.07    
+Total input tokens:                      430750    
+Total generated tokens:                  398013    
+Request throughput (req/s):              5.74      
+Input token throughput (tok/s):          1435.48   
+Output token throughput (tok/s):         1326.38   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          52787.71  
+Median TTFT (ms):                        50641.08  
+P99 TTFT (ms):                           117383.96 
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          118.16    
+Median TPOT (ms):                        95.91     
+P99 TPOT (ms):                           256.80    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           118.65    
+Median ITL (ms):                         67.27     
+P99 ITL (ms):                            518.11    
+==================================================
+Concurrent checker terminated
+Server terminated
