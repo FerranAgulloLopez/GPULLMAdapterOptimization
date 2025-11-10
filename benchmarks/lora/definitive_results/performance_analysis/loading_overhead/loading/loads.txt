@@ -1,0 +1,48 @@
+# rank 8
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_8",
+"prompt": "meh"
+}'
+
+## first load
+Total LoRA loading time: 0.103859 seconds, Total LoRA activating time: 0.008537 seconds
+
+## after loads
+Total LoRA loading time: 0.044026 seconds, Total LoRA activating time: 0.008684 seconds
+Total LoRA loading time: 0.041680 seconds, Total LoRA activating time: 0.008573 seconds
+Total LoRA loading time: 0.038482 seconds, Total LoRA activating time: 0.008584 seconds
+
+# rank 16
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_16",
+"prompt": "meh"
+}'
+
+## first load
+Total LoRA loading time: 0.263469 seconds, Total LoRA activating time: 0.009325 seconds
+
+## after loads
+Total LoRA loading time: 0.08015 seconds, Total LoRA activating time: 0.009155 seconds
+Total LoRA loading time: 0.083171 seconds, Total LoRA activating time: 0.008905 seconds
+Total LoRA loading time: 0.041677 seconds, Total LoRA activating time: 0.009132 seconds
+
+# rank 32
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_32",
+"prompt": "meh"
+}'
+
+## first load
+Total LoRA loading time: 0.509965 seconds, Total LoRA activating time: 0.008432 seconds
+
+## after loads
+Total LoRA loading time: 0.102383 seconds, Total LoRA activating time: 0.008341 seconds
+Total LoRA loading time: 0.107473 seconds, Total LoRA activating time: 0.008657 seconds
+Total LoRA loading time: 0.051136 seconds, Total LoRA activating time: 0.008454 seconds
+

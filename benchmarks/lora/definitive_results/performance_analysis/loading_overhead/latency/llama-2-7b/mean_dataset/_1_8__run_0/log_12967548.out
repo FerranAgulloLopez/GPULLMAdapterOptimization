@@ -1,0 +1,31 @@
+WARNING 12-13 11:32:53 _custom_ops.py:14] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+Namespace(backend='openai', base_url=None, host='localhost', port=46465, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_mean.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=100, sharegpt_output_len=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, request_rate=inf, request_rate_by_lora=None, seed=0, trust_remote_code=False, disable_tqdm=True, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/theory/lora_overhead/llama-2-7b/mean_dataset/_1_8__run_0', launch_server=True, server_args='--port=46465 --disable-log-requests --model=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b --enable-lora --lora-modules=sql-lora=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_8/ --max-num-seqs=50 --max-loras=1 --max-lora-rank=8', disable_log_stats=False, disable_loras_users=False, user_lora_request_relation=None, infinite_behaviour=False, restrict_loras=None)
+Server started
+Requests users. Values: ['0']. Counts: [100]
+Requests loras. Values: ['sql-lora']. Counts: [100]
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+============ Serving Benchmark Result ============
+Successful requests:                     100       
+Benchmark duration (s):                  13.19     
+Total input tokens:                      25000     
+Total generated tokens:                  23100     
+Request throughput (req/s):              7.58      
+Input token throughput (tok/s):          1895.57   
+Output token throughput (tok/s):         1751.51   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          3809.90   
+Median TTFT (ms):                        3815.72   
+P99 TTFT (ms):                           7324.68   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          26.65     
+Median TPOT (ms):                        26.44     
+P99 TPOT (ms):                           27.81     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           26.76     
+Median ITL (ms):                         25.44     
+P99 ITL (ms):                            32.77     
+==================================================
+Concurrent checker terminated
+Server terminated

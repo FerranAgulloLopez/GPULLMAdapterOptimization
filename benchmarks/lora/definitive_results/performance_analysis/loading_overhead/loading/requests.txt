@@ -1,0 +1,121 @@
+THIS IS NOT USED
+
+# small dataset
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_8",
+"prompt": "suppose you are a professor of Data Science using R subject. Ill ask you some questions as a student"
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_16",
+"prompt": "suppose you are a professor of Data Science using R subject. Ill ask you some questions as a student"
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_32",
+"prompt": "suppose you are a professor of Data Science using R subject. Ill ask you some questions as a student"
+}'
+
+curl http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_32",
+"prompt": "suppose you are a professor of Data Science using R subject. Ill ask you some questions as a student"
+}'
+
+## rank 8 (requests after load)
+Total: 0.224469s
+Total: 0.224162s
+Total: 0.224060s
+
+## rank 16 (requests after load)
+Total: 0.223935s
+Total: 0.224067s
+Total: 0.224174s
+
+## rank 32 (requests after load)
+Total: 0.223646s
+Total: 0.224857s
+Total: 0.223486s
+
+# medium dataset
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_8",
+"prompt": "lets assume that our Contacts module is made up of a ContactService with the following c# code public abstract class ContactService : BillingServiceBase\n {\n public bool UpdateContact( ref RatingContactEntity entity )\n {\n bool result = false;\n\n var userId = base.GetCurrentUser().UserName;\n\n using( var db = new CAUEntities() )\n {\n int contactNumber = entity.ContactNumber;\n\n var contact = ( from c in db.Contacts\n where c.ContactNumber == contactNumber\n select c ).FirstOrDefault();\n\n if( contact != null )\n {\n Mapper.Map( entity, contact );\n contact.ModifiedDate = DateTime.Now;\n contact.UserId = userId;\n\n result = db.SaveChanges() > 0;\n\n if( result )\n {\n Mapper.Map( contact, entity );\n } // end if( result )\n } // end if( contact != null )\n } // end using( var db = new CAUEntities() )\n\n return result;\n } // end UpdateContact\n } // end class\n"
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_16",
+"prompt": "lets assume that our Contacts module is made up of a ContactService with the following c# code public abstract class ContactService : BillingServiceBase\n {\n public bool UpdateContact( ref RatingContactEntity entity )\n {\n bool result = false;\n\n var userId = base.GetCurrentUser().UserName;\n\n using( var db = new CAUEntities() )\n {\n int contactNumber = entity.ContactNumber;\n\n var contact = ( from c in db.Contacts\n where c.ContactNumber == contactNumber\n select c ).FirstOrDefault();\n\n if( contact != null )\n {\n Mapper.Map( entity, contact );\n contact.ModifiedDate = DateTime.Now;\n contact.UserId = userId;\n\n result = db.SaveChanges() > 0;\n\n if( result )\n {\n Mapper.Map( contact, entity );\n } // end if( result )\n } // end if( contact != null )\n } // end using( var db = new CAUEntities() )\n\n return result;\n } // end UpdateContact\n } // end class\n"
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_32",
+"prompt": "lets assume that our Contacts module is made up of a ContactService with the following c# code public abstract class ContactService : BillingServiceBase\n {\n public bool UpdateContact( ref RatingContactEntity entity )\n {\n bool result = false;\n\n var userId = base.GetCurrentUser().UserName;\n\n using( var db = new CAUEntities() )\n {\n int contactNumber = entity.ContactNumber;\n\n var contact = ( from c in db.Contacts\n where c.ContactNumber == contactNumber\n select c ).FirstOrDefault();\n\n if( contact != null )\n {\n Mapper.Map( entity, contact );\n contact.ModifiedDate = DateTime.Now;\n contact.UserId = userId;\n\n result = db.SaveChanges() > 0;\n\n if( result )\n {\n Mapper.Map( contact, entity );\n } // end if( result )\n } // end if( contact != null )\n } // end using( var db = new CAUEntities() )\n\n return result;\n } // end UpdateContact\n } // end class\n"
+}'
+
+## rank 8 (requests after load)
+Total: 0.249354s
+Total: 0.248638s
+Total: 0.249417s
+
+## rank 16 (requests after load)
+Total: 0.249631s
+Total: 0.250104s
+Total: 0.249719s
+
+## rank 32 (requests after load)
+Total: 0.243954s
+Total: 0.243797s
+Total: 0.243311s
+
+
+# large dataset
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_8",
+"prompt": "Rewrite this scene from The Dark Knight, but replacing Batman with Ripley (from the Alien movie) and The Joker with the Alien (from the Alien movie). Additionally Change the setting to the Nostromo Spaceship:\n\nINT. INTERROGATION ROOM, MCU, GOTHAM CENTRAL -- NIGHT\nThe Joker, bleeding from nose and mouth, LAUGHS at Batman.\nTHE JOKER\nLook at you go... does Harvey know\nabout you and his-?\nThe Joker SMASHES into the wall- SLIDES to the floor. Batman\nstands over him, a man possessedBATMAN\nWHERE ARE THEY?!\nHe GRABS the Joker, holding him closeTHE JOKER\nKilling is making a choice...\nBatman PUNCHES the Joker across the face. HARD.\nBATMAN\nWHERE ARE THEY?!\nThe Joker FEEDS off Batmans anger. Loving it.\nTHE JOKER\n...you choose one life over the\nother. Your friend, the district\nattorney. Or his blushing bride-tobe.\nBatman PUNCHES the Joker again. The Joker LAUGHS.\nTHE JOKER\nYou have nothing. Nothing to\nthreaten me with. Nothing to do with\nall your strength...\n(spits a tooth)\nBut dont worry, Im going to tell\nyou where they are. Both of them,\nand thats the point- youll have to\nchoose.\nThe Batman stares at the Joker...\nTHE JOKER\nHes at 250 52nd Boulevard. And\nshes on avenue X at Cicero.\n88.\nBatman DROPS him."
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_16",
+"prompt": "Rewrite this scene from The Dark Knight, but replacing Batman with Ripley (from the Alien movie) and The Joker with the Alien (from the Alien movie). Additionally Change the setting to the Nostromo Spaceship:\n\nINT. INTERROGATION ROOM, MCU, GOTHAM CENTRAL -- NIGHT\nThe Joker, bleeding from nose and mouth, LAUGHS at Batman.\nTHE JOKER\nLook at you go... does Harvey know\nabout you and his-?\nThe Joker SMASHES into the wall- SLIDES to the floor. Batman\nstands over him, a man possessedBATMAN\nWHERE ARE THEY?!\nHe GRABS the Joker, holding him closeTHE JOKER\nKilling is making a choice...\nBatman PUNCHES the Joker across the face. HARD.\nBATMAN\nWHERE ARE THEY?!\nThe Joker FEEDS off Batmans anger. Loving it.\nTHE JOKER\n...you choose one life over the\nother. Your friend, the district\nattorney. Or his blushing bride-tobe.\nBatman PUNCHES the Joker again. The Joker LAUGHS.\nTHE JOKER\nYou have nothing. Nothing to\nthreaten me with. Nothing to do with\nall your strength...\n(spits a tooth)\nBut dont worry, Im going to tell\nyou where they are. Both of them,\nand thats the point- youll have to\nchoose.\nThe Batman stares at the Joker...\nTHE JOKER\nHes at 250 52nd Boulevard. And\nshes on avenue X at Cicero.\n88.\nBatman DROPS him."
+}'
+
+curl -o /dev/null -s -w 'Total: %{time_total}s\n' http://localhost:46465/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+"model": "dummy_lora_rank_32",
+"prompt": "Rewrite this scene from The Dark Knight, but replacing Batman with Ripley (from the Alien movie) and The Joker with the Alien (from the Alien movie). Additionally Change the setting to the Nostromo Spaceship:\n\nINT. INTERROGATION ROOM, MCU, GOTHAM CENTRAL -- NIGHT\nThe Joker, bleeding from nose and mouth, LAUGHS at Batman.\nTHE JOKER\nLook at you go... does Harvey know\nabout you and his-?\nThe Joker SMASHES into the wall- SLIDES to the floor. Batman\nstands over him, a man possessedBATMAN\nWHERE ARE THEY?!\nHe GRABS the Joker, holding him closeTHE JOKER\nKilling is making a choice...\nBatman PUNCHES the Joker across the face. HARD.\nBATMAN\nWHERE ARE THEY?!\nThe Joker FEEDS off Batmans anger. Loving it.\nTHE JOKER\n...you choose one life over the\nother. Your friend, the district\nattorney. Or his blushing bride-tobe.\nBatman PUNCHES the Joker again. The Joker LAUGHS.\nTHE JOKER\nYou have nothing. Nothing to\nthreaten me with. Nothing to do with\nall your strength...\n(spits a tooth)\nBut dont worry, Im going to tell\nyou where they are. Both of them,\nand thats the point- youll have to\nchoose.\nThe Batman stares at the Joker...\nTHE JOKER\nHes at 250 52nd Boulevard. And\nshes on avenue X at Cicero.\n88.\nBatman DROPS him."
+}'
+
+## rank 8 (requests after load)
+Total: 0.248472s
+Total: 0.249427s
+Total: 0.249492s
+
+## rank 16 (requests after load)
+Total: 0.246995s
+Total: 0.249598s
+Total: 0.249599s
+
+## rank 32 (requests after load)
+Total: 0.249008s
+Total: 0.250147s
+Total: 0.249629s
+

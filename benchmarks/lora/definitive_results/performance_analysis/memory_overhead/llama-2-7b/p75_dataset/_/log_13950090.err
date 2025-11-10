@@ -1,0 +1,3 @@
+load SINGULARITY/3.11.5 (PATH)
+/home/bsc/bsc098069/llm_benchmarking/FairnessInLLMAdapterServing/benchmarks/lora/benchmark_serving.py:412: UserWarning: All requests failed. This is likely due to a misconfiguration on the benchmark arguments.
+  metrics, actual_output_lens = calculate_metrics(

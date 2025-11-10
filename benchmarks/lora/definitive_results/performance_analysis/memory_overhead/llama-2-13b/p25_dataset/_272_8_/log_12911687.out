@@ -1,0 +1,29 @@
+WARNING 12-11 20:43:32 _custom_ops.py:14] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+Namespace(backend='openai', base_url=None, host='localhost', port=29449, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/dummy_dataset_p25.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-13b', tokenizer=None, best_of=1, use_beam_search=False, num_prompts=1000, sharegpt_output_len=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, request_rate=inf, request_rate_by_lora=None, seed=0, trust_remote_code=False, disable_tqdm=True, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/theory/S/llama-2-13b/p25_dataset/_272_8_', launch_server=True, server_args='--port=29449 --disable-log-requests --model=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-13b --enable-lora --max-num-seqs=4096 --max-loras=272 --max-lora-rank=8', disable_log_stats=False, disable_loras_users=True, user_lora_request_relation=None, infinite_behaviour=False, restrict_loras=None)
+Server started
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+============ Serving Benchmark Result ============
+Successful requests:                     1000      
+Benchmark duration (s):                  11.18     
+Total input tokens:                      23000     
+Total generated tokens:                  27000     
+Request throughput (req/s):              89.47     
+Input token throughput (tok/s):          2057.76   
+Output token throughput (tok/s):         2415.63   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          4460.35   
+Median TTFT (ms):                        4074.90   
+P99 TTFT (ms):                           9721.82   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          103.55    
+Median TPOT (ms):                        101.53    
+P99 TPOT (ms):                           156.20    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           103.38    
+Median ITL (ms):                         67.32     
+P99 ITL (ms):                            651.53    
+==================================================
+Concurrent checker terminated
+Server terminated
