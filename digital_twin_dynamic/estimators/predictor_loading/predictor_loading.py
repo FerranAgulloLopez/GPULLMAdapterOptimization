@@ -4,10 +4,6 @@ import os
 import re
 from typing import List, Tuple, Dict, Set, Any
 
-#import matplotlib.pyplot as plt
-import numpy as np
-#from matplotlib.lines import Line2D
-
 
 CONSTANTS_PER_MODEL = {  # model - max_lora_rank - adapter_rank
     'llama-3.1-8b-instruct': {
@@ -284,7 +280,12 @@ def main():
         print(f'Final results for {model}')
         print(json.dumps(final_results, indent=4))
         print(f'Total duration by model {model}: {total_duration}')
+        with open(os.path.join('', f'{model}_constants.json'), 'w') as file:
+            json.dump(final_results, file, indent=4)
 
 
 if __name__ == '__main__':
+    # visualization imports here, to not run them during DT execution
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
     main()

@@ -4,12 +4,7 @@ import json
 import os
 import random
 from typing import List, Tuple, Dict, Set
-#from matplotlib.patches import Patch
-
-#import matplotlib.pyplot as plt
 import numpy as np
-#from matplotlib.lines import Line2D
-#from scipy.optimize import curve_fit
 
 
 PREFILL_CONSTANTS_PER_MODEL = {
@@ -349,6 +344,8 @@ def plot_predictor(
 
     popt_exponential, _ = curve_fit(default_latency_predictor_prefill, xdata, ydata, maxfev=15000)
     print(f'Prefill. Learnt constants for model {title}: {popt_exponential}')
+    with open(os.path.join('', f'{title}_prefill_constants.json'), 'w') as file:
+        json.dump({f'constant_{index_constant}': value for index_constant, value in enumerate(list(popt_exponential))}, file, indent=4)
 
     for set_batch_size, x_line, y_line in processed_results_input:
         axs[index_x].plot(
@@ -402,6 +399,8 @@ def plot_predictor(
 
     popt_exponential, _ = curve_fit(default_latency_predictor_decode, xdata, ydata, maxfev=15000)
     print(f'Decode. Learnt constants for model {title}: {popt_exponential}')
+    with open(os.path.join('', f'{title}_decode_constants.json'), 'w') as file:
+        json.dump({f'constant_{index_constant}': value for index_constant, value in enumerate(list(popt_exponential))}, file, indent=4)
 
     for output_length, x_line, y_line in processed_results_output:
         axs[index_x].plot(
@@ -452,4 +451,9 @@ def main():
 
 
 if __name__ == '__main__':
+    # visualization imports here, to not run them during DT execution
+    from matplotlib.patches import Patch
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    from scipy.optimize import curve_fit
     main()

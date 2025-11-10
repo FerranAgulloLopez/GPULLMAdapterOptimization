@@ -1,7 +1,0 @@
-load SINGULARITY/3.11.5 (PATH)
-Traceback (most recent call last):
-  File "/home/bsc/bsc098069/llm_benchmarking/vLLMAdapterServingScaling/benchmarks/lora/benchmark_serving.py", line 951, in <module>
-    main(args)
-  File "/home/bsc/bsc098069/llm_benchmarking/vLLMAdapterServingScaling/benchmarks/lora/benchmark_serving.py", line 656, in main
-    raise Exception("Server did not start on time")
-Exception: Server did not start on time

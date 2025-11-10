@@ -6,12 +6,7 @@ import os
 import re
 from collections import deque
 from typing import List, Tuple, Dict, Set
-#from matplotlib.patches import Patch
-
-#import matplotlib.pyplot as plt
 import numpy as np
-#from matplotlib.lines import Line2D
-#from scipy.optimize import curve_fit
 
 
 DECODE_CONSTANTS_PER_MODEL = {
@@ -500,6 +495,8 @@ def plot_predictor(
         predictor = latency_overhead_predictor_decode
         popt_exponential, _ = curve_fit(predictor, xdata, ydata, maxfev=15000)
         print(f'{label_results}. Learnt constants for model {title}: {popt_exponential}')
+        with open(os.path.join('', f'{title}_constants.json'), 'w') as file:
+            json.dump({f'constant_{index_constant}': value for index_constant, value in enumerate(list(popt_exponential))}, file, indent=4)
 
         for rank in rank_values:
             x_line = list(range(1, round(max_x_line)))
@@ -536,18 +533,23 @@ def main():
             results_output_initial_points,
             results_output_overheads,
             '',
-            f'{model}_small'
+            f'{model}'
         )
 
         plot_predictor(
             results_output_initial_points,
             results_output_overheads,
             '',
-            f'{model}_small'
+            f'{model}'
         )
 
         print(f'Total duration by model {model}: {total_duration}')
 
 
 if __name__ == '__main__':
+    # visualization imports here, to not run them during DT execution
+    from matplotlib.patches import Patch
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    from scipy.optimize import curve_fit
     main()
