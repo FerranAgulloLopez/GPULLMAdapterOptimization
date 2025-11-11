@@ -1,0 +1,28 @@
+INFO 05-20 19:00:09 [__init__.py:239] Automatically detected platform cuda.
+Namespace(backend='openai', base_url=None, host='localhost', port=26134, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct', tokenizer=None, num_prompts=1, sharegpt_output_len=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, request_rate=inf, request_rate_by_lora=None, seed=0, trust_remote_code=False, disable_tqdm=True, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/finding_maximum/check_available_gpu_memory/llama-3.1-8b-instruct/_288_8_', launch_server=True, server_args='--port=26134 --disable-log-stats --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct" --enable-lora --max-num-seqs="2048" --scheduler-cls="vllm.v1.core.sched.scheduler.Scheduler" --no-enable-prefix-caching --max-loras=288 --max-lora-rank=8', server_init_time=1800, disable_log_stats=True, disable_loras_users=True, user_lora_request_relation=None, restrict_loras=None, lora_pre_loading=False, use_synthetic_dataset=None, synthetic_input_length=None, synthetic_output_length=None)
+Server started
+Starting initial single prompt test run for base model
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+============ Serving Benchmark Result ============
+Successful requests:                     1         
+Benchmark duration (s):                  2.37      
+Total input tokens:                      13        
+Total generated tokens:                  120       
+Request throughput (req/s):              0.42      
+Input token throughput (tok/s):          5.50      
+Output token throughput (tok/s):         50.73     
+---------------Time to First Token----------------
+Mean TTFT (ms):                          26.40     
+Median TTFT (ms):                        26.40     
+P99 TTFT (ms):                           26.40     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          19.66     
+Median TPOT (ms):                        19.66     
+P99 TPOT (ms):                           19.66     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           19.66     
+Median ITL (ms):                         19.64     
+P99 ITL (ms):                            20.02     
+==================================================
+Server terminated
