@@ -1,0 +1,51 @@
+INFO 06-01 17:16:45 [__init__.py:239] Automatically detected platform cuda.
+Namespace(backend='openai', base_url=None, host='localhost', port=49485, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', tokenizer=None, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/finding_maximum/test_dataset/with_offloading/qwen-2.5-7b-instruct/rate_0.4-0.05-0.025_size_8-8-32/_96_192_32_', launch_server=True, server_args='--port=49485 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_32/" --max-num-seqs="2048" --scheduler-cls="vllm.v1.core.sched.scheduler.Scheduler" --no-enable-prefix-caching --max-loras=96 --max-cpu-loras=192 --max-lora-rank=32', server_init_time=1800, disable_log_stats=False, total_time=3600, adapter_rates=[0.4, 0.05, 0.025], aggregated_rate=None, use_extended_metric_checker=False, lora_pre_loading=False)
+Server started
+Number of adapters: 192
+Adapter rates. Values: [0.025 0.05  0.4  ]. Counts: [64 64 64]
+Adapter prompts. [4320, 270, 4320, 270, 4320, 270, 4320, 270, 270, 270, 540, 540, 540, 540, 4320, 540, 270, 4320, 270, 540, 540, 270, 4320, 4320, 270, 540, 270, 540, 270, 270, 540, 270, 270, 540, 540, 4320, 540, 270, 540, 4320, 4320, 540, 4320, 270, 540, 540, 4320, 540, 270, 270, 540, 4320, 270, 540, 270, 4320, 4320, 540, 4320, 4320, 4320, 270, 540, 4320, 270, 540, 270, 540, 270, 270, 540, 4320, 4320, 270, 270, 270, 4320, 4320, 4320, 540, 270, 270, 270, 270, 270, 4320, 270, 540, 270, 4320, 4320, 270, 4320, 270, 540, 540, 4320, 270, 270, 270, 4320, 4320, 540, 4320, 540, 4320, 4320, 540, 540, 270, 4320, 540, 540, 540, 4320, 540, 270, 540, 4320, 4320, 540, 4320, 540, 270, 4320, 540, 270, 540, 540, 270, 540, 4320, 270, 540, 4320, 270, 540, 4320, 4320, 540, 270, 4320, 540, 270, 270, 540, 4320, 4320, 4320, 270, 4320, 270, 4320, 270, 540, 270, 4320, 4320, 540, 4320, 270, 4320, 4320, 4320, 270, 4320, 4320, 4320, 540, 540, 540, 540, 540, 540, 270, 4320, 540, 4320, 270, 4320, 540, 270, 540, 270, 270, 540, 540, 540, 4320, 540, 270, 270]
+Prompts retrieved: 328320 . Total input tokens: 73268759 . Total output tokens: 65629823
+Prompts distributed
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6f71dbb0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6e27bb90>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a9507d0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6e27be90>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6f71dbb0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a950e60>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a951100>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a951a60>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a951cd0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6f9985c0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6e27bec0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a952870>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a951a90>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a951400>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6a9507a0>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f6e27bf50>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Error while running usage checker: HTTPConnectionPool(host='localhost', port=49485): Max retries exceeded with url: /metrics/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9f715cd520>: Failed to establish a new connection: [Errno 99] Cannot assign requested address'))
+Concurrent checker started
+Starting initial single prompt test run for base model
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     84103     
+Benchmark duration (s):                  3601.60   
+Total input tokens:                      18869179  
+Total generated tokens:                  16001414  
+Request throughput (req/s):              23.35     
+Input token throughput (tok/s):          5239.11   
+Output token throughput (tok/s):         4442.86   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          397507.94 
+Median TTFT (ms):                        392038.12 
+P99 TTFT (ms):                           991160.96 
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          210.92    
+Median TPOT (ms):                        209.61    
+P99 TPOT (ms):                           296.93    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           210.73    
+Median ITL (ms):                         202.03    
+P99 ITL (ms):                            703.37    
+==================================================
+Concurrent checker terminated
+Server terminated

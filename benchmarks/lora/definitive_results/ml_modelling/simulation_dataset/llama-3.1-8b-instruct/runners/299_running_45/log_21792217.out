@@ -1,0 +1,2342 @@
+INFO 05-31 19:31:05 [__init__.py:243] No platform detected, vLLM is running on UnspecifiedPlatform
+WARNING 05-31 19:31:06 [_custom_ops.py:21] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.1-0.0125-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.1,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.1-0.0125-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.1     ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 1080, 135, 33, 1080, 1080, 33, 135, 1080, 1080, 1080, 1080, 135, 135, 135, 135, 1080, 1080, 135, 135, 33, 1080, 33, 1080, 135, 135, 135, 33, 33, 135, 33, 1080, 33, 1080, 135, 1080, 135, 33, 135, 1080, 135, 1080, 33, 1080, 1080, 1080, 1080, 33, 135, 135, 135, 1080, 135, 33, 135, 33, 1080, 135, 1080, 1080, 135, 1080, 1080, 33, 33, 1080, 135, 135, 33, 33, 33, 135, 33, 135, 33, 1080, 33, 135, 1080, 33, 1080, 135, 33, 1080, 1080, 1080, 1080, 135, 33, 135, 1080, 1080, 135, 33, 33, 1080, 135, 135, 33, 33, 1080, 135, 1080, 135, 1080, 1080, 135, 1080, 1080, 33, 135, 135, 135, 135, 33, 33, 1080, 33, 1080, 33, 33, 33, 135, 135, 1080, 33, 33, 1080, 33, 1080, 135, 33, 1080, 135, 135, 33, 1080, 1080, 1080, 33, 135, 1080, 33, 1080, 135, 135, 1080, 1080, 33, 135, 1080, 33, 135, 135, 33, 135, 33, 135, 1080, 1080, 135, 33, 1080, 33, 1080, 135, 135, 135, 135, 135, 33, 33, 1080, 33, 1080, 33, 135, 1080, 135, 1080, 135, 1080, 135, 1080, 33, 135, 135, 135, 135, 135, 135, 135, 135, 1080, 33, 33, 33, 33, 33, 135, 33, 33, 135, 1080, 1080, 33, 33, 1080, 33, 33, 33, 135, 33, 135, 1080, 1080, 135, 135, 33, 1080, 135, 1080, 33, 135, 135, 33, 33, 135, 33, 1080, 1080, 33, 1080, 1080, 33, 135, 1080, 33, 33, 135, 135, 33, 33, 1080, 1080, 1080, 1080, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 1080, 135, 135, 135, 1080, 33, 135, 135, 1080, 1080, 33, 1080, 1080, 33, 1080, 33, 33, 135, 33, 1080, 1080, 1080, 135, 33, 1080, 1080, 135, 135, 1080, 1080, 33, 1080, 1080, 135, 33, 1080, 135, 135, 1080, 1080, 1080, 33, 1080, 33, 1080, 1080, 33, 33, 1080, 33, 135, 1080, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 1080, 33, 33, 33, 135, 33, 135, 135, 33, 1080, 135, 1080, 33, 1080, 33, 135, 135, 135, 135, 33, 135, 1080, 1080, 33, 1080, 1080, 33, 1080, 135, 1080, 135, 135, 135, 33, 135, 33, 33, 1080, 33, 135, 33, 33, 135, 1080, 135, 1080, 33, 1080, 1080, 135, 1080, 135, 33, 1080, 33, 1080, 1080, 33, 33, 33]
+Prompts retrieved: 159744 . Total input tokens: 35546497 . Total output tokens: 31385770
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 6.050076556857675,
+    "estimated_duration": 3600.059236403587,
+    "input_throughput": 3647.693867703859,
+    "output_throughput": 3141.693860376261,
+    "total_throughput": 6789.38772808012,
+    "itl": 119.38183266317293,
+    "ttft": 76095.49096892058,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 4547,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 29.02768851677698,
+    "arrivals": 53529,
+    "finished_requests": 52704,
+    "scheduler_time": 41.83044515486722
+}
+#Debug simulation 
+Total elapsed time: 6.050212824717164. Arrivals time: 0.1326197488233447 Scheduler time: 5.725205253344029 Scheduler overhead time: 0.04524902068078518 Adapter cache time: 0.08101558033376932 Engine time: 0.045183257665485144 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.1,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.1     ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 1080, 66, 33, 1080, 1080, 33, 66, 1080, 1080, 1080, 1080, 66, 66, 66, 66, 1080, 1080, 66, 66, 33, 1080, 33, 1080, 66, 66, 66, 33, 33, 66, 33, 1080, 33, 1080, 66, 1080, 66, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 1080, 1080, 33, 66, 66, 66, 1080, 66, 33, 66, 33, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 33, 1080, 66, 66, 33, 33, 33, 66, 33, 66, 33, 1080, 33, 66, 1080, 33, 1080, 66, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 1080, 1080, 66, 33, 33, 1080, 66, 66, 33, 33, 1080, 66, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 33, 33, 66, 66, 1080, 33, 33, 1080, 33, 1080, 66, 33, 1080, 66, 66, 33, 1080, 1080, 1080, 33, 66, 1080, 33, 1080, 66, 66, 1080, 1080, 33, 66, 1080, 33, 66, 66, 33, 66, 33, 66, 1080, 1080, 66, 33, 1080, 33, 1080, 66, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 66, 1080, 66, 1080, 66, 1080, 66, 1080, 33, 66, 66, 66, 66, 66, 66, 66, 66, 1080, 33, 33, 33, 33, 33, 66, 33, 33, 66, 1080, 1080, 33, 33, 1080, 33, 33, 33, 66, 33, 66, 1080, 1080, 66, 66, 33, 1080, 66, 1080, 33, 66, 66, 33, 33, 66, 33, 1080, 1080, 33, 1080, 1080, 33, 66, 1080, 33, 33, 66, 66, 33, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 1080, 66, 66, 66, 1080, 33, 66, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 33, 33, 66, 33, 1080, 1080, 1080, 66, 33, 1080, 1080, 66, 66, 1080, 1080, 33, 1080, 1080, 66, 33, 1080, 66, 66, 1080, 1080, 1080, 33, 1080, 33, 1080, 1080, 33, 33, 1080, 33, 66, 1080, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 1080, 33, 33, 33, 66, 33, 66, 66, 33, 1080, 66, 1080, 33, 1080, 33, 66, 66, 66, 66, 33, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 66, 1080, 66, 66, 66, 33, 66, 33, 33, 1080, 33, 66, 33, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 66, 1080, 66, 33, 1080, 33, 1080, 1080, 33, 33, 33]
+Prompts retrieved: 150912 . Total input tokens: 33584756 . Total output tokens: 29637005
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.708802131935954,
+    "estimated_duration": 3600.110906035978,
+    "input_throughput": 3443.4389171776565,
+    "output_throughput": 3021.514415503757,
+    "total_throughput": 6464.9533326814135,
+    "itl": 111.55342316096427,
+    "ttft": 46872.52402357067,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 4908,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 32.4537035288071,
+    "arrivals": 50610,
+    "finished_requests": 50076,
+    "scheduler_time": 38.96048762054705
+}
+#Debug simulation 
+Total elapsed time: 4.708907167892903. Arrivals time: 0.1207912527024746 Scheduler time: 4.387471457011998 Scheduler overhead time: 0.04704041266813874 Adapter cache time: 0.08579602790996432 Engine time: 0.04614109452813864 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.1,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.1     ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 1080, 66, 33, 1080, 1080, 33, 66, 1080, 1080, 1080, 1080, 66, 66, 66, 66, 1080, 1080, 66, 66, 33, 1080, 33, 1080, 66, 66, 66, 33, 33, 66, 33, 1080, 33, 1080, 66, 1080, 66, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 1080, 1080, 33, 66, 66, 66, 1080, 66, 33, 66, 33, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 33, 1080, 66, 66, 33, 33, 33, 66, 33, 66, 33, 1080, 33, 66, 1080, 33, 1080, 66, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 1080, 1080, 66, 33, 33, 1080, 66, 66, 33, 33, 1080, 66, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 33, 33, 66, 66, 1080, 33, 33, 1080, 33, 1080, 66, 33, 1080, 66, 66, 33, 1080, 1080, 1080, 33, 66, 1080, 33, 1080, 66, 66, 1080, 1080, 33, 66, 1080, 33, 66, 66, 33, 66, 33, 66, 1080, 1080, 66, 33, 1080, 33, 1080, 66, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 66, 1080, 66, 1080, 66, 1080, 66, 1080, 33, 66, 66, 66, 66, 66, 66, 66, 66, 1080, 33, 33, 33, 33, 33, 66, 33, 33, 66, 1080, 1080, 33, 33, 1080, 33, 33, 33, 66, 33, 66, 1080, 1080, 66, 66, 33, 1080, 66, 1080, 33, 66, 66, 33, 33, 66, 33, 1080, 1080, 33, 1080, 1080, 33, 66, 1080, 33, 33, 66, 66, 33, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 1080, 66, 66, 66, 1080, 33, 66, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 33, 33, 66, 33, 1080, 1080, 1080, 66, 33, 1080, 1080, 66, 66, 1080, 1080, 33, 1080, 1080, 66, 33, 1080, 66, 66, 1080, 1080, 1080, 33, 1080, 33, 1080, 1080, 33, 33, 1080, 33, 66, 1080, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 1080, 33, 33, 33, 66, 33, 66, 66, 33, 1080, 66, 1080, 33, 1080, 33, 66, 66, 66, 66, 33, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 66, 1080, 66, 66, 66, 33, 66, 33, 33, 1080, 33, 66, 33, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 66, 1080, 66, 33, 1080, 33, 1080, 1080, 33, 33, 33]
+Prompts retrieved: 150912 . Total input tokens: 33584756 . Total output tokens: 29637005
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.91405976517126,
+    "estimated_duration": 3600.0212010830883,
+    "input_throughput": 3443.5758312396338,
+    "output_throughput": 3021.471094872297,
+    "total_throughput": 6465.046926111931,
+    "itl": 111.81288604007571,
+    "ttft": 47188.468746518774,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 4877,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 35.6544299162681,
+    "arrivals": 50610,
+    "finished_requests": 50072,
+    "scheduler_time": 38.97715165059467
+}
+#Debug simulation 
+Total elapsed time: 4.914153199177235. Arrivals time: 0.12295172177255154 Scheduler time: 4.585909053683281 Scheduler overhead time: 0.0479311547242105 Adapter cache time: 0.08733760099858046 Engine time: 0.04786706669256091 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.1,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.1     ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 1080, 66, 33, 1080, 1080, 33, 66, 1080, 1080, 1080, 1080, 66, 66, 66, 66, 1080, 1080, 66, 66, 33, 1080, 33, 1080, 66, 66, 66, 33, 33, 66, 33, 1080, 33, 1080, 66, 1080, 66, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 1080, 1080, 33, 66, 66, 66, 1080, 66, 33, 66, 33, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 33, 1080, 66, 66, 33, 33, 33, 66, 33, 66, 33, 1080, 33, 66, 1080, 33, 1080, 66, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 1080, 1080, 66, 33, 33, 1080, 66, 66, 33, 33, 1080, 66, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 33, 33, 66, 66, 1080, 33, 33, 1080, 33, 1080, 66, 33, 1080, 66, 66, 33, 1080, 1080, 1080, 33, 66, 1080, 33, 1080, 66, 66, 1080, 1080, 33, 66, 1080, 33, 66, 66, 33, 66, 33, 66, 1080, 1080, 66, 33, 1080, 33, 1080, 66, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 66, 1080, 66, 1080, 66, 1080, 66, 1080, 33, 66, 66, 66, 66, 66, 66, 66, 66, 1080, 33, 33, 33, 33, 33, 66, 33, 33, 66, 1080, 1080, 33, 33, 1080, 33, 33, 33, 66, 33, 66, 1080, 1080, 66, 66, 33, 1080, 66, 1080, 33, 66, 66, 33, 33, 66, 33, 1080, 1080, 33, 1080, 1080, 33, 66, 1080, 33, 33, 66, 66, 33, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 1080, 66, 66, 66, 1080, 33, 66, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 33, 33, 66, 33, 1080, 1080, 1080, 66, 33, 1080, 1080, 66, 66, 1080, 1080, 33, 1080, 1080, 66, 33, 1080, 66, 66, 1080, 1080, 1080, 33, 1080, 33, 1080, 1080, 33, 33, 1080, 33, 66, 1080, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 1080, 33, 33, 33, 66, 33, 66, 66, 33, 1080, 66, 1080, 33, 1080, 33, 66, 66, 66, 66, 33, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 66, 1080, 66, 66, 66, 33, 66, 33, 33, 1080, 33, 66, 33, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 66, 1080, 66, 33, 1080, 33, 1080, 1080, 33, 33, 33]
+Prompts retrieved: 150912 . Total input tokens: 33584756 . Total output tokens: 29637005
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.822968953289092,
+    "estimated_duration": 3600.1117823853956,
+    "input_throughput": 3442.319502587419,
+    "output_throughput": 3021.175634939119,
+    "total_throughput": 6463.495137526537,
+    "itl": 111.6186010906736,
+    "ttft": 47832.51211003242,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 4840,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 33.21928281974147,
+    "arrivals": 50610,
+    "finished_requests": 50065,
+    "scheduler_time": 38.97202441995878
+}
+#Debug simulation 
+Total elapsed time: 4.8230944271199405. Arrivals time: 0.12230622256174684 Scheduler time: 4.4968057526275516 Scheduler overhead time: 0.04761068755760789 Adapter cache time: 0.086294359061867 Engine time: 0.04789572674781084 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.1,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.1-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.1-0.00625-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.1     ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 1080, 66, 33, 1080, 1080, 33, 66, 1080, 1080, 1080, 1080, 66, 66, 66, 66, 1080, 1080, 66, 66, 33, 1080, 33, 1080, 66, 66, 66, 33, 33, 66, 33, 1080, 33, 1080, 66, 1080, 66, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 1080, 1080, 33, 66, 66, 66, 1080, 66, 33, 66, 33, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 33, 1080, 66, 66, 33, 33, 33, 66, 33, 66, 33, 1080, 33, 66, 1080, 33, 1080, 66, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 1080, 1080, 66, 33, 33, 1080, 66, 66, 33, 33, 1080, 66, 1080, 66, 1080, 1080, 66, 1080, 1080, 33, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 33, 33, 66, 66, 1080, 33, 33, 1080, 33, 1080, 66, 33, 1080, 66, 66, 33, 1080, 1080, 1080, 33, 66, 1080, 33, 1080, 66, 66, 1080, 1080, 33, 66, 1080, 33, 66, 66, 33, 66, 33, 66, 1080, 1080, 66, 33, 1080, 33, 1080, 66, 66, 66, 66, 66, 33, 33, 1080, 33, 1080, 33, 66, 1080, 66, 1080, 66, 1080, 66, 1080, 33, 66, 66, 66, 66, 66, 66, 66, 66, 1080, 33, 33, 33, 33, 33, 66, 33, 33, 66, 1080, 1080, 33, 33, 1080, 33, 33, 33, 66, 33, 66, 1080, 1080, 66, 66, 33, 1080, 66, 1080, 33, 66, 66, 33, 33, 66, 33, 1080, 1080, 33, 1080, 1080, 33, 66, 1080, 33, 33, 66, 66, 33, 33, 1080, 1080, 1080, 1080, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 1080, 66, 66, 66, 1080, 33, 66, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 33, 33, 66, 33, 1080, 1080, 1080, 66, 33, 1080, 1080, 66, 66, 1080, 1080, 33, 1080, 1080, 66, 33, 1080, 66, 66, 1080, 1080, 1080, 33, 1080, 33, 1080, 1080, 33, 33, 1080, 33, 66, 1080, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 1080, 33, 33, 33, 66, 33, 66, 66, 33, 1080, 66, 1080, 33, 1080, 33, 66, 66, 66, 66, 33, 66, 1080, 1080, 33, 1080, 1080, 33, 1080, 66, 1080, 66, 66, 66, 33, 66, 33, 33, 1080, 33, 66, 33, 33, 66, 1080, 66, 1080, 33, 1080, 1080, 66, 1080, 66, 33, 1080, 33, 1080, 1080, 33, 33, 33]
+Prompts retrieved: 150912 . Total input tokens: 33584756 . Total output tokens: 29637005
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.759799785912037,
+    "estimated_duration": 3600.1058772125552,
+    "input_throughput": 3443.6670539253782,
+    "output_throughput": 3021.4003062659885,
+    "total_throughput": 6465.067360191367,
+    "itl": 111.48327920270292,
+    "ttft": 46689.965722848414,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 4918,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 31.396123185728964,
+    "arrivals": 50610,
+    "finished_requests": 50078,
+    "scheduler_time": 38.95612756112736
+}
+#Debug simulation 
+Total elapsed time: 4.759893533308059. Arrivals time: 0.1215914310887456 Scheduler time: 4.434027315117419 Scheduler overhead time: 0.047546131536364555 Adapter cache time: 0.08756372751668096 Engine time: 0.04723408492282033 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.0125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.0125 0.025  0.05  ]. Counts: [128 128 128]
+Adapter prompts. [135, 135, 540, 270, 135, 540, 540, 135, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 135, 540, 135, 540, 270, 270, 270, 135, 135, 270, 135, 540, 135, 540, 270, 540, 270, 135, 270, 540, 270, 540, 135, 540, 540, 540, 540, 135, 270, 270, 270, 540, 270, 135, 270, 135, 540, 270, 540, 540, 270, 540, 540, 135, 135, 540, 270, 270, 135, 135, 135, 270, 135, 270, 135, 540, 135, 270, 540, 135, 540, 270, 135, 540, 540, 540, 540, 270, 135, 270, 540, 540, 270, 135, 135, 540, 270, 270, 135, 135, 540, 270, 540, 270, 540, 540, 270, 540, 540, 135, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 135, 135, 270, 270, 540, 135, 135, 540, 135, 540, 270, 135, 540, 270, 270, 135, 540, 540, 540, 135, 270, 540, 135, 540, 270, 270, 540, 540, 135, 270, 540, 135, 270, 270, 135, 270, 135, 270, 540, 540, 270, 135, 540, 135, 540, 270, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 270, 540, 270, 540, 270, 540, 270, 540, 135, 270, 270, 270, 270, 270, 270, 270, 270, 540, 135, 135, 135, 135, 135, 270, 135, 135, 270, 540, 540, 135, 135, 540, 135, 135, 135, 270, 135, 270, 540, 540, 270, 270, 135, 540, 270, 540, 135, 270, 270, 135, 135, 270, 135, 540, 540, 135, 540, 540, 135, 270, 540, 135, 135, 270, 270, 135, 135, 540, 540, 540, 540, 270, 135, 270, 270, 135, 135, 135, 135, 135, 135, 135, 135, 270, 540, 270, 270, 270, 540, 135, 270, 270, 540, 540, 135, 540, 540, 135, 540, 135, 135, 270, 135, 540, 540, 540, 270, 135, 540, 540, 270, 270, 540, 540, 135, 540, 540, 270, 135, 540, 270, 270, 540, 540, 540, 135, 540, 135, 540, 540, 135, 135, 540, 135, 270, 540, 135, 270, 270, 270, 270, 135, 270, 135, 270, 270, 135, 540, 135, 135, 135, 270, 135, 270, 270, 135, 540, 270, 540, 135, 540, 135, 270, 270, 270, 270, 135, 270, 540, 540, 135, 540, 540, 135, 540, 270, 540, 270, 270, 270, 135, 270, 135, 135, 540, 135, 270, 135, 135, 270, 540, 270, 540, 135, 540, 540, 270, 540, 270, 135, 540, 135, 540, 540, 135, 135, 135]
+Prompts retrieved: 120960 . Total input tokens: 26885424 . Total output tokens: 23776768
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.368662029039115,
+    "estimated_duration": 3600.022525276878,
+    "input_throughput": 2740.458130672732,
+    "output_throughput": 2391.8330898048353,
+    "total_throughput": 5132.291220477567,
+    "itl": 85.48613723438505,
+    "ttft": 55868.00777420167,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11964,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 79.11086165824365,
+    "arrivals": 40507,
+    "finished_requests": 40051,
+    "scheduler_time": 28.388894621360098
+}
+#Debug simulation 
+Total elapsed time: 4.368757969234139. Arrivals time: 0.10363694094121456 Scheduler time: 3.9511565510183573 Scheduler overhead time: 0.05249924911186099 Adapter cache time: 0.18451177654787898 Engine time: 0.05226686643436551 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.0125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.0125 0.025  0.05  ]. Counts: [128 128 128]
+Adapter prompts. [135, 135, 540, 270, 135, 540, 540, 135, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 135, 540, 135, 540, 270, 270, 270, 135, 135, 270, 135, 540, 135, 540, 270, 540, 270, 135, 270, 540, 270, 540, 135, 540, 540, 540, 540, 135, 270, 270, 270, 540, 270, 135, 270, 135, 540, 270, 540, 540, 270, 540, 540, 135, 135, 540, 270, 270, 135, 135, 135, 270, 135, 270, 135, 540, 135, 270, 540, 135, 540, 270, 135, 540, 540, 540, 540, 270, 135, 270, 540, 540, 270, 135, 135, 540, 270, 270, 135, 135, 540, 270, 540, 270, 540, 540, 270, 540, 540, 135, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 135, 135, 270, 270, 540, 135, 135, 540, 135, 540, 270, 135, 540, 270, 270, 135, 540, 540, 540, 135, 270, 540, 135, 540, 270, 270, 540, 540, 135, 270, 540, 135, 270, 270, 135, 270, 135, 270, 540, 540, 270, 135, 540, 135, 540, 270, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 270, 540, 270, 540, 270, 540, 270, 540, 135, 270, 270, 270, 270, 270, 270, 270, 270, 540, 135, 135, 135, 135, 135, 270, 135, 135, 270, 540, 540, 135, 135, 540, 135, 135, 135, 270, 135, 270, 540, 540, 270, 270, 135, 540, 270, 540, 135, 270, 270, 135, 135, 270, 135, 540, 540, 135, 540, 540, 135, 270, 540, 135, 135, 270, 270, 135, 135, 540, 540, 540, 540, 270, 135, 270, 270, 135, 135, 135, 135, 135, 135, 135, 135, 270, 540, 270, 270, 270, 540, 135, 270, 270, 540, 540, 135, 540, 540, 135, 540, 135, 135, 270, 135, 540, 540, 540, 270, 135, 540, 540, 270, 270, 540, 540, 135, 540, 540, 270, 135, 540, 270, 270, 540, 540, 540, 135, 540, 135, 540, 540, 135, 135, 540, 135, 270, 540, 135, 270, 270, 270, 270, 135, 270, 135, 270, 270, 135, 540, 135, 135, 135, 270, 135, 270, 270, 135, 540, 270, 540, 135, 540, 135, 270, 270, 270, 270, 135, 270, 540, 540, 135, 540, 540, 135, 540, 270, 540, 270, 270, 270, 135, 270, 135, 135, 540, 135, 270, 135, 135, 270, 540, 270, 540, 135, 540, 540, 270, 540, 270, 135, 540, 135, 540, 540, 135, 135, 135]
+Prompts retrieved: 120960 . Total input tokens: 26885424 . Total output tokens: 23776768
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.405191515106708,
+    "estimated_duration": 3600.04267622206,
+    "input_throughput": 2740.4905683933193,
+    "output_throughput": 2391.2799858900876,
+    "total_throughput": 5131.770554283406,
+    "itl": 85.85042921811812,
+    "ttft": 56142.556227285335,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11869,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 86.80156149758015,
+    "arrivals": 40507,
+    "finished_requests": 40051,
+    "scheduler_time": 28.432051499898503
+}
+#Debug simulation 
+Total elapsed time: 4.405313937924802. Arrivals time: 0.10539811104536057 Scheduler time: 3.9832678362727165 Scheduler overhead time: 0.0534045216627419 Adapter cache time: 0.18593100737780333 Engine time: 0.05255937110632658 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.0125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.0125 0.025  0.05  ]. Counts: [128 128 128]
+Adapter prompts. [135, 135, 540, 270, 135, 540, 540, 135, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 135, 540, 135, 540, 270, 270, 270, 135, 135, 270, 135, 540, 135, 540, 270, 540, 270, 135, 270, 540, 270, 540, 135, 540, 540, 540, 540, 135, 270, 270, 270, 540, 270, 135, 270, 135, 540, 270, 540, 540, 270, 540, 540, 135, 135, 540, 270, 270, 135, 135, 135, 270, 135, 270, 135, 540, 135, 270, 540, 135, 540, 270, 135, 540, 540, 540, 540, 270, 135, 270, 540, 540, 270, 135, 135, 540, 270, 270, 135, 135, 540, 270, 540, 270, 540, 540, 270, 540, 540, 135, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 135, 135, 270, 270, 540, 135, 135, 540, 135, 540, 270, 135, 540, 270, 270, 135, 540, 540, 540, 135, 270, 540, 135, 540, 270, 270, 540, 540, 135, 270, 540, 135, 270, 270, 135, 270, 135, 270, 540, 540, 270, 135, 540, 135, 540, 270, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 270, 540, 270, 540, 270, 540, 270, 540, 135, 270, 270, 270, 270, 270, 270, 270, 270, 540, 135, 135, 135, 135, 135, 270, 135, 135, 270, 540, 540, 135, 135, 540, 135, 135, 135, 270, 135, 270, 540, 540, 270, 270, 135, 540, 270, 540, 135, 270, 270, 135, 135, 270, 135, 540, 540, 135, 540, 540, 135, 270, 540, 135, 135, 270, 270, 135, 135, 540, 540, 540, 540, 270, 135, 270, 270, 135, 135, 135, 135, 135, 135, 135, 135, 270, 540, 270, 270, 270, 540, 135, 270, 270, 540, 540, 135, 540, 540, 135, 540, 135, 135, 270, 135, 540, 540, 540, 270, 135, 540, 540, 270, 270, 540, 540, 135, 540, 540, 270, 135, 540, 270, 270, 540, 540, 540, 135, 540, 135, 540, 540, 135, 135, 540, 135, 270, 540, 135, 270, 270, 270, 270, 135, 270, 135, 270, 270, 135, 540, 135, 135, 135, 270, 135, 270, 270, 135, 540, 270, 540, 135, 540, 135, 270, 270, 270, 270, 135, 270, 540, 540, 135, 540, 540, 135, 540, 270, 540, 270, 270, 270, 135, 270, 135, 135, 540, 135, 270, 135, 135, 270, 540, 270, 540, 135, 540, 540, 270, 540, 270, 135, 540, 135, 540, 540, 135, 135, 135]
+Prompts retrieved: 120960 . Total input tokens: 26885424 . Total output tokens: 23776768
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.415868055075407,
+    "estimated_duration": 3600.0556729222576,
+    "input_throughput": 2740.3378992725484,
+    "output_throughput": 2391.1980208384675,
+    "total_throughput": 5131.535920111016,
+    "itl": 85.56572073625257,
+    "ttft": 56355.74311503328,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11794,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 80.83929458244432,
+    "arrivals": 40507,
+    "finished_requests": 40050,
+    "scheduler_time": 28.41310828799944
+}
+#Debug simulation 
+Total elapsed time: 4.41596221504733. Arrivals time: 0.10695423185825348 Scheduler time: 3.993023213930428 Scheduler overhead time: 0.05261978879570961 Adapter cache time: 0.18627912970259786 Engine time: 0.05244802078232169 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.0125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.0125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.0125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.0125 0.025  0.05  ]. Counts: [128 128 128]
+Adapter prompts. [135, 135, 540, 270, 135, 540, 540, 135, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 135, 540, 135, 540, 270, 270, 270, 135, 135, 270, 135, 540, 135, 540, 270, 540, 270, 135, 270, 540, 270, 540, 135, 540, 540, 540, 540, 135, 270, 270, 270, 540, 270, 135, 270, 135, 540, 270, 540, 540, 270, 540, 540, 135, 135, 540, 270, 270, 135, 135, 135, 270, 135, 270, 135, 540, 135, 270, 540, 135, 540, 270, 135, 540, 540, 540, 540, 270, 135, 270, 540, 540, 270, 135, 135, 540, 270, 270, 135, 135, 540, 270, 540, 270, 540, 540, 270, 540, 540, 135, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 135, 135, 270, 270, 540, 135, 135, 540, 135, 540, 270, 135, 540, 270, 270, 135, 540, 540, 540, 135, 270, 540, 135, 540, 270, 270, 540, 540, 135, 270, 540, 135, 270, 270, 135, 270, 135, 270, 540, 540, 270, 135, 540, 135, 540, 270, 270, 270, 270, 270, 135, 135, 540, 135, 540, 135, 270, 540, 270, 540, 270, 540, 270, 540, 135, 270, 270, 270, 270, 270, 270, 270, 270, 540, 135, 135, 135, 135, 135, 270, 135, 135, 270, 540, 540, 135, 135, 540, 135, 135, 135, 270, 135, 270, 540, 540, 270, 270, 135, 540, 270, 540, 135, 270, 270, 135, 135, 270, 135, 540, 540, 135, 540, 540, 135, 270, 540, 135, 135, 270, 270, 135, 135, 540, 540, 540, 540, 270, 135, 270, 270, 135, 135, 135, 135, 135, 135, 135, 135, 270, 540, 270, 270, 270, 540, 135, 270, 270, 540, 540, 135, 540, 540, 135, 540, 135, 135, 270, 135, 540, 540, 540, 270, 135, 540, 540, 270, 270, 540, 540, 135, 540, 540, 270, 135, 540, 270, 270, 540, 540, 540, 135, 540, 135, 540, 540, 135, 135, 540, 135, 270, 540, 135, 270, 270, 270, 270, 135, 270, 135, 270, 270, 135, 540, 135, 135, 135, 270, 135, 270, 270, 135, 540, 270, 540, 135, 540, 135, 270, 270, 270, 270, 135, 270, 540, 540, 135, 540, 540, 135, 540, 270, 540, 270, 270, 270, 135, 270, 135, 135, 540, 135, 270, 135, 135, 270, 540, 270, 540, 135, 540, 540, 270, 540, 270, 135, 540, 135, 540, 540, 135, 135, 135]
+Prompts retrieved: 120960 . Total input tokens: 26885424 . Total output tokens: 23776768
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 4.387299560010433,
+    "estimated_duration": 3600.0067356431127,
+    "input_throughput": 2740.7207054120713,
+    "output_throughput": 2392.268857369652,
+    "total_throughput": 5132.989562781723,
+    "itl": 85.37776695074294,
+    "ttft": 55230.6550497822,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 12000,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 76.60705128684148,
+    "arrivals": 40507,
+    "finished_requests": 40057,
+    "scheduler_time": 28.375099563721623
+}
+#Debug simulation 
+Total elapsed time: 4.3874000776559114. Arrivals time: 0.10808835690841079 Scheduler time: 3.961128294467926 Scheduler overhead time: 0.05265132710337639 Adapter cache time: 0.18840974383056164 Engine time: 0.052474046126008034 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.025   0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 270, 66, 540, 540, 66, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 66, 540, 66, 540, 270, 270, 270, 66, 66, 270, 66, 540, 66, 540, 270, 540, 270, 66, 270, 540, 270, 540, 66, 540, 540, 540, 540, 66, 270, 270, 270, 540, 270, 66, 270, 66, 540, 270, 540, 540, 270, 540, 540, 66, 66, 540, 270, 270, 66, 66, 66, 270, 66, 270, 66, 540, 66, 270, 540, 66, 540, 270, 66, 540, 540, 540, 540, 270, 66, 270, 540, 540, 270, 66, 66, 540, 270, 270, 66, 66, 540, 270, 540, 270, 540, 540, 270, 540, 540, 66, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 66, 66, 270, 270, 540, 66, 66, 540, 66, 540, 270, 66, 540, 270, 270, 66, 540, 540, 540, 66, 270, 540, 66, 540, 270, 270, 540, 540, 66, 270, 540, 66, 270, 270, 66, 270, 66, 270, 540, 540, 270, 66, 540, 66, 540, 270, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 270, 540, 270, 540, 270, 540, 270, 540, 66, 270, 270, 270, 270, 270, 270, 270, 270, 540, 66, 66, 66, 66, 66, 270, 66, 66, 270, 540, 540, 66, 66, 540, 66, 66, 66, 270, 66, 270, 540, 540, 270, 270, 66, 540, 270, 540, 66, 270, 270, 66, 66, 270, 66, 540, 540, 66, 540, 540, 66, 270, 540, 66, 66, 270, 270, 66, 66, 540, 540, 540, 540, 270, 66, 270, 270, 66, 66, 66, 66, 66, 66, 66, 66, 270, 540, 270, 270, 270, 540, 66, 270, 270, 540, 540, 66, 540, 540, 66, 540, 66, 66, 270, 66, 540, 540, 540, 270, 66, 540, 540, 270, 270, 540, 540, 66, 540, 540, 270, 66, 540, 270, 270, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 270, 540, 66, 270, 270, 270, 270, 66, 270, 66, 270, 270, 66, 540, 66, 66, 66, 270, 66, 270, 270, 66, 540, 270, 540, 66, 540, 66, 270, 270, 270, 270, 66, 270, 540, 540, 66, 540, 540, 66, 540, 270, 540, 270, 270, 270, 66, 270, 66, 66, 540, 66, 270, 66, 66, 270, 540, 270, 540, 66, 540, 540, 270, 540, 270, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 112128 . Total input tokens: 24949201 . Total output tokens: 22033828
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.6313266600482166,
+    "estimated_duration": 3600.0793230880226,
+    "input_throughput": 2557.3414288279823,
+    "output_throughput": 2252.5337005752763,
+    "total_throughput": 4809.875129403259,
+    "itl": 81.34177480769166,
+    "ttft": 38832.116227599676,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13798,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 91.23801982283045,
+    "arrivals": 37708,
+    "finished_requests": 37373,
+    "scheduler_time": 25.41408765512082
+}
+#Debug simulation 
+Total elapsed time: 3.6314175059087574. Arrivals time: 0.09907669853419065 Scheduler time: 3.1876196726225317 Scheduler overhead time: 0.053767512552440166 Adapter cache time: 0.21231785649433732 Engine time: 0.053221896290779114 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.025   0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 270, 66, 540, 540, 66, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 66, 540, 66, 540, 270, 270, 270, 66, 66, 270, 66, 540, 66, 540, 270, 540, 270, 66, 270, 540, 270, 540, 66, 540, 540, 540, 540, 66, 270, 270, 270, 540, 270, 66, 270, 66, 540, 270, 540, 540, 270, 540, 540, 66, 66, 540, 270, 270, 66, 66, 66, 270, 66, 270, 66, 540, 66, 270, 540, 66, 540, 270, 66, 540, 540, 540, 540, 270, 66, 270, 540, 540, 270, 66, 66, 540, 270, 270, 66, 66, 540, 270, 540, 270, 540, 540, 270, 540, 540, 66, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 66, 66, 270, 270, 540, 66, 66, 540, 66, 540, 270, 66, 540, 270, 270, 66, 540, 540, 540, 66, 270, 540, 66, 540, 270, 270, 540, 540, 66, 270, 540, 66, 270, 270, 66, 270, 66, 270, 540, 540, 270, 66, 540, 66, 540, 270, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 270, 540, 270, 540, 270, 540, 270, 540, 66, 270, 270, 270, 270, 270, 270, 270, 270, 540, 66, 66, 66, 66, 66, 270, 66, 66, 270, 540, 540, 66, 66, 540, 66, 66, 66, 270, 66, 270, 540, 540, 270, 270, 66, 540, 270, 540, 66, 270, 270, 66, 66, 270, 66, 540, 540, 66, 540, 540, 66, 270, 540, 66, 66, 270, 270, 66, 66, 540, 540, 540, 540, 270, 66, 270, 270, 66, 66, 66, 66, 66, 66, 66, 66, 270, 540, 270, 270, 270, 540, 66, 270, 270, 540, 540, 66, 540, 540, 66, 540, 66, 66, 270, 66, 540, 540, 540, 270, 66, 540, 540, 270, 270, 540, 540, 66, 540, 540, 270, 66, 540, 270, 270, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 270, 540, 66, 270, 270, 270, 270, 66, 270, 66, 270, 270, 66, 540, 66, 66, 66, 270, 66, 270, 270, 66, 540, 270, 540, 66, 540, 66, 270, 270, 270, 270, 66, 270, 540, 540, 66, 540, 540, 66, 540, 270, 540, 270, 270, 270, 66, 270, 66, 66, 540, 66, 270, 66, 66, 270, 540, 270, 540, 66, 540, 540, 270, 540, 270, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 112128 . Total input tokens: 24949201 . Total output tokens: 22033828
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.583045993000269,
+    "estimated_duration": 3600.0178758737948,
+    "input_throughput": 2556.9725810780124,
+    "output_throughput": 2252.0249286351645,
+    "total_throughput": 4808.997509713177,
+    "itl": 81.70893242218064,
+    "ttft": 39298.75120400859,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13675,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 100.0939633523618,
+    "arrivals": 37708,
+    "finished_requests": 37369,
+    "scheduler_time": 25.45725247539672
+}
+#Debug simulation 
+Total elapsed time: 3.5831386358477175. Arrivals time: 0.09800619166344404 Scheduler time: 3.1480231368914247 Scheduler overhead time: 0.053798765409737825 Adapter cache time: 0.2058107708580792 Engine time: 0.052211994770914316 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.025   0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 270, 66, 540, 540, 66, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 66, 540, 66, 540, 270, 270, 270, 66, 66, 270, 66, 540, 66, 540, 270, 540, 270, 66, 270, 540, 270, 540, 66, 540, 540, 540, 540, 66, 270, 270, 270, 540, 270, 66, 270, 66, 540, 270, 540, 540, 270, 540, 540, 66, 66, 540, 270, 270, 66, 66, 66, 270, 66, 270, 66, 540, 66, 270, 540, 66, 540, 270, 66, 540, 540, 540, 540, 270, 66, 270, 540, 540, 270, 66, 66, 540, 270, 270, 66, 66, 540, 270, 540, 270, 540, 540, 270, 540, 540, 66, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 66, 66, 270, 270, 540, 66, 66, 540, 66, 540, 270, 66, 540, 270, 270, 66, 540, 540, 540, 66, 270, 540, 66, 540, 270, 270, 540, 540, 66, 270, 540, 66, 270, 270, 66, 270, 66, 270, 540, 540, 270, 66, 540, 66, 540, 270, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 270, 540, 270, 540, 270, 540, 270, 540, 66, 270, 270, 270, 270, 270, 270, 270, 270, 540, 66, 66, 66, 66, 66, 270, 66, 66, 270, 540, 540, 66, 66, 540, 66, 66, 66, 270, 66, 270, 540, 540, 270, 270, 66, 540, 270, 540, 66, 270, 270, 66, 66, 270, 66, 540, 540, 66, 540, 540, 66, 270, 540, 66, 66, 270, 270, 66, 66, 540, 540, 540, 540, 270, 66, 270, 270, 66, 66, 66, 66, 66, 66, 66, 66, 270, 540, 270, 270, 270, 540, 66, 270, 270, 540, 540, 66, 540, 540, 66, 540, 66, 66, 270, 66, 540, 540, 540, 270, 66, 540, 540, 270, 270, 540, 540, 66, 540, 540, 270, 66, 540, 270, 270, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 270, 540, 66, 270, 270, 270, 270, 66, 270, 66, 270, 270, 66, 540, 66, 66, 66, 270, 66, 270, 270, 66, 540, 270, 540, 66, 540, 66, 270, 270, 270, 270, 66, 270, 540, 540, 66, 540, 540, 66, 540, 270, 540, 270, 270, 270, 66, 270, 66, 66, 540, 66, 270, 66, 66, 270, 540, 270, 540, 66, 540, 540, 270, 540, 270, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 112128 . Total input tokens: 24949201 . Total output tokens: 22033828
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.6281694951467216,
+    "estimated_duration": 3600.0484344617034,
+    "input_throughput": 2557.1792067782335,
+    "output_throughput": 2252.3683077092937,
+    "total_throughput": 4809.547514487527,
+    "itl": 81.47347964748631,
+    "ttft": 38993.46131577893,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13743,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 94.37825106453012,
+    "arrivals": 37708,
+    "finished_requests": 37371,
+    "scheduler_time": 25.429573549798665
+}
+#Debug simulation 
+Total elapsed time: 3.62826346186921. Arrivals time: 0.09809545520693064 Scheduler time: 3.1862665177322924 Scheduler overhead time: 0.05393460812047124 Adapter cache time: 0.21084277937188745 Engine time: 0.05359523743391037 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.00625_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.025   0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 270, 66, 540, 540, 66, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 66, 540, 66, 540, 270, 270, 270, 66, 66, 270, 66, 540, 66, 540, 270, 540, 270, 66, 270, 540, 270, 540, 66, 540, 540, 540, 540, 66, 270, 270, 270, 540, 270, 66, 270, 66, 540, 270, 540, 540, 270, 540, 540, 66, 66, 540, 270, 270, 66, 66, 66, 270, 66, 270, 66, 540, 66, 270, 540, 66, 540, 270, 66, 540, 540, 540, 540, 270, 66, 270, 540, 540, 270, 66, 66, 540, 270, 270, 66, 66, 540, 270, 540, 270, 540, 540, 270, 540, 540, 66, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 66, 66, 270, 270, 540, 66, 66, 540, 66, 540, 270, 66, 540, 270, 270, 66, 540, 540, 540, 66, 270, 540, 66, 540, 270, 270, 540, 540, 66, 270, 540, 66, 270, 270, 66, 270, 66, 270, 540, 540, 270, 66, 540, 66, 540, 270, 270, 270, 270, 270, 66, 66, 540, 66, 540, 66, 270, 540, 270, 540, 270, 540, 270, 540, 66, 270, 270, 270, 270, 270, 270, 270, 270, 540, 66, 66, 66, 66, 66, 270, 66, 66, 270, 540, 540, 66, 66, 540, 66, 66, 66, 270, 66, 270, 540, 540, 270, 270, 66, 540, 270, 540, 66, 270, 270, 66, 66, 270, 66, 540, 540, 66, 540, 540, 66, 270, 540, 66, 66, 270, 270, 66, 66, 540, 540, 540, 540, 270, 66, 270, 270, 66, 66, 66, 66, 66, 66, 66, 66, 270, 540, 270, 270, 270, 540, 66, 270, 270, 540, 540, 66, 540, 540, 66, 540, 66, 66, 270, 66, 540, 540, 540, 270, 66, 540, 540, 270, 270, 540, 540, 66, 540, 540, 270, 66, 540, 270, 270, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 270, 540, 66, 270, 270, 270, 270, 66, 270, 66, 270, 270, 66, 540, 66, 66, 66, 270, 66, 270, 270, 66, 540, 270, 540, 66, 540, 66, 270, 270, 270, 270, 66, 270, 540, 540, 66, 540, 540, 66, 540, 270, 540, 270, 270, 270, 66, 270, 66, 66, 540, 66, 270, 66, 66, 270, 540, 270, 540, 66, 540, 540, 270, 540, 270, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 112128 . Total input tokens: 24949201 . Total output tokens: 22033828
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.6183547219261527,
+    "estimated_duration": 3600.073366572825,
+    "input_throughput": 2557.345660087053,
+    "output_throughput": 2252.5332609317975,
+    "total_throughput": 4809.878921018851,
+    "itl": 81.2133717456521,
+    "ttft": 38862.310279271216,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13844,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 88.37900150124202,
+    "arrivals": 37708,
+    "finished_requests": 37372,
+    "scheduler_time": 25.39971560767084
+}
+#Debug simulation 
+Total elapsed time: 3.618445170111954. Arrivals time: 0.09802716271951795 Scheduler time: 3.1762089310213923 Scheduler overhead time: 0.053908501751720905 Adapter cache time: 0.21101904986426234 Engine time: 0.05384312057867646 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.025    0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 270, 33, 540, 540, 33, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 33, 540, 33, 540, 270, 270, 270, 33, 33, 270, 33, 540, 33, 540, 270, 540, 270, 33, 270, 540, 270, 540, 33, 540, 540, 540, 540, 33, 270, 270, 270, 540, 270, 33, 270, 33, 540, 270, 540, 540, 270, 540, 540, 33, 33, 540, 270, 270, 33, 33, 33, 270, 33, 270, 33, 540, 33, 270, 540, 33, 540, 270, 33, 540, 540, 540, 540, 270, 33, 270, 540, 540, 270, 33, 33, 540, 270, 270, 33, 33, 540, 270, 540, 270, 540, 540, 270, 540, 540, 33, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 33, 33, 270, 270, 540, 33, 33, 540, 33, 540, 270, 33, 540, 270, 270, 33, 540, 540, 540, 33, 270, 540, 33, 540, 270, 270, 540, 540, 33, 270, 540, 33, 270, 270, 33, 270, 33, 270, 540, 540, 270, 33, 540, 33, 540, 270, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 270, 540, 270, 540, 270, 540, 270, 540, 33, 270, 270, 270, 270, 270, 270, 270, 270, 540, 33, 33, 33, 33, 33, 270, 33, 33, 270, 540, 540, 33, 33, 540, 33, 33, 33, 270, 33, 270, 540, 540, 270, 270, 33, 540, 270, 540, 33, 270, 270, 33, 33, 270, 33, 540, 540, 33, 540, 540, 33, 270, 540, 33, 33, 270, 270, 33, 33, 540, 540, 540, 540, 270, 33, 270, 270, 33, 33, 33, 33, 33, 33, 33, 33, 270, 540, 270, 270, 270, 540, 33, 270, 270, 540, 540, 33, 540, 540, 33, 540, 33, 33, 270, 33, 540, 540, 540, 270, 33, 540, 540, 270, 270, 540, 540, 33, 540, 540, 270, 33, 540, 270, 270, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 270, 540, 33, 270, 270, 270, 270, 33, 270, 33, 270, 270, 33, 540, 33, 33, 33, 270, 33, 270, 270, 33, 540, 270, 540, 33, 540, 33, 270, 270, 270, 270, 33, 270, 540, 540, 33, 540, 540, 33, 540, 270, 540, 270, 270, 270, 33, 270, 33, 33, 540, 33, 270, 33, 33, 270, 540, 270, 540, 33, 540, 540, 270, 540, 270, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 107904 . Total input tokens: 24005309 . Total output tokens: 21207746
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.1552640800364316,
+    "estimated_duration": 3600.0236314438707,
+    "input_throughput": 2474.5232009566307,
+    "output_throughput": 2144.228146886917,
+    "total_throughput": 4618.751347843548,
+    "itl": 77.99249929581686,
+    "ttft": 18324.48005059958,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15929,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 105.32906346990487,
+    "arrivals": 36171,
+    "finished_requests": 36007,
+    "scheduler_time": 23.193357008122963
+}
+#Debug simulation 
+Total elapsed time: 3.1553611578419805. Arrivals time: 0.09433429129421711 Scheduler time: 2.6914776847697794 Scheduler overhead time: 0.05460411263629794 Adapter cache time: 0.23466308927163482 Engine time: 0.05443529738113284 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.025    0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 270, 33, 540, 540, 33, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 33, 540, 33, 540, 270, 270, 270, 33, 33, 270, 33, 540, 33, 540, 270, 540, 270, 33, 270, 540, 270, 540, 33, 540, 540, 540, 540, 33, 270, 270, 270, 540, 270, 33, 270, 33, 540, 270, 540, 540, 270, 540, 540, 33, 33, 540, 270, 270, 33, 33, 33, 270, 33, 270, 33, 540, 33, 270, 540, 33, 540, 270, 33, 540, 540, 540, 540, 270, 33, 270, 540, 540, 270, 33, 33, 540, 270, 270, 33, 33, 540, 270, 540, 270, 540, 540, 270, 540, 540, 33, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 33, 33, 270, 270, 540, 33, 33, 540, 33, 540, 270, 33, 540, 270, 270, 33, 540, 540, 540, 33, 270, 540, 33, 540, 270, 270, 540, 540, 33, 270, 540, 33, 270, 270, 33, 270, 33, 270, 540, 540, 270, 33, 540, 33, 540, 270, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 270, 540, 270, 540, 270, 540, 270, 540, 33, 270, 270, 270, 270, 270, 270, 270, 270, 540, 33, 33, 33, 33, 33, 270, 33, 33, 270, 540, 540, 33, 33, 540, 33, 33, 33, 270, 33, 270, 540, 540, 270, 270, 33, 540, 270, 540, 33, 270, 270, 33, 33, 270, 33, 540, 540, 33, 540, 540, 33, 270, 540, 33, 33, 270, 270, 33, 33, 540, 540, 540, 540, 270, 33, 270, 270, 33, 33, 33, 33, 33, 33, 33, 33, 270, 540, 270, 270, 270, 540, 33, 270, 270, 540, 540, 33, 540, 540, 33, 540, 33, 33, 270, 33, 540, 540, 540, 270, 33, 540, 540, 270, 270, 540, 540, 33, 540, 540, 270, 33, 540, 270, 270, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 270, 540, 33, 270, 270, 270, 270, 33, 270, 33, 270, 270, 33, 540, 33, 33, 33, 270, 33, 270, 270, 33, 540, 270, 540, 33, 540, 33, 270, 270, 270, 270, 33, 270, 540, 540, 33, 540, 540, 33, 540, 270, 540, 270, 270, 270, 33, 270, 33, 33, 540, 33, 270, 33, 33, 270, 540, 270, 540, 33, 540, 540, 270, 540, 270, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 107904 . Total input tokens: 24005309 . Total output tokens: 21207746
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.1639597029425204,
+    "estimated_duration": 3600.0771844329124,
+    "input_throughput": 2474.3277834481096,
+    "output_throughput": 2144.037642686224,
+    "total_throughput": 4618.365426134334,
+    "itl": 78.52254685108589,
+    "ttft": 18881.295011135095,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15794,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 115.7246466000052,
+    "arrivals": 36171,
+    "finished_requests": 36005,
+    "scheduler_time": 23.25753752082643
+}
+#Debug simulation 
+Total elapsed time: 3.164053797721863. Arrivals time: 0.09776170924305916 Scheduler time: 2.7008371790871024 Scheduler overhead time: 0.05493786884471774 Adapter cache time: 0.23082351218909025 Engine time: 0.05375541467219591 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.025    0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 270, 33, 540, 540, 33, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 33, 540, 33, 540, 270, 270, 270, 33, 33, 270, 33, 540, 33, 540, 270, 540, 270, 33, 270, 540, 270, 540, 33, 540, 540, 540, 540, 33, 270, 270, 270, 540, 270, 33, 270, 33, 540, 270, 540, 540, 270, 540, 540, 33, 33, 540, 270, 270, 33, 33, 33, 270, 33, 270, 33, 540, 33, 270, 540, 33, 540, 270, 33, 540, 540, 540, 540, 270, 33, 270, 540, 540, 270, 33, 33, 540, 270, 270, 33, 33, 540, 270, 540, 270, 540, 540, 270, 540, 540, 33, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 33, 33, 270, 270, 540, 33, 33, 540, 33, 540, 270, 33, 540, 270, 270, 33, 540, 540, 540, 33, 270, 540, 33, 540, 270, 270, 540, 540, 33, 270, 540, 33, 270, 270, 33, 270, 33, 270, 540, 540, 270, 33, 540, 33, 540, 270, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 270, 540, 270, 540, 270, 540, 270, 540, 33, 270, 270, 270, 270, 270, 270, 270, 270, 540, 33, 33, 33, 33, 33, 270, 33, 33, 270, 540, 540, 33, 33, 540, 33, 33, 33, 270, 33, 270, 540, 540, 270, 270, 33, 540, 270, 540, 33, 270, 270, 33, 33, 270, 33, 540, 540, 33, 540, 540, 33, 270, 540, 33, 33, 270, 270, 33, 33, 540, 540, 540, 540, 270, 33, 270, 270, 33, 33, 33, 33, 33, 33, 33, 33, 270, 540, 270, 270, 270, 540, 33, 270, 270, 540, 540, 33, 540, 540, 33, 540, 33, 33, 270, 33, 540, 540, 540, 270, 33, 540, 540, 270, 270, 540, 540, 33, 540, 540, 270, 33, 540, 270, 270, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 270, 540, 33, 270, 270, 270, 270, 33, 270, 33, 270, 270, 33, 540, 33, 33, 33, 270, 33, 270, 270, 33, 540, 270, 540, 33, 540, 33, 270, 270, 270, 270, 33, 270, 540, 540, 33, 540, 540, 33, 540, 270, 540, 270, 270, 270, 33, 270, 33, 33, 540, 33, 270, 33, 33, 270, 540, 270, 540, 33, 540, 540, 270, 540, 270, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 107904 . Total input tokens: 24005309 . Total output tokens: 21207746
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.1631080638617277,
+    "estimated_duration": 3600.0675618835703,
+    "input_throughput": 2474.334674802441,
+    "output_throughput": 2144.0925391859732,
+    "total_throughput": 4618.427213988414,
+    "itl": 78.18598872396693,
+    "ttft": 18578.58218505864,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15889,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 109.18455751872064,
+    "arrivals": 36171,
+    "finished_requests": 36006,
+    "scheduler_time": 23.217342798940876
+}
+#Debug simulation 
+Total elapsed time: 3.1632026522420347. Arrivals time: 0.0947674629278481 Scheduler time: 2.6988109573721886 Scheduler overhead time: 0.05446080444380641 Adapter cache time: 0.23536919755861163 Engine time: 0.05395690305158496 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.025,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.025-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.025-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.025    0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 270, 33, 540, 540, 33, 270, 540, 540, 540, 540, 270, 270, 270, 270, 540, 540, 270, 270, 33, 540, 33, 540, 270, 270, 270, 33, 33, 270, 33, 540, 33, 540, 270, 540, 270, 33, 270, 540, 270, 540, 33, 540, 540, 540, 540, 33, 270, 270, 270, 540, 270, 33, 270, 33, 540, 270, 540, 540, 270, 540, 540, 33, 33, 540, 270, 270, 33, 33, 33, 270, 33, 270, 33, 540, 33, 270, 540, 33, 540, 270, 33, 540, 540, 540, 540, 270, 33, 270, 540, 540, 270, 33, 33, 540, 270, 270, 33, 33, 540, 270, 540, 270, 540, 540, 270, 540, 540, 33, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 33, 33, 270, 270, 540, 33, 33, 540, 33, 540, 270, 33, 540, 270, 270, 33, 540, 540, 540, 33, 270, 540, 33, 540, 270, 270, 540, 540, 33, 270, 540, 33, 270, 270, 33, 270, 33, 270, 540, 540, 270, 33, 540, 33, 540, 270, 270, 270, 270, 270, 33, 33, 540, 33, 540, 33, 270, 540, 270, 540, 270, 540, 270, 540, 33, 270, 270, 270, 270, 270, 270, 270, 270, 540, 33, 33, 33, 33, 33, 270, 33, 33, 270, 540, 540, 33, 33, 540, 33, 33, 33, 270, 33, 270, 540, 540, 270, 270, 33, 540, 270, 540, 33, 270, 270, 33, 33, 270, 33, 540, 540, 33, 540, 540, 33, 270, 540, 33, 33, 270, 270, 33, 33, 540, 540, 540, 540, 270, 33, 270, 270, 33, 33, 33, 33, 33, 33, 33, 33, 270, 540, 270, 270, 270, 540, 33, 270, 270, 540, 540, 33, 540, 540, 33, 540, 33, 33, 270, 33, 540, 540, 540, 270, 33, 540, 540, 270, 270, 540, 540, 33, 540, 540, 270, 33, 540, 270, 270, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 270, 540, 33, 270, 270, 270, 270, 33, 270, 33, 270, 270, 33, 540, 33, 33, 33, 270, 33, 270, 270, 33, 540, 270, 540, 33, 540, 33, 270, 270, 270, 270, 33, 270, 540, 540, 33, 540, 540, 33, 540, 270, 540, 270, 270, 270, 33, 270, 33, 33, 540, 33, 270, 33, 33, 270, 540, 270, 540, 33, 540, 540, 270, 540, 270, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 107904 . Total input tokens: 24005309 . Total output tokens: 21207746
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 3.136965054087341,
+    "estimated_duration": 3600.0659694885594,
+    "input_throughput": 2474.516321506622,
+    "output_throughput": 2144.38126007361,
+    "total_throughput": 4618.897581580232,
+    "itl": 77.82367707321023,
+    "ttft": 18180.06866163205,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15967,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 101.93206565805998,
+    "arrivals": 36171,
+    "finished_requests": 36009,
+    "scheduler_time": 23.172568405385093
+}
+#Debug simulation 
+Total elapsed time: 3.137053574901074. Arrivals time: 0.09445832530036569 Scheduler time: 2.6710426257923245 Scheduler overhead time: 0.054823638405650854 Adapter cache time: 0.23558183759450912 Engine time: 0.05485332245007157 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 135, 66, 540, 540, 66, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 66, 540, 66, 540, 135, 135, 135, 66, 66, 135, 66, 540, 66, 540, 135, 540, 135, 66, 135, 540, 135, 540, 66, 540, 540, 540, 540, 66, 135, 135, 135, 540, 135, 66, 135, 66, 540, 135, 540, 540, 135, 540, 540, 66, 66, 540, 135, 135, 66, 66, 66, 135, 66, 135, 66, 540, 66, 135, 540, 66, 540, 135, 66, 540, 540, 540, 540, 135, 66, 135, 540, 540, 135, 66, 66, 540, 135, 135, 66, 66, 540, 135, 540, 135, 540, 540, 135, 540, 540, 66, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 66, 66, 135, 135, 540, 66, 66, 540, 66, 540, 135, 66, 540, 135, 135, 66, 540, 540, 540, 66, 135, 540, 66, 540, 135, 135, 540, 540, 66, 135, 540, 66, 135, 135, 66, 135, 66, 135, 540, 540, 135, 66, 540, 66, 540, 135, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 135, 540, 135, 540, 135, 540, 135, 540, 66, 135, 135, 135, 135, 135, 135, 135, 135, 540, 66, 66, 66, 66, 66, 135, 66, 66, 135, 540, 540, 66, 66, 540, 66, 66, 66, 135, 66, 135, 540, 540, 135, 135, 66, 540, 135, 540, 66, 135, 135, 66, 66, 135, 66, 540, 540, 66, 540, 540, 66, 135, 540, 66, 66, 135, 135, 66, 66, 540, 540, 540, 540, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 540, 135, 135, 135, 540, 66, 135, 135, 540, 540, 66, 540, 540, 66, 540, 66, 66, 135, 66, 540, 540, 540, 135, 66, 540, 540, 135, 135, 540, 540, 66, 540, 540, 135, 66, 540, 135, 135, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 135, 540, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 540, 66, 66, 66, 135, 66, 135, 135, 66, 540, 135, 540, 66, 540, 66, 135, 135, 135, 135, 66, 135, 540, 540, 66, 540, 540, 66, 540, 135, 540, 135, 135, 135, 66, 135, 66, 66, 540, 66, 135, 66, 66, 135, 540, 135, 540, 66, 540, 540, 135, 540, 135, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 94848 . Total input tokens: 21123351 . Total output tokens: 18651401
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.71388043416664,
+    "estimated_duration": 3599.7763134966826,
+    "input_throughput": 2179.6423768282652,
+    "output_throughput": 1907.8593784425514,
+    "total_throughput": 4087.501755270817,
+    "itl": 56.86483673603252,
+    "ttft": 11197.509363967416,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15084,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 99.74157783791149,
+    "arrivals": 31815,
+    "finished_requests": 31717,
+    "scheduler_time": 16.313062553696707
+}
+#Debug simulation 
+Total elapsed time: 2.713969747070223. Arrivals time: 0.08596288319677114 Scheduler time: 2.214242738671601 Scheduler overhead time: 0.0674434257671237 Adapter cache time: 0.24552018428221345 Engine time: 0.06779238115996122 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 135, 66, 540, 540, 66, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 66, 540, 66, 540, 135, 135, 135, 66, 66, 135, 66, 540, 66, 540, 135, 540, 135, 66, 135, 540, 135, 540, 66, 540, 540, 540, 540, 66, 135, 135, 135, 540, 135, 66, 135, 66, 540, 135, 540, 540, 135, 540, 540, 66, 66, 540, 135, 135, 66, 66, 66, 135, 66, 135, 66, 540, 66, 135, 540, 66, 540, 135, 66, 540, 540, 540, 540, 135, 66, 135, 540, 540, 135, 66, 66, 540, 135, 135, 66, 66, 540, 135, 540, 135, 540, 540, 135, 540, 540, 66, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 66, 66, 135, 135, 540, 66, 66, 540, 66, 540, 135, 66, 540, 135, 135, 66, 540, 540, 540, 66, 135, 540, 66, 540, 135, 135, 540, 540, 66, 135, 540, 66, 135, 135, 66, 135, 66, 135, 540, 540, 135, 66, 540, 66, 540, 135, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 135, 540, 135, 540, 135, 540, 135, 540, 66, 135, 135, 135, 135, 135, 135, 135, 135, 540, 66, 66, 66, 66, 66, 135, 66, 66, 135, 540, 540, 66, 66, 540, 66, 66, 66, 135, 66, 135, 540, 540, 135, 135, 66, 540, 135, 540, 66, 135, 135, 66, 66, 135, 66, 540, 540, 66, 540, 540, 66, 135, 540, 66, 66, 135, 135, 66, 66, 540, 540, 540, 540, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 540, 135, 135, 135, 540, 66, 135, 135, 540, 540, 66, 540, 540, 66, 540, 66, 66, 135, 66, 540, 540, 540, 135, 66, 540, 540, 135, 135, 540, 540, 66, 540, 540, 135, 66, 540, 135, 135, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 135, 540, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 540, 66, 66, 66, 135, 66, 135, 135, 66, 540, 135, 540, 66, 540, 66, 135, 135, 135, 135, 66, 135, 540, 540, 66, 540, 540, 66, 540, 135, 540, 135, 135, 135, 66, 135, 66, 66, 540, 66, 135, 66, 66, 135, 540, 135, 540, 66, 540, 540, 135, 540, 135, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 94848 . Total input tokens: 21123351 . Total output tokens: 18651401
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.709348649252206,
+    "estimated_duration": 3599.791882725194,
+    "input_throughput": 2179.4284935329747,
+    "output_throughput": 1907.7486209566691,
+    "total_throughput": 4087.177114489644,
+    "itl": 57.45005476411281,
+    "ttft": 11314.157119359706,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15071,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 110.43856102986098,
+    "arrivals": 31815,
+    "finished_requests": 31716,
+    "scheduler_time": 16.42873520164035
+}
+#Debug simulation 
+Total elapsed time: 2.7094376902095973. Arrivals time: 0.08552706288173795 Scheduler time: 2.211302889045328 Scheduler overhead time: 0.06677415454760194 Adapter cache time: 0.24692509742453694 Engine time: 0.0665266695432365 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 135, 66, 540, 540, 66, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 66, 540, 66, 540, 135, 135, 135, 66, 66, 135, 66, 540, 66, 540, 135, 540, 135, 66, 135, 540, 135, 540, 66, 540, 540, 540, 540, 66, 135, 135, 135, 540, 135, 66, 135, 66, 540, 135, 540, 540, 135, 540, 540, 66, 66, 540, 135, 135, 66, 66, 66, 135, 66, 135, 66, 540, 66, 135, 540, 66, 540, 135, 66, 540, 540, 540, 540, 135, 66, 135, 540, 540, 135, 66, 66, 540, 135, 135, 66, 66, 540, 135, 540, 135, 540, 540, 135, 540, 540, 66, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 66, 66, 135, 135, 540, 66, 66, 540, 66, 540, 135, 66, 540, 135, 135, 66, 540, 540, 540, 66, 135, 540, 66, 540, 135, 135, 540, 540, 66, 135, 540, 66, 135, 135, 66, 135, 66, 135, 540, 540, 135, 66, 540, 66, 540, 135, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 135, 540, 135, 540, 135, 540, 135, 540, 66, 135, 135, 135, 135, 135, 135, 135, 135, 540, 66, 66, 66, 66, 66, 135, 66, 66, 135, 540, 540, 66, 66, 540, 66, 66, 66, 135, 66, 135, 540, 540, 135, 135, 66, 540, 135, 540, 66, 135, 135, 66, 66, 135, 66, 540, 540, 66, 540, 540, 66, 135, 540, 66, 66, 135, 135, 66, 66, 540, 540, 540, 540, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 540, 135, 135, 135, 540, 66, 135, 135, 540, 540, 66, 540, 540, 66, 540, 66, 66, 135, 66, 540, 540, 540, 135, 66, 540, 540, 135, 135, 540, 540, 66, 540, 540, 135, 66, 540, 135, 135, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 135, 540, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 540, 66, 66, 66, 135, 66, 135, 135, 66, 540, 135, 540, 66, 540, 66, 135, 135, 135, 135, 66, 135, 540, 540, 66, 540, 540, 66, 540, 135, 540, 135, 135, 135, 66, 135, 66, 66, 540, 66, 135, 66, 66, 135, 540, 135, 540, 66, 540, 540, 135, 540, 135, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 94848 . Total input tokens: 21123351 . Total output tokens: 18651401
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.64430481614545,
+    "estimated_duration": 3599.7849076570565,
+    "input_throughput": 2179.6371731295376,
+    "output_throughput": 1907.8548236011125,
+    "total_throughput": 4087.49199673065,
+    "itl": 57.073936278760335,
+    "ttft": 11198.672282028228,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15070,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 103.63405900258637,
+    "arrivals": 31815,
+    "finished_requests": 31717,
+    "scheduler_time": 16.355010700648197
+}
+#Debug simulation 
+Total elapsed time: 2.6443897401914. Arrivals time: 0.08328315988183022 Scheduler time: 2.1502957097254694 Scheduler overhead time: 0.06656217714771628 Adapter cache time: 0.24678440019488335 Engine time: 0.06541616981849074 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.00625_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.05   ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 540, 135, 66, 540, 540, 66, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 66, 540, 66, 540, 135, 135, 135, 66, 66, 135, 66, 540, 66, 540, 135, 540, 135, 66, 135, 540, 135, 540, 66, 540, 540, 540, 540, 66, 135, 135, 135, 540, 135, 66, 135, 66, 540, 135, 540, 540, 135, 540, 540, 66, 66, 540, 135, 135, 66, 66, 66, 135, 66, 135, 66, 540, 66, 135, 540, 66, 540, 135, 66, 540, 540, 540, 540, 135, 66, 135, 540, 540, 135, 66, 66, 540, 135, 135, 66, 66, 540, 135, 540, 135, 540, 540, 135, 540, 540, 66, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 66, 66, 135, 135, 540, 66, 66, 540, 66, 540, 135, 66, 540, 135, 135, 66, 540, 540, 540, 66, 135, 540, 66, 540, 135, 135, 540, 540, 66, 135, 540, 66, 135, 135, 66, 135, 66, 135, 540, 540, 135, 66, 540, 66, 540, 135, 135, 135, 135, 135, 66, 66, 540, 66, 540, 66, 135, 540, 135, 540, 135, 540, 135, 540, 66, 135, 135, 135, 135, 135, 135, 135, 135, 540, 66, 66, 66, 66, 66, 135, 66, 66, 135, 540, 540, 66, 66, 540, 66, 66, 66, 135, 66, 135, 540, 540, 135, 135, 66, 540, 135, 540, 66, 135, 135, 66, 66, 135, 66, 540, 540, 66, 540, 540, 66, 135, 540, 66, 66, 135, 135, 66, 66, 540, 540, 540, 540, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 540, 135, 135, 135, 540, 66, 135, 135, 540, 540, 66, 540, 540, 66, 540, 66, 66, 135, 66, 540, 540, 540, 135, 66, 540, 540, 135, 135, 540, 540, 66, 540, 540, 135, 66, 540, 135, 135, 540, 540, 540, 66, 540, 66, 540, 540, 66, 66, 540, 66, 135, 540, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 540, 66, 66, 66, 135, 66, 135, 135, 66, 540, 135, 540, 66, 540, 66, 135, 135, 135, 135, 66, 135, 540, 540, 66, 540, 540, 66, 540, 135, 540, 135, 135, 135, 66, 135, 66, 66, 540, 66, 135, 66, 66, 135, 540, 135, 540, 66, 540, 540, 135, 540, 135, 66, 540, 66, 540, 540, 66, 66, 66]
+Prompts retrieved: 94848 . Total input tokens: 21123351 . Total output tokens: 18651401
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.696403637994081,
+    "estimated_duration": 3599.7834366674224,
+    "input_throughput": 2179.638063800808,
+    "output_throughput": 1907.855603213197,
+    "total_throughput": 4087.493667014005,
+    "itl": 56.67665702678848,
+    "ttft": 11196.163642358297,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 15068,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 96.1929207324927,
+    "arrivals": 31815,
+    "finished_requests": 31717,
+    "scheduler_time": 16.274486008981217
+}
+#Debug simulation 
+Total elapsed time: 2.696498017758131. Arrivals time: 0.08474233839660883 Scheduler time: 2.1948358519002795 Scheduler overhead time: 0.06782210292294621 Adapter cache time: 0.24791410379111767 Engine time: 0.06836520647630095 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 135, 33, 540, 540, 33, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 33, 540, 33, 540, 135, 135, 135, 33, 33, 135, 33, 540, 33, 540, 135, 540, 135, 33, 135, 540, 135, 540, 33, 540, 540, 540, 540, 33, 135, 135, 135, 540, 135, 33, 135, 33, 540, 135, 540, 540, 135, 540, 540, 33, 33, 540, 135, 135, 33, 33, 33, 135, 33, 135, 33, 540, 33, 135, 540, 33, 540, 135, 33, 540, 540, 540, 540, 135, 33, 135, 540, 540, 135, 33, 33, 540, 135, 135, 33, 33, 540, 135, 540, 135, 540, 540, 135, 540, 540, 33, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 33, 33, 135, 135, 540, 33, 33, 540, 33, 540, 135, 33, 540, 135, 135, 33, 540, 540, 540, 33, 135, 540, 33, 540, 135, 135, 540, 540, 33, 135, 540, 33, 135, 135, 33, 135, 33, 135, 540, 540, 135, 33, 540, 33, 540, 135, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 135, 540, 135, 540, 135, 540, 135, 540, 33, 135, 135, 135, 135, 135, 135, 135, 135, 540, 33, 33, 33, 33, 33, 135, 33, 33, 135, 540, 540, 33, 33, 540, 33, 33, 33, 135, 33, 135, 540, 540, 135, 135, 33, 540, 135, 540, 33, 135, 135, 33, 33, 135, 33, 540, 540, 33, 540, 540, 33, 135, 540, 33, 33, 135, 135, 33, 33, 540, 540, 540, 540, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 540, 135, 135, 135, 540, 33, 135, 135, 540, 540, 33, 540, 540, 33, 540, 33, 33, 135, 33, 540, 540, 540, 135, 33, 540, 540, 135, 135, 540, 540, 33, 540, 540, 135, 33, 540, 135, 135, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 135, 540, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 540, 33, 33, 33, 135, 33, 135, 135, 33, 540, 135, 540, 33, 540, 33, 135, 135, 135, 135, 33, 135, 540, 540, 33, 540, 540, 33, 540, 135, 540, 135, 135, 135, 33, 135, 33, 33, 540, 33, 135, 33, 33, 135, 540, 135, 540, 33, 540, 540, 135, 540, 135, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 90624 . Total input tokens: 20211841 . Total output tokens: 17814668
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.5837535010650754,
+    "estimated_duration": 3599.966995245683,
+    "input_throughput": 2096.8014456712685,
+    "output_throughput": 1820.6003023515802,
+    "total_throughput": 3917.4017480228486,
+    "itl": 49.78316277115299,
+    "ttft": 7062.190608117795,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 12986,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 85.86874368889126,
+    "arrivals": 30443,
+    "finished_requests": 30384,
+    "scheduler_time": 13.427359712079259
+}
+#Debug simulation 
+Total elapsed time: 2.5838462500832975. Arrivals time: 0.082241325173527 Scheduler time: 2.080698569305241 Scheduler overhead time: 0.07483190717175603 Adapter cache time: 0.23537758784368634 Engine time: 0.07432156009599566 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 135, 33, 540, 540, 33, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 33, 540, 33, 540, 135, 135, 135, 33, 33, 135, 33, 540, 33, 540, 135, 540, 135, 33, 135, 540, 135, 540, 33, 540, 540, 540, 540, 33, 135, 135, 135, 540, 135, 33, 135, 33, 540, 135, 540, 540, 135, 540, 540, 33, 33, 540, 135, 135, 33, 33, 33, 135, 33, 135, 33, 540, 33, 135, 540, 33, 540, 135, 33, 540, 540, 540, 540, 135, 33, 135, 540, 540, 135, 33, 33, 540, 135, 135, 33, 33, 540, 135, 540, 135, 540, 540, 135, 540, 540, 33, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 33, 33, 135, 135, 540, 33, 33, 540, 33, 540, 135, 33, 540, 135, 135, 33, 540, 540, 540, 33, 135, 540, 33, 540, 135, 135, 540, 540, 33, 135, 540, 33, 135, 135, 33, 135, 33, 135, 540, 540, 135, 33, 540, 33, 540, 135, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 135, 540, 135, 540, 135, 540, 135, 540, 33, 135, 135, 135, 135, 135, 135, 135, 135, 540, 33, 33, 33, 33, 33, 135, 33, 33, 135, 540, 540, 33, 33, 540, 33, 33, 33, 135, 33, 135, 540, 540, 135, 135, 33, 540, 135, 540, 33, 135, 135, 33, 33, 135, 33, 540, 540, 33, 540, 540, 33, 135, 540, 33, 33, 135, 135, 33, 33, 540, 540, 540, 540, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 540, 135, 135, 135, 540, 33, 135, 135, 540, 540, 33, 540, 540, 33, 540, 33, 33, 135, 33, 540, 540, 540, 135, 33, 540, 540, 135, 135, 540, 540, 33, 540, 540, 135, 33, 540, 135, 135, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 135, 540, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 540, 33, 33, 33, 135, 33, 135, 135, 33, 540, 135, 540, 33, 540, 33, 135, 135, 135, 135, 33, 135, 540, 540, 33, 540, 540, 33, 540, 135, 540, 135, 135, 135, 33, 135, 33, 33, 540, 33, 135, 33, 33, 135, 540, 135, 540, 33, 540, 540, 135, 540, 135, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 90624 . Total input tokens: 20211841 . Total output tokens: 17814668
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.551684486679733,
+    "estimated_duration": 3599.9758109939485,
+    "input_throughput": 2096.7963109496263,
+    "output_throughput": 1820.59584400108,
+    "total_throughput": 3917.3921549507063,
+    "itl": 49.78095110418176,
+    "ttft": 7062.474623464508,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13009,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 95.37305331696086,
+    "arrivals": 30443,
+    "finished_requests": 30384,
+    "scheduler_time": 13.420533510278009
+}
+#Debug simulation 
+Total elapsed time: 2.551813622005284. Arrivals time: 0.0813495721668005 Scheduler time: 2.048370155505836 Scheduler overhead time: 0.07469186279922724 Adapter cache time: 0.23865788104012609 Engine time: 0.07236021338030696 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 135, 33, 540, 540, 33, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 33, 540, 33, 540, 135, 135, 135, 33, 33, 135, 33, 540, 33, 540, 135, 540, 135, 33, 135, 540, 135, 540, 33, 540, 540, 540, 540, 33, 135, 135, 135, 540, 135, 33, 135, 33, 540, 135, 540, 540, 135, 540, 540, 33, 33, 540, 135, 135, 33, 33, 33, 135, 33, 135, 33, 540, 33, 135, 540, 33, 540, 135, 33, 540, 540, 540, 540, 135, 33, 135, 540, 540, 135, 33, 33, 540, 135, 135, 33, 33, 540, 135, 540, 135, 540, 540, 135, 540, 540, 33, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 33, 33, 135, 135, 540, 33, 33, 540, 33, 540, 135, 33, 540, 135, 135, 33, 540, 540, 540, 33, 135, 540, 33, 540, 135, 135, 540, 540, 33, 135, 540, 33, 135, 135, 33, 135, 33, 135, 540, 540, 135, 33, 540, 33, 540, 135, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 135, 540, 135, 540, 135, 540, 135, 540, 33, 135, 135, 135, 135, 135, 135, 135, 135, 540, 33, 33, 33, 33, 33, 135, 33, 33, 135, 540, 540, 33, 33, 540, 33, 33, 33, 135, 33, 135, 540, 540, 135, 135, 33, 540, 135, 540, 33, 135, 135, 33, 33, 135, 33, 540, 540, 33, 540, 540, 33, 135, 540, 33, 33, 135, 135, 33, 33, 540, 540, 540, 540, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 540, 135, 135, 135, 540, 33, 135, 135, 540, 540, 33, 540, 540, 33, 540, 33, 33, 135, 33, 540, 540, 540, 135, 33, 540, 540, 135, 135, 540, 540, 33, 540, 540, 135, 33, 540, 135, 135, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 135, 540, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 540, 33, 33, 33, 135, 33, 135, 135, 33, 540, 135, 540, 33, 540, 33, 135, 135, 135, 135, 33, 135, 540, 540, 33, 540, 540, 33, 540, 135, 540, 135, 135, 135, 33, 135, 33, 33, 540, 33, 135, 33, 33, 135, 540, 135, 540, 33, 540, 540, 135, 540, 135, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 90624 . Total input tokens: 20211841 . Total output tokens: 17814668
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.60978962527588,
+    "estimated_duration": 3599.9478800707907,
+    "input_throughput": 2096.8125793675563,
+    "output_throughput": 1820.6099694618683,
+    "total_throughput": 3917.4225488294246,
+    "itl": 49.54307655279273,
+    "ttft": 7061.84025452129,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 13016,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 89.52196628987336,
+    "arrivals": 30443,
+    "finished_requests": 30384,
+    "scheduler_time": 13.360072096489697
+}
+#Debug simulation 
+Total elapsed time: 2.609882818069309. Arrivals time: 0.08597275661304593 Scheduler time: 2.099173767026514 Scheduler overhead time: 0.07531751599162817 Adapter cache time: 0.2379045789130032 Engine time: 0.07514196680858731 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.0125-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 135, 33, 540, 540, 33, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 33, 540, 33, 540, 135, 135, 135, 33, 33, 135, 33, 540, 33, 540, 135, 540, 135, 33, 135, 540, 135, 540, 33, 540, 540, 540, 540, 33, 135, 135, 135, 540, 135, 33, 135, 33, 540, 135, 540, 540, 135, 540, 540, 33, 33, 540, 135, 135, 33, 33, 33, 135, 33, 135, 33, 540, 33, 135, 540, 33, 540, 135, 33, 540, 540, 540, 540, 135, 33, 135, 540, 540, 135, 33, 33, 540, 135, 135, 33, 33, 540, 135, 540, 135, 540, 540, 135, 540, 540, 33, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 33, 33, 135, 135, 540, 33, 33, 540, 33, 540, 135, 33, 540, 135, 135, 33, 540, 540, 540, 33, 135, 540, 33, 540, 135, 135, 540, 540, 33, 135, 540, 33, 135, 135, 33, 135, 33, 135, 540, 540, 135, 33, 540, 33, 540, 135, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 135, 540, 135, 540, 135, 540, 135, 540, 33, 135, 135, 135, 135, 135, 135, 135, 135, 540, 33, 33, 33, 33, 33, 135, 33, 33, 135, 540, 540, 33, 33, 540, 33, 33, 33, 135, 33, 135, 540, 540, 135, 135, 33, 540, 135, 540, 33, 135, 135, 33, 33, 135, 33, 540, 540, 33, 540, 540, 33, 135, 540, 33, 33, 135, 135, 33, 33, 540, 540, 540, 540, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 540, 135, 135, 135, 540, 33, 135, 135, 540, 540, 33, 540, 540, 33, 540, 33, 33, 135, 33, 540, 540, 540, 135, 33, 540, 540, 135, 135, 540, 540, 33, 540, 540, 135, 33, 540, 135, 135, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 135, 540, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 540, 33, 33, 33, 135, 33, 135, 135, 33, 540, 135, 540, 33, 540, 33, 135, 135, 135, 135, 33, 135, 540, 540, 33, 540, 540, 33, 540, 135, 540, 135, 135, 135, 33, 135, 33, 33, 540, 33, 135, 33, 33, 135, 540, 135, 540, 33, 540, 540, 135, 540, 135, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 90624 . Total input tokens: 20211841 . Total output tokens: 17814668
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.596393338870257,
+    "estimated_duration": 3599.9608331038908,
+    "input_throughput": 2096.8050348180445,
+    "output_throughput": 1820.6034187180437,
+    "total_throughput": 3917.408453536088,
+    "itl": 49.66768227885266,
+    "ttft": 7061.884586215421,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 12984,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 82.88882949235673,
+    "arrivals": 30443,
+    "finished_requests": 30384,
+    "scheduler_time": 13.397134796729478
+}
+#Debug simulation 
+Total elapsed time: 2.5964804627001286. Arrivals time: 0.0811857059597969 Scheduler time: 2.093179570045322 Scheduler overhead time: 0.0753106726333499 Adapter cache time: 0.23771636234596372 Engine time: 0.0725833005271852 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 66, 33, 540, 540, 33, 66, 540, 540, 540, 540, 66, 66, 66, 66, 540, 540, 66, 66, 33, 540, 33, 540, 66, 66, 66, 33, 33, 66, 33, 540, 33, 540, 66, 540, 66, 33, 66, 540, 66, 540, 33, 540, 540, 540, 540, 33, 66, 66, 66, 540, 66, 33, 66, 33, 540, 66, 540, 540, 66, 540, 540, 33, 33, 540, 66, 66, 33, 33, 33, 66, 33, 66, 33, 540, 33, 66, 540, 33, 540, 66, 33, 540, 540, 540, 540, 66, 33, 66, 540, 540, 66, 33, 33, 540, 66, 66, 33, 33, 540, 66, 540, 66, 540, 540, 66, 540, 540, 33, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 33, 33, 66, 66, 540, 33, 33, 540, 33, 540, 66, 33, 540, 66, 66, 33, 540, 540, 540, 33, 66, 540, 33, 540, 66, 66, 540, 540, 33, 66, 540, 33, 66, 66, 33, 66, 33, 66, 540, 540, 66, 33, 540, 33, 540, 66, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 66, 540, 66, 540, 66, 540, 66, 540, 33, 66, 66, 66, 66, 66, 66, 66, 66, 540, 33, 33, 33, 33, 33, 66, 33, 33, 66, 540, 540, 33, 33, 540, 33, 33, 33, 66, 33, 66, 540, 540, 66, 66, 33, 540, 66, 540, 33, 66, 66, 33, 33, 66, 33, 540, 540, 33, 540, 540, 33, 66, 540, 33, 33, 66, 66, 33, 33, 540, 540, 540, 540, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 540, 66, 66, 66, 540, 33, 66, 66, 540, 540, 33, 540, 540, 33, 540, 33, 33, 66, 33, 540, 540, 540, 66, 33, 540, 540, 66, 66, 540, 540, 33, 540, 540, 66, 33, 540, 66, 66, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 66, 540, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 540, 33, 33, 33, 66, 33, 66, 66, 33, 540, 66, 540, 33, 540, 33, 66, 66, 66, 66, 33, 66, 540, 540, 33, 540, 540, 33, 540, 66, 540, 66, 66, 66, 33, 66, 33, 33, 540, 33, 66, 33, 33, 66, 540, 66, 540, 33, 540, 540, 66, 540, 66, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 81792 . Total input tokens: 18238428 . Total output tokens: 16047925
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.3720796280540526,
+    "estimated_duration": 3600.009326914657,
+    "input_throughput": 1876.6404157597224,
+    "output_throughput": 1640.264917052529,
+    "total_throughput": 3516.9053328122513,
+    "itl": 40.63865998076878,
+    "ttft": 6481.15211152393,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 9412,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 62.235993808718575,
+    "arrivals": 27512,
+    "finished_requests": 27463,
+    "scheduler_time": 7.882460094953413
+}
+#Debug simulation 
+Total elapsed time: 2.3721705046482384. Arrivals time: 0.0755055295303464 Scheduler time: 1.8679851246997714 Scheduler overhead time: 0.08713511005043983 Adapter cache time: 0.21186761232092977 Engine time: 0.08740697847679257 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 66, 33, 540, 540, 33, 66, 540, 540, 540, 540, 66, 66, 66, 66, 540, 540, 66, 66, 33, 540, 33, 540, 66, 66, 66, 33, 33, 66, 33, 540, 33, 540, 66, 540, 66, 33, 66, 540, 66, 540, 33, 540, 540, 540, 540, 33, 66, 66, 66, 540, 66, 33, 66, 33, 540, 66, 540, 540, 66, 540, 540, 33, 33, 540, 66, 66, 33, 33, 33, 66, 33, 66, 33, 540, 33, 66, 540, 33, 540, 66, 33, 540, 540, 540, 540, 66, 33, 66, 540, 540, 66, 33, 33, 540, 66, 66, 33, 33, 540, 66, 540, 66, 540, 540, 66, 540, 540, 33, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 33, 33, 66, 66, 540, 33, 33, 540, 33, 540, 66, 33, 540, 66, 66, 33, 540, 540, 540, 33, 66, 540, 33, 540, 66, 66, 540, 540, 33, 66, 540, 33, 66, 66, 33, 66, 33, 66, 540, 540, 66, 33, 540, 33, 540, 66, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 66, 540, 66, 540, 66, 540, 66, 540, 33, 66, 66, 66, 66, 66, 66, 66, 66, 540, 33, 33, 33, 33, 33, 66, 33, 33, 66, 540, 540, 33, 33, 540, 33, 33, 33, 66, 33, 66, 540, 540, 66, 66, 33, 540, 66, 540, 33, 66, 66, 33, 33, 66, 33, 540, 540, 33, 540, 540, 33, 66, 540, 33, 33, 66, 66, 33, 33, 540, 540, 540, 540, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 540, 66, 66, 66, 540, 33, 66, 66, 540, 540, 33, 540, 540, 33, 540, 33, 33, 66, 33, 540, 540, 540, 66, 33, 540, 540, 66, 66, 540, 540, 33, 540, 540, 66, 33, 540, 66, 66, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 66, 540, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 540, 33, 33, 33, 66, 33, 66, 66, 33, 540, 66, 540, 33, 540, 33, 66, 66, 66, 66, 33, 66, 540, 540, 33, 540, 540, 33, 540, 66, 540, 66, 66, 66, 33, 66, 33, 33, 540, 33, 66, 33, 33, 66, 540, 66, 540, 33, 540, 540, 66, 540, 66, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 81792 . Total input tokens: 18238428 . Total output tokens: 16047925
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.3617093469947577,
+    "estimated_duration": 3600.016631897976,
+    "input_throughput": 1876.6366077698337,
+    "output_throughput": 1640.261588704612,
+    "total_throughput": 3516.8981964744457,
+    "itl": 41.112345940310966,
+    "ttft": 6482.22126650824,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 9389,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 68.84823591773767,
+    "arrivals": 27512,
+    "finished_requests": 27463,
+    "scheduler_time": 8.064248567843102
+}
+#Debug simulation 
+Total elapsed time: 2.361801032908261. Arrivals time: 0.07663640519604087 Scheduler time: 1.8596022268757224 Scheduler overhead time: 0.08647233992815018 Adapter cache time: 0.2111666090786457 Engine time: 0.08622897556051612 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 66, 33, 540, 540, 33, 66, 540, 540, 540, 540, 66, 66, 66, 66, 540, 540, 66, 66, 33, 540, 33, 540, 66, 66, 66, 33, 33, 66, 33, 540, 33, 540, 66, 540, 66, 33, 66, 540, 66, 540, 33, 540, 540, 540, 540, 33, 66, 66, 66, 540, 66, 33, 66, 33, 540, 66, 540, 540, 66, 540, 540, 33, 33, 540, 66, 66, 33, 33, 33, 66, 33, 66, 33, 540, 33, 66, 540, 33, 540, 66, 33, 540, 540, 540, 540, 66, 33, 66, 540, 540, 66, 33, 33, 540, 66, 66, 33, 33, 540, 66, 540, 66, 540, 540, 66, 540, 540, 33, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 33, 33, 66, 66, 540, 33, 33, 540, 33, 540, 66, 33, 540, 66, 66, 33, 540, 540, 540, 33, 66, 540, 33, 540, 66, 66, 540, 540, 33, 66, 540, 33, 66, 66, 33, 66, 33, 66, 540, 540, 66, 33, 540, 33, 540, 66, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 66, 540, 66, 540, 66, 540, 66, 540, 33, 66, 66, 66, 66, 66, 66, 66, 66, 540, 33, 33, 33, 33, 33, 66, 33, 33, 66, 540, 540, 33, 33, 540, 33, 33, 33, 66, 33, 66, 540, 540, 66, 66, 33, 540, 66, 540, 33, 66, 66, 33, 33, 66, 33, 540, 540, 33, 540, 540, 33, 66, 540, 33, 33, 66, 66, 33, 33, 540, 540, 540, 540, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 540, 66, 66, 66, 540, 33, 66, 66, 540, 540, 33, 540, 540, 33, 540, 33, 33, 66, 33, 540, 540, 540, 66, 33, 540, 540, 66, 66, 540, 540, 33, 540, 540, 66, 33, 540, 66, 66, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 66, 540, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 540, 33, 33, 33, 66, 33, 66, 66, 33, 540, 66, 540, 33, 540, 33, 66, 66, 66, 66, 33, 66, 540, 540, 33, 540, 540, 33, 540, 66, 540, 66, 66, 66, 33, 66, 33, 33, 540, 33, 66, 33, 33, 66, 540, 66, 540, 33, 540, 540, 66, 540, 66, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 81792 . Total input tokens: 18238428 . Total output tokens: 16047925
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.3540515671484172,
+    "estimated_duration": 3600.029388304274,
+    "input_throughput": 1876.6299580632729,
+    "output_throughput": 1640.2557765733752,
+    "total_throughput": 3516.885734636648,
+    "itl": 40.69928549840676,
+    "ttft": 6481.284439150523,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 9408,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 64.68409227099447,
+    "arrivals": 27512,
+    "finished_requests": 27463,
+    "scheduler_time": 7.905768196621073
+}
+#Debug simulation 
+Total elapsed time: 2.3541395091451705. Arrivals time: 0.07628398947417736 Scheduler time: 1.850821528583765 Scheduler overhead time: 0.08781787706539035 Adapter cache time: 0.21066058846190572 Engine time: 0.08625510614365339 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.05,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.05-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.05-0.00625-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 66, 33, 540, 540, 33, 66, 540, 540, 540, 540, 66, 66, 66, 66, 540, 540, 66, 66, 33, 540, 33, 540, 66, 66, 66, 33, 33, 66, 33, 540, 33, 540, 66, 540, 66, 33, 66, 540, 66, 540, 33, 540, 540, 540, 540, 33, 66, 66, 66, 540, 66, 33, 66, 33, 540, 66, 540, 540, 66, 540, 540, 33, 33, 540, 66, 66, 33, 33, 33, 66, 33, 66, 33, 540, 33, 66, 540, 33, 540, 66, 33, 540, 540, 540, 540, 66, 33, 66, 540, 540, 66, 33, 33, 540, 66, 66, 33, 33, 540, 66, 540, 66, 540, 540, 66, 540, 540, 33, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 33, 33, 66, 66, 540, 33, 33, 540, 33, 540, 66, 33, 540, 66, 66, 33, 540, 540, 540, 33, 66, 540, 33, 540, 66, 66, 540, 540, 33, 66, 540, 33, 66, 66, 33, 66, 33, 66, 540, 540, 66, 33, 540, 33, 540, 66, 66, 66, 66, 66, 33, 33, 540, 33, 540, 33, 66, 540, 66, 540, 66, 540, 66, 540, 33, 66, 66, 66, 66, 66, 66, 66, 66, 540, 33, 33, 33, 33, 33, 66, 33, 33, 66, 540, 540, 33, 33, 540, 33, 33, 33, 66, 33, 66, 540, 540, 66, 66, 33, 540, 66, 540, 33, 66, 66, 33, 33, 66, 33, 540, 540, 33, 540, 540, 33, 66, 540, 33, 33, 66, 66, 33, 33, 540, 540, 540, 540, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 540, 66, 66, 66, 540, 33, 66, 66, 540, 540, 33, 540, 540, 33, 540, 33, 33, 66, 33, 540, 540, 540, 66, 33, 540, 540, 66, 66, 540, 540, 33, 540, 540, 66, 33, 540, 66, 66, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 66, 540, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 540, 33, 33, 33, 66, 33, 66, 66, 33, 540, 66, 540, 33, 540, 33, 66, 66, 66, 66, 33, 66, 540, 540, 33, 540, 540, 33, 540, 66, 540, 66, 66, 66, 33, 66, 33, 33, 540, 33, 66, 33, 33, 66, 540, 66, 540, 33, 540, 540, 66, 540, 66, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 81792 . Total input tokens: 18238428 . Total output tokens: 16047925
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 2.369096434209496,
+    "estimated_duration": 3600.0187996474638,
+    "input_throughput": 1876.6354777540557,
+    "output_throughput": 1640.260601021931,
+    "total_throughput": 3516.8960787759866,
+    "itl": 40.586796828376045,
+    "ttft": 6480.964212628134,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 9412,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 60.08546389265677,
+    "arrivals": 27512,
+    "finished_requests": 27463,
+    "scheduler_time": 7.861845835441239
+}
+#Debug simulation 
+Total elapsed time: 2.369189590215683. Arrivals time: 0.07601275201886892 Scheduler time: 1.8662915816530585 Scheduler overhead time: 0.08688757801428437 Adapter cache time: 0.21188847720623016 Engine time: 0.08553754910826683 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-8-8/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.025  ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 270, 135, 66, 270, 270, 66, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 66, 270, 66, 270, 135, 135, 135, 66, 66, 135, 66, 270, 66, 270, 135, 270, 135, 66, 135, 270, 135, 270, 66, 270, 270, 270, 270, 66, 135, 135, 135, 270, 135, 66, 135, 66, 270, 135, 270, 270, 135, 270, 270, 66, 66, 270, 135, 135, 66, 66, 66, 135, 66, 135, 66, 270, 66, 135, 270, 66, 270, 135, 66, 270, 270, 270, 270, 135, 66, 135, 270, 270, 135, 66, 66, 270, 135, 135, 66, 66, 270, 135, 270, 135, 270, 270, 135, 270, 270, 66, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 66, 66, 135, 135, 270, 66, 66, 270, 66, 270, 135, 66, 270, 135, 135, 66, 270, 270, 270, 66, 135, 270, 66, 270, 135, 135, 270, 270, 66, 135, 270, 66, 135, 135, 66, 135, 66, 135, 270, 270, 135, 66, 270, 66, 270, 135, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 135, 270, 135, 270, 135, 270, 135, 270, 66, 135, 135, 135, 135, 135, 135, 135, 135, 270, 66, 66, 66, 66, 66, 135, 66, 66, 135, 270, 270, 66, 66, 270, 66, 66, 66, 135, 66, 135, 270, 270, 135, 135, 66, 270, 135, 270, 66, 135, 135, 66, 66, 135, 66, 270, 270, 66, 270, 270, 66, 135, 270, 66, 66, 135, 135, 66, 66, 270, 270, 270, 270, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 270, 135, 135, 135, 270, 66, 135, 135, 270, 270, 66, 270, 270, 66, 270, 66, 66, 135, 66, 270, 270, 270, 135, 66, 270, 270, 135, 135, 270, 270, 66, 270, 270, 135, 66, 270, 135, 135, 270, 270, 270, 66, 270, 66, 270, 270, 66, 66, 270, 66, 135, 270, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 270, 66, 66, 66, 135, 66, 135, 135, 66, 270, 135, 270, 66, 270, 66, 135, 135, 135, 135, 66, 135, 270, 270, 66, 270, 270, 66, 270, 135, 270, 135, 135, 135, 66, 135, 66, 66, 270, 66, 135, 66, 66, 135, 270, 135, 270, 66, 270, 270, 135, 270, 135, 66, 270, 66, 270, 270, 66, 66, 66]
+Prompts retrieved: 60288 . Total input tokens: 13399771 . Total output tokens: 11859158
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.8836765261366963,
+    "estimated_duration": 3599.9584144734627,
+    "input_throughput": 1375.4542219411244,
+    "output_throughput": 1207.210889583468,
+    "total_throughput": 2582.6651115245922,
+    "itl": 32.277885064972935,
+    "ttft": 8579.800284894984,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11749,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 77.68919371637551,
+    "arrivals": 20275,
+    "finished_requests": 20227,
+    "scheduler_time": 0.5086517429897081
+}
+#Debug simulation 
+Total elapsed time: 1.8837688681669533. Arrivals time: 0.05971879931166768 Scheduler time: 1.378744913265109 Scheduler overhead time: 0.10339664155617356 Adapter cache time: 0.19135931925848126 Engine time: 0.1000737864524126 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-8-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.025  ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 270, 135, 66, 270, 270, 66, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 66, 270, 66, 270, 135, 135, 135, 66, 66, 135, 66, 270, 66, 270, 135, 270, 135, 66, 135, 270, 135, 270, 66, 270, 270, 270, 270, 66, 135, 135, 135, 270, 135, 66, 135, 66, 270, 135, 270, 270, 135, 270, 270, 66, 66, 270, 135, 135, 66, 66, 66, 135, 66, 135, 66, 270, 66, 135, 270, 66, 270, 135, 66, 270, 270, 270, 270, 135, 66, 135, 270, 270, 135, 66, 66, 270, 135, 135, 66, 66, 270, 135, 270, 135, 270, 270, 135, 270, 270, 66, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 66, 66, 135, 135, 270, 66, 66, 270, 66, 270, 135, 66, 270, 135, 135, 66, 270, 270, 270, 66, 135, 270, 66, 270, 135, 135, 270, 270, 66, 135, 270, 66, 135, 135, 66, 135, 66, 135, 270, 270, 135, 66, 270, 66, 270, 135, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 135, 270, 135, 270, 135, 270, 135, 270, 66, 135, 135, 135, 135, 135, 135, 135, 135, 270, 66, 66, 66, 66, 66, 135, 66, 66, 135, 270, 270, 66, 66, 270, 66, 66, 66, 135, 66, 135, 270, 270, 135, 135, 66, 270, 135, 270, 66, 135, 135, 66, 66, 135, 66, 270, 270, 66, 270, 270, 66, 135, 270, 66, 66, 135, 135, 66, 66, 270, 270, 270, 270, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 270, 135, 135, 135, 270, 66, 135, 135, 270, 270, 66, 270, 270, 66, 270, 66, 66, 135, 66, 270, 270, 270, 135, 66, 270, 270, 135, 135, 270, 270, 66, 270, 270, 135, 66, 270, 135, 135, 270, 270, 270, 66, 270, 66, 270, 270, 66, 66, 270, 66, 135, 270, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 270, 66, 66, 66, 135, 66, 135, 135, 66, 270, 135, 270, 66, 270, 66, 135, 135, 135, 135, 66, 135, 270, 270, 66, 270, 270, 66, 270, 135, 270, 135, 135, 135, 66, 135, 66, 66, 270, 66, 135, 66, 66, 135, 270, 135, 270, 66, 270, 270, 135, 270, 135, 66, 270, 66, 270, 270, 66, 66, 66]
+Prompts retrieved: 60288 . Total input tokens: 13399771 . Total output tokens: 11859158
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.8950178558006883,
+    "estimated_duration": 3599.9375504597674,
+    "input_throughput": 1375.4030259129452,
+    "output_throughput": 1207.1387181272066,
+    "total_throughput": 2582.541744040152,
+    "itl": 32.719987846799384,
+    "ttft": 8758.642713926276,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11735,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 85.83089375075821,
+    "arrivals": 20275,
+    "finished_requests": 20226,
+    "scheduler_time": 0.5693422628096789
+}
+#Debug simulation 
+Total elapsed time: 1.8951115910895169. Arrivals time: 0.06206417316570878 Scheduler time: 1.387212841771543 Scheduler overhead time: 0.10245972080156207 Adapter cache time: 0.19284114241600037 Engine time: 0.1005820888094604 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_8-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.025  ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 270, 135, 66, 270, 270, 66, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 66, 270, 66, 270, 135, 135, 135, 66, 66, 135, 66, 270, 66, 270, 135, 270, 135, 66, 135, 270, 135, 270, 66, 270, 270, 270, 270, 66, 135, 135, 135, 270, 135, 66, 135, 66, 270, 135, 270, 270, 135, 270, 270, 66, 66, 270, 135, 135, 66, 66, 66, 135, 66, 135, 66, 270, 66, 135, 270, 66, 270, 135, 66, 270, 270, 270, 270, 135, 66, 135, 270, 270, 135, 66, 66, 270, 135, 135, 66, 66, 270, 135, 270, 135, 270, 270, 135, 270, 270, 66, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 66, 66, 135, 135, 270, 66, 66, 270, 66, 270, 135, 66, 270, 135, 135, 66, 270, 270, 270, 66, 135, 270, 66, 270, 135, 135, 270, 270, 66, 135, 270, 66, 135, 135, 66, 135, 66, 135, 270, 270, 135, 66, 270, 66, 270, 135, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 135, 270, 135, 270, 135, 270, 135, 270, 66, 135, 135, 135, 135, 135, 135, 135, 135, 270, 66, 66, 66, 66, 66, 135, 66, 66, 135, 270, 270, 66, 66, 270, 66, 66, 66, 135, 66, 135, 270, 270, 135, 135, 66, 270, 135, 270, 66, 135, 135, 66, 66, 135, 66, 270, 270, 66, 270, 270, 66, 135, 270, 66, 66, 135, 135, 66, 66, 270, 270, 270, 270, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 270, 135, 135, 135, 270, 66, 135, 135, 270, 270, 66, 270, 270, 66, 270, 66, 66, 135, 66, 270, 270, 270, 135, 66, 270, 270, 135, 135, 270, 270, 66, 270, 270, 135, 66, 270, 135, 135, 270, 270, 270, 66, 270, 66, 270, 270, 66, 66, 270, 66, 135, 270, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 270, 66, 66, 66, 135, 66, 135, 135, 66, 270, 135, 270, 66, 270, 66, 135, 135, 135, 135, 66, 135, 270, 270, 66, 270, 270, 66, 270, 135, 270, 135, 135, 135, 66, 135, 66, 66, 270, 66, 135, 66, 66, 135, 270, 135, 270, 66, 270, 270, 135, 270, 135, 66, 270, 66, 270, 270, 66, 66, 66]
+Prompts retrieved: 60288 . Total input tokens: 13399771 . Total output tokens: 11859158
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.9181844401173294,
+    "estimated_duration": 3599.939643853818,
+    "input_throughput": 1375.4022261049495,
+    "output_throughput": 1207.1380161662682,
+    "total_throughput": 2582.5402422712177,
+    "itl": 32.32035996247241,
+    "ttft": 8757.695590989631,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11743,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 80.53037326615544,
+    "arrivals": 20275,
+    "finished_requests": 20226,
+    "scheduler_time": 0.5150506721430865
+}
+#Debug simulation 
+Total elapsed time: 1.9182764161378145. Arrivals time: 0.06037314608693123 Scheduler time: 1.407586078159511 Scheduler overhead time: 0.1032078443095088 Adapter cache time: 0.19414133671671152 Engine time: 0.1025832206942141 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.00625
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.00625_size_16-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.00625_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.00625 0.0125  0.025  ]. Counts: [128 128 128]
+Adapter prompts. [66, 66, 270, 135, 66, 270, 270, 66, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 66, 270, 66, 270, 135, 135, 135, 66, 66, 135, 66, 270, 66, 270, 135, 270, 135, 66, 135, 270, 135, 270, 66, 270, 270, 270, 270, 66, 135, 135, 135, 270, 135, 66, 135, 66, 270, 135, 270, 270, 135, 270, 270, 66, 66, 270, 135, 135, 66, 66, 66, 135, 66, 135, 66, 270, 66, 135, 270, 66, 270, 135, 66, 270, 270, 270, 270, 135, 66, 135, 270, 270, 135, 66, 66, 270, 135, 135, 66, 66, 270, 135, 270, 135, 270, 270, 135, 270, 270, 66, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 66, 66, 135, 135, 270, 66, 66, 270, 66, 270, 135, 66, 270, 135, 135, 66, 270, 270, 270, 66, 135, 270, 66, 270, 135, 135, 270, 270, 66, 135, 270, 66, 135, 135, 66, 135, 66, 135, 270, 270, 135, 66, 270, 66, 270, 135, 135, 135, 135, 135, 66, 66, 270, 66, 270, 66, 135, 270, 135, 270, 135, 270, 135, 270, 66, 135, 135, 135, 135, 135, 135, 135, 135, 270, 66, 66, 66, 66, 66, 135, 66, 66, 135, 270, 270, 66, 66, 270, 66, 66, 66, 135, 66, 135, 270, 270, 135, 135, 66, 270, 135, 270, 66, 135, 135, 66, 66, 135, 66, 270, 270, 66, 270, 270, 66, 135, 270, 66, 66, 135, 135, 66, 66, 270, 270, 270, 270, 135, 66, 135, 135, 66, 66, 66, 66, 66, 66, 66, 66, 135, 270, 135, 135, 135, 270, 66, 135, 135, 270, 270, 66, 270, 270, 66, 270, 66, 66, 135, 66, 270, 270, 270, 135, 66, 270, 270, 135, 135, 270, 270, 66, 270, 270, 135, 66, 270, 135, 135, 270, 270, 270, 66, 270, 66, 270, 270, 66, 66, 270, 66, 135, 270, 66, 135, 135, 135, 135, 66, 135, 66, 135, 135, 66, 270, 66, 66, 66, 135, 66, 135, 135, 66, 270, 135, 270, 66, 270, 66, 135, 135, 135, 135, 66, 135, 270, 270, 66, 270, 270, 66, 270, 135, 270, 135, 135, 135, 66, 135, 66, 66, 270, 66, 135, 66, 66, 135, 270, 135, 270, 66, 270, 270, 135, 270, 135, 66, 270, 66, 270, 270, 66, 66, 66]
+Prompts retrieved: 60288 . Total input tokens: 13399771 . Total output tokens: 11859158
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.9087560712359846,
+    "estimated_duration": 3599.960642953444,
+    "input_throughput": 1375.3942031815798,
+    "output_throughput": 1207.13097475277,
+    "total_throughput": 2582.52517793435,
+    "itl": 32.568269576221326,
+    "ttft": 8757.76801707878,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 11759,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 75.06852634016549,
+    "arrivals": 20275,
+    "finished_requests": 20226,
+    "scheduler_time": 0.5450994731300999
+}
+#Debug simulation 
+Total elapsed time: 1.9088476169854403. Arrivals time: 0.05992977228015661 Scheduler time: 1.4021298615261912 Scheduler overhead time: 0.10391717404127121 Adapter cache time: 0.19267257396131754 Engine time: 0.09985908772796392 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 135, 33, 270, 270, 33, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 33, 270, 33, 270, 135, 135, 135, 33, 33, 135, 33, 270, 33, 270, 135, 270, 135, 33, 135, 270, 135, 270, 33, 270, 270, 270, 270, 33, 135, 135, 135, 270, 135, 33, 135, 33, 270, 135, 270, 270, 135, 270, 270, 33, 33, 270, 135, 135, 33, 33, 33, 135, 33, 135, 33, 270, 33, 135, 270, 33, 270, 135, 33, 270, 270, 270, 270, 135, 33, 135, 270, 270, 135, 33, 33, 270, 135, 135, 33, 33, 270, 135, 270, 135, 270, 270, 135, 270, 270, 33, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 33, 33, 135, 135, 270, 33, 33, 270, 33, 270, 135, 33, 270, 135, 135, 33, 270, 270, 270, 33, 135, 270, 33, 270, 135, 135, 270, 270, 33, 135, 270, 33, 135, 135, 33, 135, 33, 135, 270, 270, 135, 33, 270, 33, 270, 135, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 135, 270, 135, 270, 135, 270, 135, 270, 33, 135, 135, 135, 135, 135, 135, 135, 135, 270, 33, 33, 33, 33, 33, 135, 33, 33, 135, 270, 270, 33, 33, 270, 33, 33, 33, 135, 33, 135, 270, 270, 135, 135, 33, 270, 135, 270, 33, 135, 135, 33, 33, 135, 33, 270, 270, 33, 270, 270, 33, 135, 270, 33, 33, 135, 135, 33, 33, 270, 270, 270, 270, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 270, 135, 135, 135, 270, 33, 135, 135, 270, 270, 33, 270, 270, 33, 270, 33, 33, 135, 33, 270, 270, 270, 135, 33, 270, 270, 135, 135, 270, 270, 33, 270, 270, 135, 33, 270, 135, 135, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 135, 270, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 270, 33, 33, 33, 135, 33, 135, 135, 33, 270, 135, 270, 33, 270, 33, 135, 135, 135, 135, 33, 135, 270, 270, 33, 270, 270, 33, 270, 135, 270, 135, 135, 135, 33, 135, 33, 33, 270, 33, 135, 33, 33, 135, 270, 135, 270, 33, 270, 270, 135, 270, 135, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 56064 . Total input tokens: 12455892 . Total output tokens: 11027359
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.824442836921662,
+    "estimated_duration": 3598.984113377739,
+    "input_throughput": 1279.324624658811,
+    "output_throughput": 1144.8450090914716,
+    "total_throughput": 2424.1696337502826,
+    "itl": 30.988130472753763,
+    "ttft": 11483.176351731316,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 10135,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 67.01676553881657,
+    "arrivals": 18900,
+    "finished_requests": 18840,
+    "scheduler_time": 0.17290938496704716
+}
+#Debug simulation 
+Total elapsed time: 1.8245370388031006. Arrivals time: 0.05969846714287996 Scheduler time: 1.3225926933810115 Scheduler overhead time: 0.10590194258838892 Adapter cache time: 0.1786309750750661 Engine time: 0.10599119821563363 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 135, 33, 270, 270, 33, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 33, 270, 33, 270, 135, 135, 135, 33, 33, 135, 33, 270, 33, 270, 135, 270, 135, 33, 135, 270, 135, 270, 33, 270, 270, 270, 270, 33, 135, 135, 135, 270, 135, 33, 135, 33, 270, 135, 270, 270, 135, 270, 270, 33, 33, 270, 135, 135, 33, 33, 33, 135, 33, 135, 33, 270, 33, 135, 270, 33, 270, 135, 33, 270, 270, 270, 270, 135, 33, 135, 270, 270, 135, 33, 33, 270, 135, 135, 33, 33, 270, 135, 270, 135, 270, 270, 135, 270, 270, 33, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 33, 33, 135, 135, 270, 33, 33, 270, 33, 270, 135, 33, 270, 135, 135, 33, 270, 270, 270, 33, 135, 270, 33, 270, 135, 135, 270, 270, 33, 135, 270, 33, 135, 135, 33, 135, 33, 135, 270, 270, 135, 33, 270, 33, 270, 135, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 135, 270, 135, 270, 135, 270, 135, 270, 33, 135, 135, 135, 135, 135, 135, 135, 135, 270, 33, 33, 33, 33, 33, 135, 33, 33, 135, 270, 270, 33, 33, 270, 33, 33, 33, 135, 33, 135, 270, 270, 135, 135, 33, 270, 135, 270, 33, 135, 135, 33, 33, 135, 33, 270, 270, 33, 270, 270, 33, 135, 270, 33, 33, 135, 135, 33, 33, 270, 270, 270, 270, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 270, 135, 135, 135, 270, 33, 135, 135, 270, 270, 33, 270, 270, 33, 270, 33, 33, 135, 33, 270, 270, 270, 135, 33, 270, 270, 135, 135, 270, 270, 33, 270, 270, 135, 33, 270, 135, 135, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 135, 270, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 270, 33, 33, 33, 135, 33, 135, 135, 33, 270, 135, 270, 33, 270, 33, 135, 135, 135, 135, 33, 135, 270, 270, 33, 270, 270, 33, 270, 135, 270, 135, 135, 135, 33, 135, 33, 33, 270, 33, 135, 33, 33, 135, 270, 135, 270, 33, 270, 270, 135, 270, 135, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 56064 . Total input tokens: 12455892 . Total output tokens: 11027359
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.8328173160552979,
+    "estimated_duration": 3598.9611143782636,
+    "input_throughput": 1279.3328001254072,
+    "output_throughput": 1144.8523251721201,
+    "total_throughput": 2424.1851252975275,
+    "itl": 31.09220093764916,
+    "ttft": 11483.621640813219,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 10134,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 74.26643842273471,
+    "arrivals": 18900,
+    "finished_requests": 18840,
+    "scheduler_time": 0.18029070295053432
+}
+#Debug simulation 
+Total elapsed time: 1.8329103630967438. Arrivals time: 0.057237550150603056 Scheduler time: 1.3332683737389743 Scheduler overhead time: 0.10666567040607333 Adapter cache time: 0.17834814684465528 Engine time: 0.1049045785330236 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 135, 33, 270, 270, 33, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 33, 270, 33, 270, 135, 135, 135, 33, 33, 135, 33, 270, 33, 270, 135, 270, 135, 33, 135, 270, 135, 270, 33, 270, 270, 270, 270, 33, 135, 135, 135, 270, 135, 33, 135, 33, 270, 135, 270, 270, 135, 270, 270, 33, 33, 270, 135, 135, 33, 33, 33, 135, 33, 135, 33, 270, 33, 135, 270, 33, 270, 135, 33, 270, 270, 270, 270, 135, 33, 135, 270, 270, 135, 33, 33, 270, 135, 135, 33, 33, 270, 135, 270, 135, 270, 270, 135, 270, 270, 33, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 33, 33, 135, 135, 270, 33, 33, 270, 33, 270, 135, 33, 270, 135, 135, 33, 270, 270, 270, 33, 135, 270, 33, 270, 135, 135, 270, 270, 33, 135, 270, 33, 135, 135, 33, 135, 33, 135, 270, 270, 135, 33, 270, 33, 270, 135, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 135, 270, 135, 270, 135, 270, 135, 270, 33, 135, 135, 135, 135, 135, 135, 135, 135, 270, 33, 33, 33, 33, 33, 135, 33, 33, 135, 270, 270, 33, 33, 270, 33, 33, 33, 135, 33, 135, 270, 270, 135, 135, 33, 270, 135, 270, 33, 135, 135, 33, 33, 135, 33, 270, 270, 33, 270, 270, 33, 135, 270, 33, 33, 135, 135, 33, 33, 270, 270, 270, 270, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 270, 135, 135, 135, 270, 33, 135, 135, 270, 270, 33, 270, 270, 33, 270, 33, 33, 135, 33, 270, 270, 270, 135, 33, 270, 270, 135, 135, 270, 270, 33, 270, 270, 135, 33, 270, 135, 135, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 135, 270, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 270, 33, 33, 33, 135, 33, 135, 135, 33, 270, 135, 270, 33, 270, 33, 135, 135, 135, 135, 33, 135, 270, 270, 33, 270, 270, 33, 270, 135, 270, 135, 135, 135, 33, 135, 33, 33, 270, 33, 135, 33, 33, 135, 270, 135, 270, 33, 270, 270, 135, 270, 135, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 56064 . Total input tokens: 12455892 . Total output tokens: 11027359
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.8126208377070725,
+    "estimated_duration": 3598.9889653708465,
+    "input_throughput": 1279.3228999315834,
+    "output_throughput": 1144.8434656635407,
+    "total_throughput": 2424.166365595124,
+    "itl": 31.023352650914592,
+    "ttft": 11483.272569461384,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 10133,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 69.6386668816355,
+    "arrivals": 18900,
+    "finished_requests": 18840,
+    "scheduler_time": 0.17556770018622583
+}
+#Debug simulation 
+Total elapsed time: 1.812712428625673. Arrivals time: 0.056843487080186605 Scheduler time: 1.3169829319231212 Scheduler overhead time: 0.10613505868241191 Adapter cache time: 0.17742948001250625 Engine time: 0.10281342221423984 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.0125,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.0125-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.025-0.0125-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.0125   0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 135, 33, 270, 270, 33, 135, 270, 270, 270, 270, 135, 135, 135, 135, 270, 270, 135, 135, 33, 270, 33, 270, 135, 135, 135, 33, 33, 135, 33, 270, 33, 270, 135, 270, 135, 33, 135, 270, 135, 270, 33, 270, 270, 270, 270, 33, 135, 135, 135, 270, 135, 33, 135, 33, 270, 135, 270, 270, 135, 270, 270, 33, 33, 270, 135, 135, 33, 33, 33, 135, 33, 135, 33, 270, 33, 135, 270, 33, 270, 135, 33, 270, 270, 270, 270, 135, 33, 135, 270, 270, 135, 33, 33, 270, 135, 135, 33, 33, 270, 135, 270, 135, 270, 270, 135, 270, 270, 33, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 33, 33, 135, 135, 270, 33, 33, 270, 33, 270, 135, 33, 270, 135, 135, 33, 270, 270, 270, 33, 135, 270, 33, 270, 135, 135, 270, 270, 33, 135, 270, 33, 135, 135, 33, 135, 33, 135, 270, 270, 135, 33, 270, 33, 270, 135, 135, 135, 135, 135, 33, 33, 270, 33, 270, 33, 135, 270, 135, 270, 135, 270, 135, 270, 33, 135, 135, 135, 135, 135, 135, 135, 135, 270, 33, 33, 33, 33, 33, 135, 33, 33, 135, 270, 270, 33, 33, 270, 33, 33, 33, 135, 33, 135, 270, 270, 135, 135, 33, 270, 135, 270, 33, 135, 135, 33, 33, 135, 33, 270, 270, 33, 270, 270, 33, 135, 270, 33, 33, 135, 135, 33, 33, 270, 270, 270, 270, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 270, 135, 135, 135, 270, 33, 135, 135, 270, 270, 33, 270, 270, 33, 270, 33, 33, 135, 33, 270, 270, 270, 135, 33, 270, 270, 135, 135, 270, 270, 33, 270, 270, 135, 33, 270, 135, 135, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 135, 270, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 270, 33, 33, 33, 135, 33, 135, 135, 33, 270, 135, 270, 33, 270, 33, 135, 135, 135, 135, 33, 135, 270, 270, 33, 270, 270, 33, 270, 135, 270, 135, 135, 135, 33, 135, 33, 33, 270, 33, 135, 33, 33, 135, 270, 135, 270, 33, 270, 270, 135, 270, 135, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 56064 . Total input tokens: 12455892 . Total output tokens: 11027359
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.8040134753100574,
+    "estimated_duration": 3598.973880002859,
+    "input_throughput": 1279.3282623091286,
+    "output_throughput": 1144.8482643604868,
+    "total_throughput": 2424.176526669615,
+    "itl": 30.948519870719984,
+    "ttft": 11482.868945955539,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 10133,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 64.68827089080797,
+    "arrivals": 18900,
+    "finished_requests": 18840,
+    "scheduler_time": 0.17065200623196747
+}
+#Debug simulation 
+Total elapsed time: 1.8041061242111027. Arrivals time: 0.05630608508363366 Scheduler time: 1.3083311691880226 Scheduler overhead time: 0.10602906625717878 Adapter cache time: 0.1779110603965819 Engine time: 0.10375056089833379 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 66, 33, 270, 270, 33, 66, 270, 270, 270, 270, 66, 66, 66, 66, 270, 270, 66, 66, 33, 270, 33, 270, 66, 66, 66, 33, 33, 66, 33, 270, 33, 270, 66, 270, 66, 33, 66, 270, 66, 270, 33, 270, 270, 270, 270, 33, 66, 66, 66, 270, 66, 33, 66, 33, 270, 66, 270, 270, 66, 270, 270, 33, 33, 270, 66, 66, 33, 33, 33, 66, 33, 66, 33, 270, 33, 66, 270, 33, 270, 66, 33, 270, 270, 270, 270, 66, 33, 66, 270, 270, 66, 33, 33, 270, 66, 66, 33, 33, 270, 66, 270, 66, 270, 270, 66, 270, 270, 33, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 33, 33, 66, 66, 270, 33, 33, 270, 33, 270, 66, 33, 270, 66, 66, 33, 270, 270, 270, 33, 66, 270, 33, 270, 66, 66, 270, 270, 33, 66, 270, 33, 66, 66, 33, 66, 33, 66, 270, 270, 66, 33, 270, 33, 270, 66, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 66, 270, 66, 270, 66, 270, 66, 270, 33, 66, 66, 66, 66, 66, 66, 66, 66, 270, 33, 33, 33, 33, 33, 66, 33, 33, 66, 270, 270, 33, 33, 270, 33, 33, 33, 66, 33, 66, 270, 270, 66, 66, 33, 270, 66, 270, 33, 66, 66, 33, 33, 66, 33, 270, 270, 33, 270, 270, 33, 66, 270, 33, 33, 66, 66, 33, 33, 270, 270, 270, 270, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 270, 66, 66, 66, 270, 33, 66, 66, 270, 270, 33, 270, 270, 33, 270, 33, 33, 66, 33, 270, 270, 270, 66, 33, 270, 270, 66, 66, 270, 270, 33, 270, 270, 66, 33, 270, 66, 66, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 66, 270, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 270, 33, 33, 33, 66, 33, 66, 66, 33, 270, 66, 270, 33, 270, 33, 66, 66, 66, 66, 33, 66, 270, 270, 33, 270, 270, 33, 270, 66, 270, 66, 66, 66, 33, 66, 33, 33, 270, 33, 66, 33, 33, 66, 270, 66, 270, 33, 270, 270, 66, 270, 66, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 47232 . Total input tokens: 10461289 . Total output tokens: 9308734
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.6185152530670166,
+    "estimated_duration": 3599.9536840471937,
+    "input_throughput": 1090.952924590047,
+    "output_throughput": 973.0877970801349,
+    "total_throughput": 2064.040721670182,
+    "itl": 28.08229904299352,
+    "ttft": 5861.444322484228,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 7555,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 49.95675023638385,
+    "arrivals": 16104,
+    "finished_requests": 16078,
+    "scheduler_time": 0.0015267704257103788
+}
+#Debug simulation 
+Total elapsed time: 1.618652684148401. Arrivals time: 0.0504254256375134 Scheduler time: 1.132281702477485 Scheduler overhead time: 0.1135384957306087 Adapter cache time: 0.1521129938773811 Engine time: 0.11418429482728243 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 66, 33, 270, 270, 33, 66, 270, 270, 270, 270, 66, 66, 66, 66, 270, 270, 66, 66, 33, 270, 33, 270, 66, 66, 66, 33, 33, 66, 33, 270, 33, 270, 66, 270, 66, 33, 66, 270, 66, 270, 33, 270, 270, 270, 270, 33, 66, 66, 66, 270, 66, 33, 66, 33, 270, 66, 270, 270, 66, 270, 270, 33, 33, 270, 66, 66, 33, 33, 33, 66, 33, 66, 33, 270, 33, 66, 270, 33, 270, 66, 33, 270, 270, 270, 270, 66, 33, 66, 270, 270, 66, 33, 33, 270, 66, 66, 33, 33, 270, 66, 270, 66, 270, 270, 66, 270, 270, 33, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 33, 33, 66, 66, 270, 33, 33, 270, 33, 270, 66, 33, 270, 66, 66, 33, 270, 270, 270, 33, 66, 270, 33, 270, 66, 66, 270, 270, 33, 66, 270, 33, 66, 66, 33, 66, 33, 66, 270, 270, 66, 33, 270, 33, 270, 66, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 66, 270, 66, 270, 66, 270, 66, 270, 33, 66, 66, 66, 66, 66, 66, 66, 66, 270, 33, 33, 33, 33, 33, 66, 33, 33, 66, 270, 270, 33, 33, 270, 33, 33, 33, 66, 33, 66, 270, 270, 66, 66, 33, 270, 66, 270, 33, 66, 66, 33, 33, 66, 33, 270, 270, 33, 270, 270, 33, 66, 270, 33, 33, 66, 66, 33, 33, 270, 270, 270, 270, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 270, 66, 66, 66, 270, 33, 66, 66, 270, 270, 33, 270, 270, 33, 270, 33, 33, 66, 33, 270, 270, 270, 66, 33, 270, 270, 66, 66, 270, 270, 33, 270, 270, 66, 33, 270, 66, 66, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 66, 270, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 270, 33, 33, 33, 66, 33, 66, 66, 33, 270, 66, 270, 33, 270, 33, 66, 66, 66, 66, 33, 66, 270, 270, 33, 270, 270, 33, 270, 66, 270, 66, 66, 66, 33, 66, 33, 33, 270, 33, 66, 33, 33, 66, 270, 66, 270, 33, 270, 270, 66, 270, 66, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 47232 . Total input tokens: 10461289 . Total output tokens: 9308734
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.6173926438204944,
+    "estimated_duration": 3599.9456280357886,
+    "input_throughput": 1090.955365940587,
+    "output_throughput": 973.0899746703548,
+    "total_throughput": 2064.045340610942,
+    "itl": 28.443647445676042,
+    "ttft": 5862.457798673151,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 7578,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 55.48087960808346,
+    "arrivals": 16104,
+    "finished_requests": 16078,
+    "scheduler_time": 0.0020558900291413208
+}
+#Debug simulation 
+Total elapsed time: 1.6174780917353928. Arrivals time: 0.05004471028223634 Scheduler time: 1.1337295398116112 Scheduler overhead time: 0.11533800419420004 Adapter cache time: 0.15229745721444488 Engine time: 0.1104432474821806 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 66, 33, 270, 270, 33, 66, 270, 270, 270, 270, 66, 66, 66, 66, 270, 270, 66, 66, 33, 270, 33, 270, 66, 66, 66, 33, 33, 66, 33, 270, 33, 270, 66, 270, 66, 33, 66, 270, 66, 270, 33, 270, 270, 270, 270, 33, 66, 66, 66, 270, 66, 33, 66, 33, 270, 66, 270, 270, 66, 270, 270, 33, 33, 270, 66, 66, 33, 33, 33, 66, 33, 66, 33, 270, 33, 66, 270, 33, 270, 66, 33, 270, 270, 270, 270, 66, 33, 66, 270, 270, 66, 33, 33, 270, 66, 66, 33, 33, 270, 66, 270, 66, 270, 270, 66, 270, 270, 33, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 33, 33, 66, 66, 270, 33, 33, 270, 33, 270, 66, 33, 270, 66, 66, 33, 270, 270, 270, 33, 66, 270, 33, 270, 66, 66, 270, 270, 33, 66, 270, 33, 66, 66, 33, 66, 33, 66, 270, 270, 66, 33, 270, 33, 270, 66, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 66, 270, 66, 270, 66, 270, 66, 270, 33, 66, 66, 66, 66, 66, 66, 66, 66, 270, 33, 33, 33, 33, 33, 66, 33, 33, 66, 270, 270, 33, 33, 270, 33, 33, 33, 66, 33, 66, 270, 270, 66, 66, 33, 270, 66, 270, 33, 66, 66, 33, 33, 66, 33, 270, 270, 33, 270, 270, 33, 66, 270, 33, 33, 66, 66, 33, 33, 270, 270, 270, 270, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 270, 66, 66, 66, 270, 33, 66, 66, 270, 270, 33, 270, 270, 33, 270, 33, 33, 66, 33, 270, 270, 270, 66, 33, 270, 270, 66, 66, 270, 270, 33, 270, 270, 66, 33, 270, 66, 66, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 66, 270, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 270, 33, 33, 33, 66, 33, 66, 66, 33, 270, 66, 270, 33, 270, 33, 66, 66, 66, 66, 33, 66, 270, 270, 33, 270, 270, 33, 270, 66, 270, 66, 66, 66, 33, 66, 33, 33, 270, 33, 66, 33, 33, 66, 270, 66, 270, 33, 270, 270, 66, 270, 66, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 47232 . Total input tokens: 10461289 . Total output tokens: 9308734
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.6261905687861145,
+    "estimated_duration": 3599.947722354535,
+    "input_throughput": 1090.9547312624054,
+    "output_throughput": 973.089408561974,
+    "total_throughput": 2064.0441398243793,
+    "itl": 28.10818964079444,
+    "ttft": 5861.639484450577,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 7555,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 51.92874337891742,
+    "arrivals": 16104,
+    "finished_requests": 16078,
+    "scheduler_time": 0.0015600879980532825
+}
+#Debug simulation 
+Total elapsed time: 1.626282958779484. Arrivals time: 0.05064161354675889 Scheduler time: 1.141070278827101 Scheduler overhead time: 0.11405118508264422 Adapter cache time: 0.15155798895284534 Engine time: 0.1126342210918665 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.025,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.025-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.025-0.00625-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.025   ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 270, 66, 33, 270, 270, 33, 66, 270, 270, 270, 270, 66, 66, 66, 66, 270, 270, 66, 66, 33, 270, 33, 270, 66, 66, 66, 33, 33, 66, 33, 270, 33, 270, 66, 270, 66, 33, 66, 270, 66, 270, 33, 270, 270, 270, 270, 33, 66, 66, 66, 270, 66, 33, 66, 33, 270, 66, 270, 270, 66, 270, 270, 33, 33, 270, 66, 66, 33, 33, 33, 66, 33, 66, 33, 270, 33, 66, 270, 33, 270, 66, 33, 270, 270, 270, 270, 66, 33, 66, 270, 270, 66, 33, 33, 270, 66, 66, 33, 33, 270, 66, 270, 66, 270, 270, 66, 270, 270, 33, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 33, 33, 66, 66, 270, 33, 33, 270, 33, 270, 66, 33, 270, 66, 66, 33, 270, 270, 270, 33, 66, 270, 33, 270, 66, 66, 270, 270, 33, 66, 270, 33, 66, 66, 33, 66, 33, 66, 270, 270, 66, 33, 270, 33, 270, 66, 66, 66, 66, 66, 33, 33, 270, 33, 270, 33, 66, 270, 66, 270, 66, 270, 66, 270, 33, 66, 66, 66, 66, 66, 66, 66, 66, 270, 33, 33, 33, 33, 33, 66, 33, 33, 66, 270, 270, 33, 33, 270, 33, 33, 33, 66, 33, 66, 270, 270, 66, 66, 33, 270, 66, 270, 33, 66, 66, 33, 33, 66, 33, 270, 270, 33, 270, 270, 33, 66, 270, 33, 33, 66, 66, 33, 33, 270, 270, 270, 270, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 270, 66, 66, 66, 270, 33, 66, 66, 270, 270, 33, 270, 270, 33, 270, 33, 33, 66, 33, 270, 270, 270, 66, 33, 270, 270, 66, 66, 270, 270, 33, 270, 270, 66, 33, 270, 66, 66, 270, 270, 270, 33, 270, 33, 270, 270, 33, 33, 270, 33, 66, 270, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 270, 33, 33, 33, 66, 33, 66, 66, 33, 270, 66, 270, 33, 270, 33, 66, 66, 66, 66, 33, 66, 270, 270, 33, 270, 270, 33, 270, 66, 270, 66, 66, 66, 33, 66, 33, 33, 270, 33, 66, 33, 33, 66, 270, 66, 270, 33, 270, 270, 66, 270, 66, 33, 270, 33, 270, 270, 33, 33, 33]
+Prompts retrieved: 47232 . Total input tokens: 10461289 . Total output tokens: 9308734
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.6364741399884224,
+    "estimated_duration": 3599.961431654168,
+    "input_throughput": 1090.950576710869,
+    "output_throughput": 973.0857028627535,
+    "total_throughput": 2064.0362795736223,
+    "itl": 28.06251466525571,
+    "ttft": 5861.404113592495,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 7554,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 48.224138785075134,
+    "arrivals": 16104,
+    "finished_requests": 16078,
+    "scheduler_time": 0.0014829864012617803
+}
+#Debug simulation 
+Total elapsed time: 1.6365654338151217. Arrivals time: 0.050974446814507246 Scheduler time: 1.1466837297193706 Scheduler overhead time: 0.11437484854832292 Adapter cache time: 0.15333397779613733 Engine time: 0.11448354972526431 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-8-8
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.0125,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        8
+    ],
+    "available_gpu_memory": 253568,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-8-8/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-8-8",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.0125  ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 135, 66, 33, 135, 135, 33, 66, 135, 135, 135, 135, 66, 66, 66, 66, 135, 135, 66, 66, 33, 135, 33, 135, 66, 66, 66, 33, 33, 66, 33, 135, 33, 135, 66, 135, 66, 33, 66, 135, 66, 135, 33, 135, 135, 135, 135, 33, 66, 66, 66, 135, 66, 33, 66, 33, 135, 66, 135, 135, 66, 135, 135, 33, 33, 135, 66, 66, 33, 33, 33, 66, 33, 66, 33, 135, 33, 66, 135, 33, 135, 66, 33, 135, 135, 135, 135, 66, 33, 66, 135, 135, 66, 33, 33, 135, 66, 66, 33, 33, 135, 66, 135, 66, 135, 135, 66, 135, 135, 33, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 33, 33, 66, 66, 135, 33, 33, 135, 33, 135, 66, 33, 135, 66, 66, 33, 135, 135, 135, 33, 66, 135, 33, 135, 66, 66, 135, 135, 33, 66, 135, 33, 66, 66, 33, 66, 33, 66, 135, 135, 66, 33, 135, 33, 135, 66, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 66, 135, 66, 135, 66, 135, 66, 135, 33, 66, 66, 66, 66, 66, 66, 66, 66, 135, 33, 33, 33, 33, 33, 66, 33, 33, 66, 135, 135, 33, 33, 135, 33, 33, 33, 66, 33, 66, 135, 135, 66, 66, 33, 135, 66, 135, 33, 66, 66, 33, 33, 66, 33, 135, 135, 33, 135, 135, 33, 66, 135, 33, 33, 66, 66, 33, 33, 135, 135, 135, 135, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 135, 66, 66, 66, 135, 33, 66, 66, 135, 135, 33, 135, 135, 33, 135, 33, 33, 66, 33, 135, 135, 135, 66, 33, 135, 135, 66, 66, 135, 135, 33, 135, 135, 66, 33, 135, 66, 66, 135, 135, 135, 33, 135, 33, 135, 135, 33, 33, 135, 33, 66, 135, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 135, 33, 33, 33, 66, 33, 66, 66, 33, 135, 66, 135, 33, 135, 33, 66, 66, 66, 66, 33, 66, 135, 135, 33, 135, 135, 33, 135, 66, 135, 66, 66, 66, 33, 66, 33, 33, 135, 33, 66, 33, 33, 66, 135, 66, 135, 33, 135, 135, 66, 135, 66, 33, 135, 33, 135, 135, 33, 33, 33]
+Prompts retrieved: 29952 . Total input tokens: 6601882 . Total output tokens: 5905358
+Prompts distributed
+Adapter sizes. Values: [8]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.2120094080455601,
+    "estimated_duration": 3599.9178022000224,
+    "input_throughput": 683.7578342749152,
+    "output_throughput": 604.5315808794348,
+    "total_throughput": 1288.28941515435,
+    "itl": 23.91853659982402,
+    "ttft": 5702.177617800492,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 5974,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 39.50253155686785,
+    "arrivals": 10179,
+    "finished_requests": 10163,
+    "scheduler_time": 0.0
+}
+#Debug simulation 
+Total elapsed time: 1.2120960741303861. Arrivals time: 0.03705591429024935 Scheduler time: 0.7490756325423717 Scheduler overhead time: 0.1287672440521419 Adapter cache time: 0.10826154332607985 Engine time: 0.1250795815140009 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-8-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.0125,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        8,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-8-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-8-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.0125  ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 135, 66, 33, 135, 135, 33, 66, 135, 135, 135, 135, 66, 66, 66, 66, 135, 135, 66, 66, 33, 135, 33, 135, 66, 66, 66, 33, 33, 66, 33, 135, 33, 135, 66, 135, 66, 33, 66, 135, 66, 135, 33, 135, 135, 135, 135, 33, 66, 66, 66, 135, 66, 33, 66, 33, 135, 66, 135, 135, 66, 135, 135, 33, 33, 135, 66, 66, 33, 33, 33, 66, 33, 66, 33, 135, 33, 66, 135, 33, 135, 66, 33, 135, 135, 135, 135, 66, 33, 66, 135, 135, 66, 33, 33, 135, 66, 66, 33, 33, 135, 66, 135, 66, 135, 135, 66, 135, 135, 33, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 33, 33, 66, 66, 135, 33, 33, 135, 33, 135, 66, 33, 135, 66, 66, 33, 135, 135, 135, 33, 66, 135, 33, 135, 66, 66, 135, 135, 33, 66, 135, 33, 66, 66, 33, 66, 33, 66, 135, 135, 66, 33, 135, 33, 135, 66, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 66, 135, 66, 135, 66, 135, 66, 135, 33, 66, 66, 66, 66, 66, 66, 66, 66, 135, 33, 33, 33, 33, 33, 66, 33, 33, 66, 135, 135, 33, 33, 135, 33, 33, 33, 66, 33, 66, 135, 135, 66, 66, 33, 135, 66, 135, 33, 66, 66, 33, 33, 66, 33, 135, 135, 33, 135, 135, 33, 66, 135, 33, 33, 66, 66, 33, 33, 135, 135, 135, 135, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 135, 66, 66, 66, 135, 33, 66, 66, 135, 135, 33, 135, 135, 33, 135, 33, 33, 66, 33, 135, 135, 135, 66, 33, 135, 135, 66, 66, 135, 135, 33, 135, 135, 66, 33, 135, 66, 66, 135, 135, 135, 33, 135, 33, 135, 135, 33, 33, 135, 33, 66, 135, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 135, 33, 33, 33, 66, 33, 66, 66, 33, 135, 66, 135, 33, 135, 33, 66, 66, 66, 66, 33, 66, 135, 135, 33, 135, 135, 33, 135, 66, 135, 66, 66, 66, 33, 66, 33, 33, 135, 33, 66, 33, 33, 66, 135, 66, 135, 33, 135, 135, 66, 135, 66, 33, 135, 33, 135, 135, 33, 33, 33]
+Prompts retrieved: 29952 . Total input tokens: 6601882 . Total output tokens: 5905358
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [256 128]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.210618771146983,
+    "estimated_duration": 3599.9154872353333,
+    "input_throughput": 683.7582739728048,
+    "output_throughput": 604.531969630023,
+    "total_throughput": 1288.2902436028278,
+    "itl": 23.957175394252573,
+    "ttft": 5702.65749450861,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 5975,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 43.73706992138499,
+    "arrivals": 10179,
+    "finished_requests": 10163,
+    "scheduler_time": 0.0
+}
+#Debug simulation 
+Total elapsed time: 1.210707539692521. Arrivals time: 0.03684328589588404 Scheduler time: 0.7495896215550601 Scheduler overhead time: 0.1266511338762939 Adapter cache time: 0.10947063378989697 Engine time: 0.12527981866151094 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.0125,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        8,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_8-16-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_8-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.0125  ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 135, 66, 33, 135, 135, 33, 66, 135, 135, 135, 135, 66, 66, 66, 66, 135, 135, 66, 66, 33, 135, 33, 135, 66, 66, 66, 33, 33, 66, 33, 135, 33, 135, 66, 135, 66, 33, 66, 135, 66, 135, 33, 135, 135, 135, 135, 33, 66, 66, 66, 135, 66, 33, 66, 33, 135, 66, 135, 135, 66, 135, 135, 33, 33, 135, 66, 66, 33, 33, 33, 66, 33, 66, 33, 135, 33, 66, 135, 33, 135, 66, 33, 135, 135, 135, 135, 66, 33, 66, 135, 135, 66, 33, 33, 135, 66, 66, 33, 33, 135, 66, 135, 66, 135, 135, 66, 135, 135, 33, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 33, 33, 66, 66, 135, 33, 33, 135, 33, 135, 66, 33, 135, 66, 66, 33, 135, 135, 135, 33, 66, 135, 33, 135, 66, 66, 135, 135, 33, 66, 135, 33, 66, 66, 33, 66, 33, 66, 135, 135, 66, 33, 135, 33, 135, 66, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 66, 135, 66, 135, 66, 135, 66, 135, 33, 66, 66, 66, 66, 66, 66, 66, 66, 135, 33, 33, 33, 33, 33, 66, 33, 33, 66, 135, 135, 33, 33, 135, 33, 33, 33, 66, 33, 66, 135, 135, 66, 66, 33, 135, 66, 135, 33, 66, 66, 33, 33, 66, 33, 135, 135, 33, 135, 135, 33, 66, 135, 33, 33, 66, 66, 33, 33, 135, 135, 135, 135, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 135, 66, 66, 66, 135, 33, 66, 66, 135, 135, 33, 135, 135, 33, 135, 33, 33, 66, 33, 135, 135, 135, 66, 33, 135, 135, 66, 66, 135, 135, 33, 135, 135, 66, 33, 135, 66, 66, 135, 135, 135, 33, 135, 33, 135, 135, 33, 33, 135, 33, 66, 135, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 135, 33, 33, 33, 66, 33, 66, 66, 33, 135, 66, 135, 33, 135, 33, 66, 66, 66, 66, 33, 66, 135, 135, 33, 135, 135, 33, 135, 66, 135, 66, 66, 66, 33, 66, 33, 33, 135, 33, 66, 33, 33, 66, 135, 66, 135, 33, 135, 135, 66, 135, 66, 33, 135, 33, 135, 135, 33, 33, 33]
+Prompts retrieved: 29952 . Total input tokens: 6601882 . Total output tokens: 5905358
+Prompts distributed
+Adapter sizes. Values: [ 8 16]. Counts: [128 256]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.2096541901119053,
+    "estimated_duration": 3599.9175833031327,
+    "input_throughput": 683.7578758515513,
+    "output_throughput": 604.5316176386327,
+    "total_throughput": 1288.289493490184,
+    "itl": 23.93303741973161,
+    "ttft": 5702.463164790778,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 5975,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 40.995333499094805,
+    "arrivals": 10179,
+    "finished_requests": 10163,
+    "scheduler_time": 0.0
+}
+#Debug simulation 
+Total elapsed time: 1.2097462890669703. Arrivals time: 0.03735815640538931 Scheduler time: 0.7483890596777201 Scheduler overhead time: 0.12663316633552313 Adapter cache time: 0.10771322343498468 Engine time: 0.1267479443922639 
+------------>Running benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_16-16-16
+With arguments {
+    "total_time": 3600.0,
+    "model": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct",
+    "adapter_slots": 128,
+    "served_adapters": 384,
+    "served_adapters_rates": [
+        0.0125,
+        0.00625,
+        0.003125
+    ],
+    "served_adapters_sizes": [
+        16,
+        16,
+        16
+    ],
+    "available_gpu_memory": 212032,
+    "max_num_batched_tokens": 2048,
+    "dataset_path": "/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "output_path": "benchmarks/lora/definitive_results/finding_maximum/simulation_dataset/with_offloading/llama-3.1-8b-instruct/results/rate_0.0125-0.00625-0.003125_size_16-16-16/adapters_384_slots_128_rate_0.0125-0.00625-0.003125_size_16-16-16",
+    "print_outcome": true,
+    "mean_version": true,
+    "include_computation_overhead": true,
+    "include_preemption": true,
+    "without_offloading": false,
+    "include_network_collapse": 25500
+}
+Adapter rates. Values: [0.003125 0.00625  0.0125  ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 135, 66, 33, 135, 135, 33, 66, 135, 135, 135, 135, 66, 66, 66, 66, 135, 135, 66, 66, 33, 135, 33, 135, 66, 66, 66, 33, 33, 66, 33, 135, 33, 135, 66, 135, 66, 33, 66, 135, 66, 135, 33, 135, 135, 135, 135, 33, 66, 66, 66, 135, 66, 33, 66, 33, 135, 66, 135, 135, 66, 135, 135, 33, 33, 135, 66, 66, 33, 33, 33, 66, 33, 66, 33, 135, 33, 66, 135, 33, 135, 66, 33, 135, 135, 135, 135, 66, 33, 66, 135, 135, 66, 33, 33, 135, 66, 66, 33, 33, 135, 66, 135, 66, 135, 135, 66, 135, 135, 33, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 33, 33, 66, 66, 135, 33, 33, 135, 33, 135, 66, 33, 135, 66, 66, 33, 135, 135, 135, 33, 66, 135, 33, 135, 66, 66, 135, 135, 33, 66, 135, 33, 66, 66, 33, 66, 33, 66, 135, 135, 66, 33, 135, 33, 135, 66, 66, 66, 66, 66, 33, 33, 135, 33, 135, 33, 66, 135, 66, 135, 66, 135, 66, 135, 33, 66, 66, 66, 66, 66, 66, 66, 66, 135, 33, 33, 33, 33, 33, 66, 33, 33, 66, 135, 135, 33, 33, 135, 33, 33, 33, 66, 33, 66, 135, 135, 66, 66, 33, 135, 66, 135, 33, 66, 66, 33, 33, 66, 33, 135, 135, 33, 135, 135, 33, 66, 135, 33, 33, 66, 66, 33, 33, 135, 135, 135, 135, 66, 33, 66, 66, 33, 33, 33, 33, 33, 33, 33, 33, 66, 135, 66, 66, 66, 135, 33, 66, 66, 135, 135, 33, 135, 135, 33, 135, 33, 33, 66, 33, 135, 135, 135, 66, 33, 135, 135, 66, 66, 135, 135, 33, 135, 135, 66, 33, 135, 66, 66, 135, 135, 135, 33, 135, 33, 135, 135, 33, 33, 135, 33, 66, 135, 33, 66, 66, 66, 66, 33, 66, 33, 66, 66, 33, 135, 33, 33, 33, 66, 33, 66, 66, 33, 135, 66, 135, 33, 135, 33, 66, 66, 66, 66, 33, 66, 135, 135, 33, 135, 135, 33, 135, 66, 135, 66, 66, 66, 33, 66, 33, 33, 135, 33, 66, 33, 33, 66, 135, 66, 135, 33, 135, 135, 66, 135, 66, 33, 135, 33, 135, 135, 33, 33, 33]
+Prompts retrieved: 29952 . Total input tokens: 6601882 . Total output tokens: 5905358
+Prompts distributed
+Adapter sizes. Values: [16]. Counts: [384]
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.2138343448750675,
+    "estimated_duration": 3599.919727865125,
+    "input_throughput": 683.7574685199263,
+    "output_throughput": 604.5312575040663,
+    "total_throughput": 1288.2887260239927,
+    "itl": 23.909850183698175,
+    "ttft": 5701.944026701403,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 5975,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 38.143927619912915,
+    "arrivals": 10179,
+    "finished_requests": 10163,
+    "scheduler_time": 0.0
+}
+#Debug simulation 
+Total elapsed time: 1.2138966210186481. Arrivals time: 0.036917231511324644 Scheduler time: 0.7501119673252106 Scheduler overhead time: 0.12770805973559618 Adapter cache time: 0.10920735448598862 Engine time: 0.1266110590659082 

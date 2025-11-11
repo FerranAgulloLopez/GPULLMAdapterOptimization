@@ -1,0 +1,34 @@
+INFO 06-01 17:19:10 [__init__.py:239] Automatically detected platform cuda.
+Namespace(backend='openai', base_url=None, host='localhost', port=55687, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', tokenizer=None, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/finding_maximum/test_dataset/with_offloading/qwen-2.5-7b-instruct/rate_0.8-0.4-0.05_size_8-8-32/_16_16_32_', launch_server=True, server_args='--port=55687 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_32/" --max-num-seqs="2048" --scheduler-cls="vllm.v1.core.sched.scheduler.Scheduler" --no-enable-prefix-caching --max-loras=16 --max-cpu-loras=16 --max-lora-rank=32', server_init_time=1800, disable_log_stats=False, total_time=3600, adapter_rates=[0.8, 0.4, 0.05], aggregated_rate=None, use_extended_metric_checker=False, lora_pre_loading=False)
+Server started
+Number of adapters: 16
+Adapter rates. Values: [0.05 0.4  0.8 ]. Counts: [5 5 6]
+Adapter prompts. [4320, 540, 540, 4320, 8640, 540, 8640, 540, 4320, 4320, 540, 4320, 8640, 8640, 8640, 8640]
+Prompts retrieved: 76140 . Total input tokens: 16948670 . Total output tokens: 15211007
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run for base model
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     25471     
+Benchmark duration (s):                  3600.06   
+Total input tokens:                      5707365   
+Total generated tokens:                  4934056   
+Request throughput (req/s):              7.08      
+Input token throughput (tok/s):          1585.35   
+Output token throughput (tok/s):         1370.55   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          50.03     
+Median TTFT (ms):                        45.48     
+P99 TTFT (ms):                           120.42    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          21.62     
+Median TPOT (ms):                        21.39     
+P99 TPOT (ms):                           27.60     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           22.00     
+Median ITL (ms):                         20.72     
+P99 ITL (ms):                            47.59     
+==================================================
+Concurrent checker terminated
+Server terminated

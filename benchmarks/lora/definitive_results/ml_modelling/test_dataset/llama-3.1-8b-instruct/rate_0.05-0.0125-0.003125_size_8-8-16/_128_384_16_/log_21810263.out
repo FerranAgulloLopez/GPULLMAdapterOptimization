@@ -1,0 +1,34 @@
+INFO 06-01 11:37:02 [__init__.py:239] Automatically detected platform cuda.
+Namespace(backend='openai', base_url=None, host='localhost', port=42533, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct', tokenizer=None, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/finding_maximum/test_dataset/with_offloading/llama-3.1-8b-instruct/rate_0.05-0.0125-0.003125_size_8-8-16/_128_384_16_', launch_server=True, server_args='--port=42533 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_16/" --max-num-seqs="2048" --scheduler-cls="vllm.v1.core.sched.scheduler.Scheduler" --no-enable-prefix-caching --max-loras=128 --max-cpu-loras=384 --max-lora-rank=16', server_init_time=1800, disable_log_stats=False, total_time=3600, adapter_rates=[0.05, 0.0125, 0.003125], aggregated_rate=None, use_extended_metric_checker=False, lora_pre_loading=False)
+Server started
+Number of adapters: 384
+Adapter rates. Values: [0.003125 0.0125   0.05    ]. Counts: [128 128 128]
+Adapter prompts. [33, 33, 540, 135, 33, 540, 540, 33, 135, 540, 540, 540, 540, 135, 135, 135, 135, 540, 540, 135, 135, 33, 540, 33, 540, 135, 135, 135, 33, 33, 135, 33, 540, 33, 540, 135, 540, 135, 33, 135, 540, 135, 540, 33, 540, 540, 540, 540, 33, 135, 135, 135, 540, 135, 33, 135, 33, 540, 135, 540, 540, 135, 540, 540, 33, 33, 540, 135, 135, 33, 33, 33, 135, 33, 135, 33, 540, 33, 135, 540, 33, 540, 135, 33, 540, 540, 540, 540, 135, 33, 135, 540, 540, 135, 33, 33, 540, 135, 135, 33, 33, 540, 135, 540, 135, 540, 540, 135, 540, 540, 33, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 33, 33, 135, 135, 540, 33, 33, 540, 33, 540, 135, 33, 540, 135, 135, 33, 540, 540, 540, 33, 135, 540, 33, 540, 135, 135, 540, 540, 33, 135, 540, 33, 135, 135, 33, 135, 33, 135, 540, 540, 135, 33, 540, 33, 540, 135, 135, 135, 135, 135, 33, 33, 540, 33, 540, 33, 135, 540, 135, 540, 135, 540, 135, 540, 33, 135, 135, 135, 135, 135, 135, 135, 135, 540, 33, 33, 33, 33, 33, 135, 33, 33, 135, 540, 540, 33, 33, 540, 33, 33, 33, 135, 33, 135, 540, 540, 135, 135, 33, 540, 135, 540, 33, 135, 135, 33, 33, 135, 33, 540, 540, 33, 540, 540, 33, 135, 540, 33, 33, 135, 135, 33, 33, 540, 540, 540, 540, 135, 33, 135, 135, 33, 33, 33, 33, 33, 33, 33, 33, 135, 540, 135, 135, 135, 540, 33, 135, 135, 540, 540, 33, 540, 540, 33, 540, 33, 33, 135, 33, 540, 540, 540, 135, 33, 540, 540, 135, 135, 540, 540, 33, 540, 540, 135, 33, 540, 135, 135, 540, 540, 540, 33, 540, 33, 540, 540, 33, 33, 540, 33, 135, 540, 33, 135, 135, 135, 135, 33, 135, 33, 135, 135, 33, 540, 33, 33, 33, 135, 33, 135, 135, 33, 540, 135, 540, 33, 540, 33, 135, 135, 135, 135, 33, 135, 540, 540, 33, 540, 540, 33, 540, 135, 540, 135, 135, 135, 33, 135, 33, 33, 540, 33, 135, 33, 33, 135, 540, 135, 540, 33, 540, 540, 135, 540, 135, 33, 540, 33, 540, 540, 33, 33, 33]
+Prompts retrieved: 90624 . Total input tokens: 20211841 . Total output tokens: 17814668
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run for base model
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     30074     
+Benchmark duration (s):                  3600.07   
+Total input tokens:                      6757316   
+Total generated tokens:                  5865736   
+Request throughput (req/s):              8.35      
+Input token throughput (tok/s):          1877.00   
+Output token throughput (tok/s):         1629.34   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          12189.38  
+Median TTFT (ms):                        983.99    
+P99 TTFT (ms):                           45249.21  
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          144.70    
+Median TPOT (ms):                        144.55    
+P99 TPOT (ms):                           265.99    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           145.87    
+Median ITL (ms):                         83.77     
+P99 ITL (ms):                            900.41    
+==================================================
+Concurrent checker terminated
+Server terminated
