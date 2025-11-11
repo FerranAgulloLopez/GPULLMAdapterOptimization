@@ -1,0 +1,34 @@
+INFO 05-16 12:34:18 [__init__.py:239] Automatically detected platform cuda.
+Namespace(backend='openai', base_url=None, host='localhost', port=44583, endpoint='/v1/completions', dataset=None, dataset_name='sharegpt', dataset_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/data/ShareGPT_V3_unfiltered_cleaned_split.json', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct', tokenizer=None, sharegpt_output_len=None, seed=0, trust_remote_code=False, save_result=True, metadata=None, result_dir='benchmarks/lora/definitive_results/model_with_offloading/table/real_results/llama-3.1-8b-instruct/rank_32_rates_0.1_0.05_0.025/_8_16_32_', launch_server=True, server_args='--port=44583 --disable-log-requests --model="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct" --enable-lora --dummy-lora-modules="/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_16/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-3.1-8b-instruct/lora/lora-finance_dummy_rank_32/" --max-num-seqs="2048" --scheduler-cls="vllm.v1.core.sched.scheduler.Scheduler" --no-enable-prefix-caching --max-loras=8 --max-cpu-loras=16 --max-lora-rank=32', server_init_time=1800, disable_log_stats=False, total_time=3600, adapter_rates=[0.1, 0.05, 0.025], aggregated_rate=None, use_extended_metric_checker=False, lora_pre_loading=False)
+Server started
+Number of adapters: 16
+Adapter rates. Values: [0.025 0.05  0.1  ]. Counts: [5 5 6]
+Adapter prompts. [540, 270, 270, 540, 1080, 270, 1080, 270, 540, 540, 270, 540, 1080, 1080, 1080, 1080]
+Prompts retrieved: 10530 . Total input tokens: 2309149 . Total output tokens: 2121671
+Prompts distributed
+Concurrent checker started
+Starting initial single prompt test run for base model
+Initial test run completed. Starting main benchmark run...
+===== Serving Benchmark Intermediate Result ======
+Successful requests:                     3403      
+Benchmark duration (s):                  3600.01   
+Total input tokens:                      735081    
+Total generated tokens:                  686740    
+Request throughput (req/s):              0.95      
+Input token throughput (tok/s):          204.19    
+Output token throughput (tok/s):         190.76    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          43.50     
+Median TTFT (ms):                        37.90     
+P99 TTFT (ms):                           74.50     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          15.86     
+Median TPOT (ms):                        15.75     
+P99 TPOT (ms):                           18.38     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           15.92     
+Median ITL (ms):                         15.58     
+P99 ITL (ms):                            26.85     
+==================================================
+Concurrent checker terminated
+Server terminated

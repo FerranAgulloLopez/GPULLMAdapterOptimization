@@ -1,0 +1,3 @@
+load SINGULARITY/3.11.5 (PATH)
+Token indices sequence length is longer than the specified maximum sequence length for this model (221043 > 131072). Running this sequence through the model will result in indexing errors
+slurmstepd: error: *** JOB 21046181 ON as01r1b14 CANCELLED AT 2025-05-16T01:40:05 DUE TO TIME LIMIT ***

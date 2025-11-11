@@ -1,0 +1,23 @@
+---Simulation End---
+#Simulation results
+{
+    "duration": 1.4380189520306885,
+    "estimated_duration": 3599.9500494984677,
+    "input_throughput": 944.7600531218003,
+    "output_throughput": 841.6247332159795,
+    "total_throughput": 1786.3847863377798,
+    "itl": 25.00122032575154,
+    "ttft": 6311.242448794873,
+    "total_loads_from_disk": 0,
+    "total_loads_from_memory": 64,
+    "loading_time_from_disk": 0,
+    "loading_time_from_memory": 0.45299401134252565,
+    "arrivals": 13783,
+    "finished_requests": 13759,
+    "scheduler_time": 0.0
+}
+#Debug simulation 
+Total elapsed time: 1.438118669204414. Arrivals time: 0.04673729510977864 Scheduler time: 1.0049617919139564 Scheduler overhead time: 0.12642598059028387 Adapter cache time: 0.07393250614404678 Engine time: 0.12455991329625249 
+Execution time: 1.5417 seconds
+Average CPU usage: 66.03%
+Average memory usage: 124.17 MB
