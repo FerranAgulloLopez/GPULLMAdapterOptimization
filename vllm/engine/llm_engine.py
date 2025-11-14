@@ -1862,10 +1862,6 @@ class LLMEngine:
             cpu_prefix_cache_hit_rate=cpu_prefix_cache_hit_rate,
             gpu_prefix_cache_hit_rate=gpu_prefix_cache_hit_rate,
 
-            #   Prefix Cache Hit Rate
-            cpu_prefix_cache_hit_rate=cpu_prefix_cache_hit_rate,
-            gpu_prefix_cache_hit_rate=gpu_prefix_cache_hit_rate,
-
             # Iteration stats
             num_prompt_tokens_iter=num_prompt_tokens_iter,
             num_generation_tokens_iter=num_generation_tokens_iter,
