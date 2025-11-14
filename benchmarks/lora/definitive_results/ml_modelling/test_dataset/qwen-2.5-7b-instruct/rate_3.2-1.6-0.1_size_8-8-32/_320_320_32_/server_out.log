@@ -1,0 +1,150 @@
+INFO 06-01 15:57:38 [__init__.py:239] Automatically detected platform cuda.
+INFO 06-01 15:57:40 [api_server.py:1046] vLLM API server version 0.1.dev6216+g1125ba0
+INFO 06-01 15:57:40 [api_server.py:1047] args: Namespace(host=None, port=33043, uvicorn_log_level='info', disable_uvicorn_access_log=False, allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, dummy_lora_modules='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_8/ /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct/lora/lora-medical_dummy_rank_32/', prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, enable_ssl_refresh=False, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, tool_call_parser=None, tool_parser_plugin='', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', task='auto', tokenizer=None, hf_config_path=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, load_format='auto', download_dir=None, model_loader_extra_config={}, use_tqdm_on_load=True, config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', max_model_len=None, guided_decoding_backend='auto', reasoning_parser=None, logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, data_parallel_size=1, enable_expert_parallel=False, max_parallel_loading_workers=None, ray_workers_use_nsight=False, disable_custom_all_reduce=False, block_size=None, gpu_memory_utilization=0.9, swap_space=4, kv_cache_dtype='auto', num_gpu_blocks_override=None, enable_prefix_caching=False, prefix_caching_hash_algo='builtin', cpu_offload_gb=0, calculate_kv_scales=False, disable_sliding_window=False, use_v2_block_manager=True, seed=None, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_token=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config={}, limit_mm_per_prompt={}, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=True, enable_lora_bias=False, max_loras=320, max_lora_rank=32, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=320, fully_sharded_loras=False, enable_prompt_adapter=None, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', speculative_config=None, ignore_patterns=[], served_model_name=None, qlora_adapter_name_or_path=None, show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, max_num_batched_tokens=None, max_num_seqs=2048, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, num_lookahead_slots=0, scheduler_delay_factor=0.0, preemption_mode=None, num_scheduler_steps=1, multi_step_stream_outputs=True, scheduling_policy='fcfs', enable_chunked_prefill=None, disable_chunked_mm_input=False, scheduler_cls='vllm.v1.core.sched.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', worker_extension_cls='', generation_config='auto', override_generation_config=None, enable_sleep_mode=False, additional_config=None, enable_reasoning=False, disable_cascade_attn=False, disable_log_requests=True, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False, enable_server_load_tracking=False)
+INFO 06-01 15:57:51 [config.py:717] This model supports multiple tasks: {'generate', 'reward', 'score', 'classify', 'embed'}. Defaulting to 'generate'.
+INFO 06-01 15:57:51 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 06-01 15:57:58 [__init__.py:239] Automatically detected platform cuda.
+INFO 06-01 15:58:01 [core.py:58] Initializing a V1 LLM engine (v0.1.dev6216+g1125ba0) with config: model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', speculative_config=None, tokenizer='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 06-01 15:58:03 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7ffa00287a40>
+INFO 06-01 15:58:03 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 06-01 15:58:03 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 06-01 15:58:03 [topk_topp_sampler.py:59] Using FlashInfer for top-p & top-k sampling.
+INFO 06-01 15:58:03 [gpu_model_runner.py:1329] Starting to load model /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct...
+INFO 06-01 15:58:47 [loader.py:458] Loading weights took 43.24 seconds
+INFO 06-01 15:58:47 [punica_selector.py:18] Using PunicaWrapperGPU.
+INFO 06-01 15:58:47 [gpu_model_runner.py:1347] Model loading took 62.3739 GiB and 43.697702 seconds
+INFO 06-01 15:59:05 [backends.py:420] Using cache directory: /scratch/tmp/_320_320_32__851234456/torch_compile_cache/0a83d9fcb5/rank_0_0 for vLLM's torch.compile
+INFO 06-01 15:59:05 [backends.py:430] Dynamo bytecode transform time: 9.15 s
+INFO 06-01 15:59:08 [backends.py:136] Cache the graph of shape None for later use
+INFO 06-01 15:59:30 [backends.py:148] Compiling a graph for general shape takes 24.65 s
+ERROR 06-01 15:59:33 [core.py:396] EngineCore failed to start.
+ERROR 06-01 15:59:33 [core.py:396] Traceback (most recent call last):
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 387, in run_engine_core
+ERROR 06-01 15:59:33 [core.py:396]     engine_core = EngineCoreProc(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 329, in __init__
+ERROR 06-01 15:59:33 [core.py:396]     super().__init__(vllm_config, executor_class, log_stats,
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 71, in __init__
+ERROR 06-01 15:59:33 [core.py:396]     self._initialize_kv_caches(vllm_config)
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/core.py", line 129, in _initialize_kv_caches
+ERROR 06-01 15:59:33 [core.py:396]     available_gpu_memory = self.model_executor.determine_available_memory()
+ERROR 06-01 15:59:33 [core.py:396]                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/executor/abstract.py", line 75, in determine_available_memory
+ERROR 06-01 15:59:33 [core.py:396]     output = self.collective_rpc("determine_available_memory")
+ERROR 06-01 15:59:33 [core.py:396]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/executor/uniproc_executor.py", line 56, in collective_rpc
+ERROR 06-01 15:59:33 [core.py:396]     answer = run_method(self.driver_worker, method, args, kwargs)
+ERROR 06-01 15:59:33 [core.py:396]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/utils.py", line 2456, in run_method
+ERROR 06-01 15:59:33 [core.py:396]     return func(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+ERROR 06-01 15:59:33 [core.py:396]     return func(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_worker.py", line 183, in determine_available_memory
+ERROR 06-01 15:59:33 [core.py:396]     self.model_runner.profile_run()
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py", line 1651, in profile_run
+ERROR 06-01 15:59:33 [core.py:396]     hidden_states = self._dummy_run(self.max_num_tokens)
+ERROR 06-01 15:59:33 [core.py:396]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+ERROR 06-01 15:59:33 [core.py:396]     return func(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/worker/gpu_model_runner.py", line 1497, in _dummy_run
+ERROR 06-01 15:59:33 [core.py:396]     outputs = model(
+ERROR 06-01 15:59:33 [core.py:396]               ^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return self._call_impl(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return forward_call(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/qwen2.py", line 466, in forward
+ERROR 06-01 15:59:33 [core.py:396]     hidden_states = self.model(input_ids, positions, intermediate_tensors,
+ERROR 06-01 15:59:33 [core.py:396]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/compilation/decorators.py", line 238, in __call__
+ERROR 06-01 15:59:33 [core.py:396]     output = self.compiled_callable(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 574, in _fn
+ERROR 06-01 15:59:33 [core.py:396]     return fn(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/model_executor/models/qwen2.py", line 325, in forward
+ERROR 06-01 15:59:33 [core.py:396]     def forward(
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return self._call_impl(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return forward_call(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+ERROR 06-01 15:59:33 [core.py:396]     return fn(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 822, in call_wrapped
+ERROR 06-01 15:59:33 [core.py:396]     return self._wrapped_call(self, *args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 400, in __call__
+ERROR 06-01 15:59:33 [core.py:396]     raise e
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/fx/graph_module.py", line 387, in __call__
+ERROR 06-01 15:59:33 [core.py:396]     return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return self._call_impl(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+ERROR 06-01 15:59:33 [core.py:396]     return forward_call(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "<eval_with_key>.58", line 604, in forward
+ERROR 06-01 15:59:33 [core.py:396]     submod_0 = self.submod_0(l_input_ids_, s0, l_self_modules_embed_tokens_parameters_weight_, l_self_modules_layers_modules_0_modules_input_layernorm_parameters_weight_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_weight_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_bias_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_token_lora_mapping, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_token_indices_sorted_by_lora_ids, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_0_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_1_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_2_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_num_tokens_per_lora, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_lora_token_start_loc, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_active_lora_ids, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_punica_wrapper_token_mapping_meta_no_lora_flag_cpu, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_0_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_1_, l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_2_, l_positions_, l_self_modules_layers_modules_0_modules_self_attn_modules_rotary_emb_buffers_cos_sin_cache_);  l_input_ids_ = l_self_modules_embed_tokens_parameters_weight_ = l_self_modules_layers_modules_0_modules_input_layernorm_parameters_weight_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_weight_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_modules_base_layer_parameters_bias_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_0_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_1_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_a_stacked_2_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_0_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_1_ = l_self_modules_layers_modules_0_modules_self_attn_modules_qkv_proj_lora_b_stacked_2_ = None
+ERROR 06-01 15:59:33 [core.py:396]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/vllm/compilation/backends.py", line 612, in __call__
+ERROR 06-01 15:59:33 [core.py:396]     return self.compiled_graph_for_general_shape(*args)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+ERROR 06-01 15:59:33 [core.py:396]     return fn(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/aot_autograd.py", line 1184, in forward
+ERROR 06-01 15:59:33 [core.py:396]     return compiled_fn(full_args)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 323, in runtime_wrapper
+ERROR 06-01 15:59:33 [core.py:396]     all_outs = call_func_at_runtime_with_args(
+ERROR 06-01 15:59:33 [core.py:396]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+ERROR 06-01 15:59:33 [core.py:396]     out = normalize_as_list(f(args))
+ERROR 06-01 15:59:33 [core.py:396]                             ^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 672, in inner_fn
+ERROR 06-01 15:59:33 [core.py:396]     outs = compiled_fn(args)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 490, in wrapper
+ERROR 06-01 15:59:33 [core.py:396]     return compiled_fn(runtime_args)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/output_code.py", line 466, in __call__
+ERROR 06-01 15:59:33 [core.py:396]     return self.current_callable(inputs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/utils.py", line 2128, in run
+ERROR 06-01 15:59:33 [core.py:396]     return model(new_inputs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/scratch/tmp/_320_320_32__851234456/torch_compile_cache/0a83d9fcb5/rank_0_0/inductor_cache/bt/cbtagpkuj4ffgswbkjogfcofmkdjwjllnpmgq5swdu7bt3aaiu56.py", line 410, in call
+ERROR 06-01 15:59:33 [core.py:396]     triton_poi_fused_cat_2.run(buf7, arg18_1, arg19_1, buf10, triton_poi_fused_cat_2_xnumel, grid=grid(triton_poi_fused_cat_2_xnumel), stream=stream0)
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 1034, in run
+ERROR 06-01 15:59:33 [core.py:396]     self.autotune_to_one_config(*args, grid=grid, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 911, in autotune_to_one_config
+ERROR 06-01 15:59:33 [core.py:396]     timings = self.benchmark_all_configs(*args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 886, in benchmark_all_configs
+ERROR 06-01 15:59:33 [core.py:396]     launcher: self.bench(launcher, *args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/triton_heuristics.py", line 787, in bench
+ERROR 06-01 15:59:33 [core.py:396]     return benchmarker.benchmark_gpu(kernel_call, rep=40)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py", line 66, in wrapper
+ERROR 06-01 15:59:33 [core.py:396]     return fn(self, *args, **kwargs)
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/torch/_inductor/runtime/benchmarking.py", line 202, in benchmark_gpu
+ERROR 06-01 15:59:33 [core.py:396]     return self.triton_do_bench(_callable, **kwargs, return_mode="median")
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/triton/testing.py", line 120, in do_bench
+ERROR 06-01 15:59:33 [core.py:396]     cache = runtime.driver.active.get_empty_cache_for_benchmark()
+ERROR 06-01 15:59:33 [core.py:396]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396]   File "/usr/local/lib/python3.12/dist-packages/triton/backends/nvidia/driver.py", line 481, in get_empty_cache_for_benchmark
+ERROR 06-01 15:59:33 [core.py:396]     return torch.empty(int(cache_size // 4), dtype=torch.int, device='cuda')
+ERROR 06-01 15:59:33 [core.py:396]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR 06-01 15:59:33 [core.py:396] torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 256.00 MiB. GPU 0 has a total capacity of 63.43 GiB of which 19.50 MiB is free. Including non-PyTorch memory, this process has 63.40 GiB memory in use. Of the allocated memory 62.49 GiB is allocated by PyTorch, and 257.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

@@ -1,0 +1,12 @@
+/usr/local/lib/python3.12/dist-packages/vllm/executor/uniproc_executor.py:29: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:10<00:31, 10.50s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:21<00:21, 10.72s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:31<00:10, 10.40s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:42<00:00, 10.57s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:42<00:00, 10.56s/it]
+
+INFO:     Started server process [4170439]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
