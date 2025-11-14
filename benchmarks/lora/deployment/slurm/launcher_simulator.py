@@ -17,7 +17,7 @@ EXP_HOME_CODE_DIR = '.'
 EXP_SLURM_EXECUTABLE = 'benchmarks/lora/deployment/slurm/slurm_simulator.sh'
 
 # path to container image
-EXP_CONTAINER_IMAGE = '/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/images/vllm_0.8.5.sif'
+EXP_CONTAINER_IMAGE = '/gpfs/scratch/bsc98/bsc098069/experiment_data/llm_benchmarking/images/vllm_0.8.5.sif'
 
 
 def schedule_job(
