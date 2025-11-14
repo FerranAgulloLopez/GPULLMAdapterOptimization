@@ -6,10 +6,6 @@ from typing import List, Optional, Tuple, Set, Dict
 
 from digital_twin_dynamic.adapter_cache import AdapterCache
 from digital_twin_dynamic.engine import Engine
-#from digital_twin_dynamic.scheduler import Scheduler
-#from digital_twin_dynamic.scheduler_optimized import SchedulerOptimized
-#from digital_twin_dynamic.scheduler_greedy_allocation import SchedulerGreedyAllocation
-#from digital_twin_dynamic.scheduler_greedy_allocation_optimized import SchedulerGreedyAllocationOptimized
 from digital_twin_dynamic.scheduler_greedy_allocation_optimized_chunked import SchedulerGreedyAllocationOptimizedChunked
 from digital_twin_dynamic.structures import Request, RequestGreedyAllocation, RequestGreedyAllocationChunked, RunningBatch, RunningBatchGreedyAllocation, RunningBatchGreedyAllocationChunked
 from digital_twin_dynamic.estimators.predictor_scheduler_overhead.predictor_scheduler_overhead import scheduler_overhead_predictor
@@ -60,9 +56,7 @@ class DynamicSimulatorManager:
             self.request_cls = RequestGreedyAllocationChunked
             self.batch_cls = RunningBatchGreedyAllocationChunked
         else:
-            self.scheduler = SchedulerOptimized(self.adapter_slots, available_gpu_memory, max_num_batched_tokens, self.debug_path)
-            self.request_cls = Request
-            self.batch_cls = RunningBatch
+            raise NotImplementedError
         self.engine: Engine = Engine(self.adapter_slots, model, include_computation_overhead)
         self.adapter_cache: AdapterCache = AdapterCache(self.adapter_slots, model, served_adapters, served_adapters_sizes)
 
