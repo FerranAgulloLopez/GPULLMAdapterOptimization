@@ -597,7 +597,6 @@ def main(args: argparse.Namespace):
                 concurrent_metrics_checker = ConcurrentMetricsChecker(
                     args.result_dir,
                     metrics_api_url,
-                    adapters
                 )
             concurrent_metrics_checker.start()
             print("Concurrent checker started")
