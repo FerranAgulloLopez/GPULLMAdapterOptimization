@@ -1,0 +1,296 @@
+INFO 05-20 19:02:41 [__init__.py:239] Automatically detected platform cuda.
+INFO 05-20 19:02:44 [api_server.py:1046] vLLM API server version 0.1.dev6216+g1125ba0
+INFO 05-20 19:02:44 [api_server.py:1047] args: Namespace(host=None, port=62137, uvicorn_log_level='info', disable_uvicorn_access_log=False, allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, dummy_lora_modules=None, prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, enable_ssl_refresh=False, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, tool_call_parser=None, tool_parser_plugin='', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', task='auto', tokenizer=None, hf_config_path=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, load_format='auto', download_dir=None, model_loader_extra_config={}, use_tqdm_on_load=True, config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', max_model_len=None, guided_decoding_backend='auto', reasoning_parser=None, logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, data_parallel_size=1, enable_expert_parallel=False, max_parallel_loading_workers=None, ray_workers_use_nsight=False, disable_custom_all_reduce=False, block_size=None, gpu_memory_utilization=0.9, swap_space=4, kv_cache_dtype='auto', num_gpu_blocks_override=None, enable_prefix_caching=False, prefix_caching_hash_algo='builtin', cpu_offload_gb=0, calculate_kv_scales=False, disable_sliding_window=False, use_v2_block_manager=True, seed=None, max_logprobs=20, disable_log_stats=True, quantization=None, rope_scaling=None, rope_theta=None, hf_token=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config={}, limit_mm_per_prompt={}, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=True, enable_lora_bias=False, max_loras=192, max_lora_rank=8, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=None, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', speculative_config=None, ignore_patterns=[], served_model_name=None, qlora_adapter_name_or_path=None, show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, max_num_batched_tokens=None, max_num_seqs=2048, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, num_lookahead_slots=0, scheduler_delay_factor=0.0, preemption_mode=None, num_scheduler_steps=1, multi_step_stream_outputs=True, scheduling_policy='fcfs', enable_chunked_prefill=None, disable_chunked_mm_input=False, scheduler_cls='vllm.v1.core.sched.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', worker_extension_cls='', generation_config='auto', override_generation_config=None, enable_sleep_mode=False, additional_config=None, enable_reasoning=False, disable_cascade_attn=False, disable_log_requests=True, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False, enable_server_load_tracking=False)
+INFO 05-20 19:02:54 [config.py:717] This model supports multiple tasks: {'reward', 'score', 'classify', 'embed', 'generate'}. Defaulting to 'generate'.
+INFO 05-20 19:02:54 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 05-20 19:03:01 [__init__.py:239] Automatically detected platform cuda.
+INFO 05-20 19:03:05 [core.py:58] Initializing a V1 LLM engine (v0.1.dev6216+g1125ba0) with config: model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', speculative_config=None, tokenizer='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 05-20 19:03:06 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7f0bd8484110>
+INFO 05-20 19:03:06 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 05-20 19:03:06 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 05-20 19:03:06 [topk_topp_sampler.py:59] Using FlashInfer for top-p & top-k sampling.
+INFO 05-20 19:03:06 [gpu_model_runner.py:1329] Starting to load model /gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/qwen/qwen-2.5-7b-instruct...
+INFO 05-20 19:03:51 [loader.py:458] Loading weights took 44.15 seconds
+INFO 05-20 19:03:51 [punica_selector.py:18] Using PunicaWrapperGPU.
+INFO 05-20 19:03:51 [gpu_model_runner.py:1347] Model loading took 21.5087 GiB and 44.524810 seconds
+INFO 05-20 19:04:05 [backends.py:420] Using cache directory: /scratch/tmp/_192_8__290820209/torch_compile_cache/c421a6f8c7/rank_0_0 for vLLM's torch.compile
+INFO 05-20 19:04:05 [backends.py:430] Dynamo bytecode transform time: 9.15 s
+INFO 05-20 19:04:09 [backends.py:136] Cache the graph of shape None for later use
+INFO 05-20 19:04:31 [backends.py:148] Compiling a graph for general shape takes 24.82 s
+INFO 05-20 19:04:50 [monitor.py:33] torch.compile takes 33.97 s in total
+INFO 05-20 19:04:51 [kv_cache_utils.py:634] GPU KV cache size: 565,744 tokens
+INFO 05-20 19:04:51 [kv_cache_utils.py:637] Maximum concurrency for 32,768 tokens per request: 17.27x
+INFO 05-20 19:16:17 [gpu_model_runner.py:1686] Graph capturing finished in 686 secs, took 2.95 GiB
+INFO 05-20 19:16:22 [core.py:159] init engine (profile, create kv cache, warmup model) took 751.34 seconds
+INFO 05-20 19:16:22 [core_client.py:439] Core engine process 0 ready.
+WARNING 05-20 19:16:22 [config.py:1239] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 05-20 19:16:22 [serving_chat.py:118] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 05-20 19:16:22 [serving_completion.py:61] Using default completion sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 05-20 19:16:22 [api_server.py:1093] Starting vLLM API server on http://0.0.0.0:62137
+INFO 05-20 19:16:22 [launcher.py:28] Available routes are:
+INFO 05-20 19:16:22 [launcher.py:36] Route: /openapi.json, Methods: GET, HEAD
+INFO 05-20 19:16:22 [launcher.py:36] Route: /docs, Methods: GET, HEAD
+INFO 05-20 19:16:22 [launcher.py:36] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+INFO 05-20 19:16:22 [launcher.py:36] Route: /redoc, Methods: GET, HEAD
+INFO 05-20 19:16:22 [launcher.py:36] Route: /health, Methods: GET
+INFO 05-20 19:16:22 [launcher.py:36] Route: /load, Methods: GET
+INFO 05-20 19:16:22 [launcher.py:36] Route: /ping, Methods: GET, POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /tokenize, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /detokenize, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/models, Methods: GET
+INFO 05-20 19:16:22 [launcher.py:36] Route: /version, Methods: GET
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/chat/completions, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/completions, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/embeddings, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /pooling, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /score, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/score, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/audio/transcriptions, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /rerank, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v1/rerank, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /v2/rerank, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /invocations, Methods: POST
+INFO 05-20 19:16:22 [launcher.py:36] Route: /metrics, Methods: GET
+INFO:     127.0.0.1:51204 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51210 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 05-20 19:16:26 [scheduler.py:514] Timestamp: 1836453.495489807. Scheduler time: 7.746205665171146e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:26 [scheduler.py:514] Timestamp: 1836453.681563139. Scheduler time: 5.8300094678997993e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.698761498. Scheduler time: 3.265892155468464e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.715216953. Scheduler time: 2.264697104692459e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.73154824. Scheduler time: 2.2107036784291267e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.747998084. Scheduler time: 3.382191061973572e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.764311138. Scheduler time: 2.161017619073391e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.780597359. Scheduler time: 2.2074906155467033e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.796889118. Scheduler time: 2.1712156012654305e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.813193488. Scheduler time: 2.1502142772078514e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.829481056. Scheduler time: 2.1295156329870224e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.845784317. Scheduler time: 2.2124033421278e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.862082585. Scheduler time: 2.14350875467062e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.878400725. Scheduler time: 2.147606573998928e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.894645749. Scheduler time: 2.1158019080758095e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.911301244. Scheduler time: 2.201390452682972e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.927593134. Scheduler time: 2.1236948668956757e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.943895447. Scheduler time: 2.1214131265878677e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.960201108. Scheduler time: 2.1104933694005013e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.976501251. Scheduler time: 2.1243933588266373e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836453.992804516. Scheduler time: 2.147117629647255e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.00912025. Scheduler time: 2.7620932087302208e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.02546694. Scheduler time: 2.1251151338219643e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.041776946. Scheduler time: 2.1387822926044464e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.058061876. Scheduler time: 2.1657906472682953e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.07437591. Scheduler time: 2.122507430613041e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.090680177. Scheduler time: 2.2312859073281288e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.106987419. Scheduler time: 2.1961983293294907e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.123298728. Scheduler time: 2.1470943465828896e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.139580248. Scheduler time: 2.1677929908037186e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.155877379. Scheduler time: 2.1724030375480652e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.172181534. Scheduler time: 2.1848827600479126e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.188473723. Scheduler time: 2.1032989025115967e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.204784728. Scheduler time: 2.1937070414423943e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.221088995. Scheduler time: 2.108188346028328e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.237404052. Scheduler time: 2.195802517235279e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.253716244. Scheduler time: 2.174009568989277e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.270019525. Scheduler time: 2.792617306113243e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.286319574. Scheduler time: 2.1891901269555092e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.302608397. Scheduler time: 2.1345913410186768e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.318932428. Scheduler time: 2.1620886400341988e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.335230773. Scheduler time: 2.3243948817253113e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.351528982. Scheduler time: 2.1422049030661583e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.368091605. Scheduler time: 2.166186459362507e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.384411034. Scheduler time: 2.1209940314292908e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.400713902. Scheduler time: 2.180389128625393e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.417031279. Scheduler time: 2.1652784198522568e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.4334577. Scheduler time: 2.1426938474178314e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.449757696. Scheduler time: 2.1450920030474663e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.466056071. Scheduler time: 2.127210609614849e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.482357647. Scheduler time: 2.1473970264196396e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.498661242. Scheduler time: 2.1303072571754456e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.514946456. Scheduler time: 2.1519139409065247e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.531259157. Scheduler time: 2.92870681732893e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.547548406. Scheduler time: 2.164999023079872e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.5638615. Scheduler time: 2.1283049136400223e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.580156987. Scheduler time: 2.1927058696746826e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.596431603. Scheduler time: 2.3113097995519638e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.612709919. Scheduler time: 2.1573156118392944e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.629025533. Scheduler time: 2.150912769138813e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.645320624. Scheduler time: 2.1451851353049278e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.661634709. Scheduler time: 2.1145911887288094e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.677948713. Scheduler time: 2.198386937379837e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:27 [scheduler.py:514] Timestamp: 1836454.694230903. Scheduler time: 2.2968975827097893e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.710516591. Scheduler time: 2.1322164684534073e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.726821635. Scheduler time: 2.235383726656437e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.743135354. Scheduler time: 2.1629035472869873e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.759441325. Scheduler time: 2.1512852981686592e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.775742868. Scheduler time: 2.1496089175343513e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.792067561. Scheduler time: 2.7143163606524467e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.808369795. Scheduler time: 2.2025080397725105e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.825014115. Scheduler time: 2.1971995010972023e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.841437733. Scheduler time: 2.1461164578795433e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.857751587. Scheduler time: 2.1697022020816803e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.874082259. Scheduler time: 2.1966174244880676e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.890375733. Scheduler time: 2.1382933482527733e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.906669239. Scheduler time: 2.158922143280506e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.92296828. Scheduler time: 2.1873973309993744e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.939268535. Scheduler time: 2.1665124222636223e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.95556936. Scheduler time: 2.1698884665966034e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.971891033. Scheduler time: 2.1345913410186768e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836454.988166373. Scheduler time: 2.1960120648145676e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.004458311. Scheduler time: 2.1592946723103523e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.02075038. Scheduler time: 2.150004729628563e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.037047287. Scheduler time: 2.198689617216587e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.053360107. Scheduler time: 2.742488868534565e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.069664212. Scheduler time: 2.2091902792453766e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.085971054. Scheduler time: 2.1994812414050102e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.102288618. Scheduler time: 2.1592015400528908e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.118583181. Scheduler time: 2.1906103938817978e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.13489419. Scheduler time: 2.2042077034711838e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.151203359. Scheduler time: 2.1629035472869873e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.167492659. Scheduler time: 2.1761981770396233e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.183804426. Scheduler time: 2.216198481619358e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.200101799. Scheduler time: 2.1507032215595245e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.216386277. Scheduler time: 2.219504676759243e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.232688663. Scheduler time: 2.1587824448943138e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.248993459. Scheduler time: 2.170098014175892e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.265299624. Scheduler time: 2.1301908418536186e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.282012395. Scheduler time: 2.160598523914814e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.2983428. Scheduler time: 2.147909253835678e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.314618688. Scheduler time: 2.6788096874952316e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.330929156. Scheduler time: 2.1249055862426758e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.347244101. Scheduler time: 2.3831147700548172e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.363536663. Scheduler time: 2.1971995010972023e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.379828115. Scheduler time: 2.1731015294790268e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.396077885. Scheduler time: 2.1491898223757744e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.412333041. Scheduler time: 2.2066989913582802e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.428633452. Scheduler time: 2.2431835532188416e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.44494488. Scheduler time: 2.230098471045494e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.46127029. Scheduler time: 2.2466061636805534e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.477577578. Scheduler time: 2.225092612206936e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.493887548. Scheduler time: 2.1930085495114326e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.510205882. Scheduler time: 2.2237887606024742e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.526509452. Scheduler time: 2.1802959963679314e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.542811482. Scheduler time: 2.17449851334095e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.559132504. Scheduler time: 2.1865125745534897e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.575442323. Scheduler time: 2.725096419453621e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.59178752. Scheduler time: 2.222089096903801e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.608146002. Scheduler time: 1.089111901819706e-05 seconds. Unique adapters by batch: 0.
+INFO:     127.0.0.1:51224 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.615490231. Scheduler time: 4.102499224245548e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.632767586. Scheduler time: 3.4491997212171555e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.64962703. Scheduler time: 2.052285708487034e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.665976773. Scheduler time: 2.4635810405015945e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:28 [scheduler.py:514] Timestamp: 1836455.682408391. Scheduler time: 2.122088335454464e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.698740433. Scheduler time: 2.6628142222762108e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.715021938. Scheduler time: 2.0826933905482292e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.731726965. Scheduler time: 2.1144049242138863e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.748040318. Scheduler time: 2.170819789171219e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.764366005. Scheduler time: 2.1302839741110802e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.780684946. Scheduler time: 2.0974082872271538e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.796940853. Scheduler time: 2.0813895389437675e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.813274719. Scheduler time: 2.1014129742980003e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.829573404. Scheduler time: 2.095382660627365e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.845912567. Scheduler time: 2.1592015400528908e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.862225217. Scheduler time: 2.0939158275723457e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.878545683. Scheduler time: 2.118712291121483e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.894865226. Scheduler time: 2.1243002265691757e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.911184984. Scheduler time: 2.117990516126156e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.927499756. Scheduler time: 2.088211476802826e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.943812163. Scheduler time: 2.1087005734443665e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.960124649. Scheduler time: 2.6416033506393433e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.976424061. Scheduler time: 2.189003862440586e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836455.992746327. Scheduler time: 2.1110987290740013e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.009012284. Scheduler time: 2.108607441186905e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.025327555. Scheduler time: 2.157106064260006e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.041629637. Scheduler time: 2.1308893337845802e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.057939076. Scheduler time: 2.16758344322443e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.07426076. Scheduler time: 2.1365936845541e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.090556076. Scheduler time: 2.121902070939541e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.106871039. Scheduler time: 2.1162908524274826e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.123213721. Scheduler time: 2.1747080609202385e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.139524401. Scheduler time: 2.0718900486826897e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.155844901. Scheduler time: 2.157595008611679e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.172146918. Scheduler time: 2.1049054339528084e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.18887454. Scheduler time: 2.1809013560414314e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.205195412. Scheduler time: 2.1175947040319443e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.221507339. Scheduler time: 2.6489142328500748e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.23782241. Scheduler time: 2.122507430613041e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.254133694. Scheduler time: 2.06769909709692e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.270467871. Scheduler time: 2.1070009097456932e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.286781815. Scheduler time: 2.130400389432907e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.30310144. Scheduler time: 2.1692831069231033e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.319444824. Scheduler time: 2.1757790818810463e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.335747638. Scheduler time: 2.097291871905327e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.352076686. Scheduler time: 2.089003100991249e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.368398933. Scheduler time: 2.1055107936263084e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.384727947. Scheduler time: 2.1243933588266373e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.401000118. Scheduler time: 2.0996900275349617e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.417285995. Scheduler time: 2.1557090803980827e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.433586302. Scheduler time: 2.151401713490486e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.449907292. Scheduler time: 2.1558953449130058e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.466217535. Scheduler time: 2.1253013983368874e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.482540526. Scheduler time: 2.5592977181077003e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.498862979. Scheduler time: 2.0731939002871513e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.515166358. Scheduler time: 2.1388987079262733e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.5314828. Scheduler time: 2.1104002371430397e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.547807355. Scheduler time: 2.1592015400528908e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.564132738. Scheduler time: 2.1219952031970024e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.580483885. Scheduler time: 2.1431827917695045e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.596762594. Scheduler time: 2.160598523914814e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.613076343. Scheduler time: 2.141110599040985e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.629404228. Scheduler time: 2.13750172406435e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.646038399. Scheduler time: 2.1388987079262733e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.662353284. Scheduler time: 2.116197720170021e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:29 [scheduler.py:514] Timestamp: 1836456.678670464. Scheduler time: 2.1934043616056442e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.694984114. Scheduler time: 2.177199348807335e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.711302471. Scheduler time: 2.0416919142007828e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.727624533. Scheduler time: 2.0993873476982117e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.743945038. Scheduler time: 2.5724992156028748e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.760273064. Scheduler time: 2.1418090909719467e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.776585273. Scheduler time: 2.21871305257082e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.79288953. Scheduler time: 2.178410068154335e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.809208853. Scheduler time: 2.1674903109669685e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.825536825. Scheduler time: 2.126605249941349e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.841846277. Scheduler time: 2.1099112927913666e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.858163481. Scheduler time: 2.1203188225626945e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.874509185. Scheduler time: 2.148514613509178e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.890840273. Scheduler time: 2.1382002159953117e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.907167814. Scheduler time: 2.1283980458974838e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.923493064. Scheduler time: 2.1445099264383316e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.939812297. Scheduler time: 2.128584310412407e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.956122578. Scheduler time: 2.2169901058077812e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.972436107. Scheduler time: 2.1733110770583153e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836456.98875642. Scheduler time: 2.115895040333271e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.005090435. Scheduler time: 2.649892121553421e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.021393545. Scheduler time: 2.167816273868084e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.037693061. Scheduler time: 2.1701212972402573e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.054015552. Scheduler time: 2.160482108592987e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.070330578. Scheduler time: 2.1684914827346802e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.086634153. Scheduler time: 2.1551037207245827e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.102951639. Scheduler time: 2.177385613322258e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.119561838. Scheduler time: 2.1431129425764084e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.135888561. Scheduler time: 2.149399369955063e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.152200056. Scheduler time: 2.1555926650762558e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.168530691. Scheduler time: 2.1748011931777e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.184867551. Scheduler time: 2.1459069103002548e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.201190148. Scheduler time: 2.2068852558732033e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.217467022. Scheduler time: 2.1504005417227745e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.233811433. Scheduler time: 2.1343817934393883e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.250148154. Scheduler time: 2.1358951926231384e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.266474205. Scheduler time: 2.650008536875248e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.282814121. Scheduler time: 2.1748943254351616e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.299113654. Scheduler time: 2.1878164261579514e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.315427499. Scheduler time: 2.1186890080571175e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.331748678. Scheduler time: 2.1934974938631058e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.348081082. Scheduler time: 2.21088994294405e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.364393751. Scheduler time: 2.1592015400528908e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.38070021. Scheduler time: 2.1916115656495094e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.396998583. Scheduler time: 2.2224849089980125e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.41333653. Scheduler time: 2.1910062059760094e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.42969675. Scheduler time: 2.158503048121929e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.446020792. Scheduler time: 2.1745217964053154e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.462342116. Scheduler time: 2.1437881514430046e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.478662535. Scheduler time: 2.1330080926418304e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.495002941. Scheduler time: 2.1856045350432396e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.511319641. Scheduler time: 2.141413278877735e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.527648775. Scheduler time: 2.6218825951218605e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.543996011. Scheduler time: 2.184417098760605e-05 seconds. Unique adapters by batch: 0.
+INFO 05-20 19:16:30 [scheduler.py:514] Timestamp: 1836457.560345312. Scheduler time: 1.090019941329956e-05 seconds. Unique adapters by batch: 0.

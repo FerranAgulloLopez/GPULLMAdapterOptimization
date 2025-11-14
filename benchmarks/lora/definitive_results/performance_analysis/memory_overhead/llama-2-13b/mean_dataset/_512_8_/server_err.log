@@ -1,0 +1,42 @@
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[rank0]:     return _run_code(code, main_globals, None,
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/entrypoints/openai/api_server.py", line 196, in <module>
+[rank0]:     engine = AsyncLLMEngine.from_engine_args(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 400, in from_engine_args
+[rank0]:     engine = cls(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 351, in __init__
+[rank0]:     self.engine = self._init_engine(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 475, in _init_engine
+[rank0]:     return engine_class(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 242, in __init__
+[rank0]:     self._initialize_kv_caches()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 333, in _initialize_kv_caches
+[rank0]:     self.model_executor.determine_num_available_blocks())
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py", line 75, in determine_num_available_blocks
+[rank0]:     return self.driver_worker.determine_num_available_blocks()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker.py", line 162, in determine_num_available_blocks
+[rank0]:     self.model_runner.profile_run()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/model_runner.py", line 844, in profile_run
+[rank0]:     self.execute_model(seqs, kv_caches)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/model_runner.py", line 765, in execute_model
+[rank0]:     output = self.model.sample(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/models/llama.py", line 386, in sample
+[rank0]:     next_tokens = self.sampler(logits, sampling_metadata)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/layers/sampler.py", line 83, in forward
+[rank0]:     logits = _apply_top_k_top_p(logits, sampling_tensors.top_ps,
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/layers/sampler.py", line 228, in _apply_top_k_top_p
+[rank0]:     logits_sort, logits_idx = logits.sort(dim=-1, descending=False)
+[rank0]: torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.23 GiB. GPU 

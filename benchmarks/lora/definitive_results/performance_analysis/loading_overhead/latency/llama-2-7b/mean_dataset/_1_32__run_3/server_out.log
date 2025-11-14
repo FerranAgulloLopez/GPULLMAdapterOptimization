@@ -1,0 +1,153 @@
+INFO 12-13 11:34:59 api_server.py:177] vLLM API server version 0.5.0
+INFO 12-13 11:34:59 api_server.py:178] args: Namespace(host=None, port=19822, uvicorn_log_level='info', allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=[LoRAModulePath(name='sql-lora', local_path='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_32/')], chat_template=None, response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_cert_reqs=0, root_path=None, middleware=[], dummy_lora_modules=None, model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, download_dir=None, load_format='auto', dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=None, guided_decoding_backend='outlines', distributed_executor_backend=None, worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, swap_space=4, gpu_memory_utilization=0.9, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=50, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, enforce_eager=False, max_context_len_to_capture=None, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, sched_policy='default', sched_policy_parameters=None, enable_lora=True, max_loras=1, max_lora_rank=32, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, device='auto', image_input_type=None, image_token_id=None, image_input_shape=None, image_feature_size=None, image_processor=None, image_processor_revision=None, disable_image_processor=False, scheduler_delay_factor=0.0, enable_chunked_prefill=False, speculative_model=None, num_speculative_tokens=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, model_loader_extra_config=None, preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, engine_use_ray=False, disable_log_requests=True, max_log_len=None)
+INFO 12-13 11:34:59 llm_engine.py:167] Initializing an LLM engine (v0.5.0) with config: model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', speculative_config=None, tokenizer='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b)
+INFO 12-13 11:35:12 model_runner.py:160] Loading model weights took 12.5562 GB
+INFO 12-13 11:35:14 gpu_executor.py:83] # GPU blocks: 5604, # CPU blocks: 512
+INFO 12-13 11:35:15 model_runner.py:894] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 12-13 11:35:15 model_runner.py:898] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 12-13 11:35:17 model_runner.py:970] Graph capturing finished in 2 secs.
+WARNING 12-13 11:35:17 serving_chat.py:101] No chat template provided. Chat API will not work.
+WARNING 12-13 11:35:17 serving_embedding.py:141] embedding_mode is False. Embedding API will not work.
+INFO:     127.0.0.1:36824 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36830 - "GET /v1/models/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:36830 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36846 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36860 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36862 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36870 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 12-13 11:35:22 metrics.py:354] Avg prompt throughput: 49.9 tokens/s, Avg generation throughput: 25.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads: 1.0, Total LoRA loading time: 0.4 seconds, Total LoRA activating time: 0.0 seconds, Mean LoRAs by batch: 1.0.
+INFO:     127.0.0.1:36874 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36888 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36900 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36910 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36912 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36940 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36948 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36956 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36966 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36972 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36982 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36996 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37010 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37022 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37036 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37040 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37054 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37064 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37070 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37072 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37076 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37084 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37086 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37096 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37102 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37104 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37118 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37120 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37134 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37146 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37156 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37160 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37172 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37180 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37194 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37196 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37200 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37210 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37226 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37240 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37250 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37264 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37280 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37290 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37302 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37304 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37318 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37330 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37352 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37368 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37408 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37420 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37432 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37442 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37454 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37464 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37468 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37472 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37482 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37492 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37506 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37520 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37534 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37548 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37562 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37566 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37570 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37576 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37584 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37586 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37590 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37602 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37610 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37624 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37626 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37640 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37646 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37660 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37670 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37672 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37682 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37692 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37708 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37724 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37734 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37738 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37762 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37772 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37774 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37804 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37818 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39278 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39288 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 12-13 11:35:27 metrics.py:354] Avg prompt throughput: 2495.8 tokens/s, Avg generation throughput: 978.7 tokens/s, Running: 50 reqs, Swapped: 0 reqs, Pending: 50 reqs, GPU KV cache usage: 19.6%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads: 1.0, Total LoRA loading time: 0.4 seconds, Total LoRA activating time: 0.0 seconds, Mean LoRAs by batch: 1.0.
+INFO:     127.0.0.1:39300 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39316 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39328 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39332 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39340 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 12-13 11:35:32 metrics.py:354] Avg prompt throughput: 2496.6 tokens/s, Avg generation throughput: 1398.1 tokens/s, Running: 50 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.3%, CPU KV cache usage: 0.0%, Total scheduling time: 0.1 seconds, Total LoRA loads: 1.0, Total LoRA loading time: 0.4 seconds, Total LoRA activating time: 0.0 seconds, Mean LoRAs by batch: 1.0.
+INFO:     127.0.0.1:39346 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39352 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39368 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60090 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60104 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 12-13 11:35:37 metrics.py:354] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 1868.9 tokens/s, Running: 50 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 25.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.2 seconds, Total LoRA loads: 1.0, Total LoRA loading time: 0.4 seconds, Total LoRA activating time: 0.0 seconds, Mean LoRAs by batch: 1.0.
+INFO:     127.0.0.1:60108 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60122 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60124 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60132 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60142 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60156 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60172 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60178 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54522 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54532 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 12-13 11:35:47 metrics.py:354] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 181.5 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.2 seconds, Total LoRA loads: 1.0, Total LoRA loading time: 0.4 seconds, Total LoRA activating time: 0.0 seconds, Mean LoRAs by batch: 1.0.
+INFO:     127.0.0.1:54534 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54544 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54558 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54560 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54574 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54578 - "GET /metrics/ HTTP/1.1" 200 OK

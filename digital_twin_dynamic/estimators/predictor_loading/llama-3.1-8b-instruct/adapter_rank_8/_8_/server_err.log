@@ -1,0 +1,10 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:11<00:35, 11.89s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:24<00:24, 12.18s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:27<00:07,  7.95s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:39<00:00,  9.58s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:39<00:00,  9.82s/it]
+
+INFO:     Started server process [2138677]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

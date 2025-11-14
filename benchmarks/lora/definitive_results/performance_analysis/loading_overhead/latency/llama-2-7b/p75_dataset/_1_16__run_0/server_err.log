@@ -1,0 +1,8 @@
+/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py:34: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+INFO:     Started server process [2269510]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 34871): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

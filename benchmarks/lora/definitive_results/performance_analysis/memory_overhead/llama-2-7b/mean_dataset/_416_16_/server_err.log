@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/usr/local/lib/python3.10/dist-packages/vllm/entrypoints/openai/api_server.py", line 196, in <module>
+    engine = AsyncLLMEngine.from_engine_args(
+  File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 400, in from_engine_args
+    engine = cls(
+  File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 351, in __init__
+    self.engine = self._init_engine(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 475, in _init_engine
+    return engine_class(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 229, in __init__
+    self.model_executor = executor_class(
+  File "/usr/local/lib/python3.10/dist-packages/vllm/executor/executor_base.py", line 41, in __init__
+    self._init_executor()
+  File "/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py", line 22, in _init_executor
+    self.driver_worker = self._create_worker()
+  File "/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py", line 67, in _create_worker
+    wrapper.init_worker(**self._get_worker_kwargs(local_rank, rank,
+  File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker_base.py", line 134, in init_worker
+    self.worker = worker_class(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker.py", line 75, in __init__
+    self.model_runner = ModelRunnerClass(
+  File "/usr/local/lib/python3.10/dist-packages/vllm/worker/model_runner.py", line 119, in __init__
+    self.attn_backend = get_attn_backend(
+  File "/usr/local/lib/python3.10/dist-packages/vllm/attention/selector.py", line 43, in get_attn_backend
+    backend = which_attn_to_use(num_heads, head_size, num_kv_heads,
+  File "/usr/local/lib/python3.10/dist-packages/vllm/attention/selector.py", line 129, in which_attn_to_use
+    if torch.cuda.get_device_capability()[0] < 8:
+  File "/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py", line 430, in get_device_capability
+    prop = get_device_properties(device)
+  File "/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py", line 444, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+  File "/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py", line 293, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero.

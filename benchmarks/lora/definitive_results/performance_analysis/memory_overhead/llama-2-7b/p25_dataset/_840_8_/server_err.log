@@ -1,0 +1,26 @@
+/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py:34: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[rank0]:     return _run_code(code, main_globals, None,
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/entrypoints/openai/api_server.py", line 196, in <module>
+[rank0]:     engine = AsyncLLMEngine.from_engine_args(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 400, in from_engine_args
+[rank0]:     engine = cls(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 351, in __init__
+[rank0]:     self.engine = self._init_engine(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 475, in _init_engine
+[rank0]:     return engine_class(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 242, in __init__
+[rank0]:     self._initialize_kv_caches()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 346, in _initialize_kv_caches
+[rank0]:     self.model_executor.initialize_cache(num_gpu_blocks, num_cpu_blocks)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py", line 86, in initialize_cache
+[rank0]:     self.driver_worker.initialize_cache(num_gpu_blocks, num_cpu_blocks)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker.py", line 195, in initialize_cache
+[rank0]:     raise_if_cache_size_invalid(num_gpu_blocks,
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker.py", line 386, in raise_if_cache_size_invalid
+[rank0]:     raise ValueError(
+[rank0]: ValueError: The model's max seq len (4096) is larger than the maximum number of tokens that can be stored in KV cache (3040). Try increasing `gpu_memory_utilization` or decreasing `max_model_len` when initializing the engine.
