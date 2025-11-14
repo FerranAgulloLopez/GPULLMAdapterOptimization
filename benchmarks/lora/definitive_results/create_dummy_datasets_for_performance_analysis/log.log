@@ -1,0 +1,6 @@
+WARNING 10-14 13:26:17 _custom_ops.py:14] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+Dataset characteristics Prompt Lens -> Mean 250.94155593138439; P25 23.0; P75 423.0
+Output Lens -> Mean 231.45671659821213; P25 27.0; P75 359.0
+Minimum distance to means -> Id: ye5Cc9I_12; prompt length: 250; output_length: 230
+Minimum distance to means -> Id: vzQhTpl_0; prompt length: 23; output_length: 27
+Minimum distance to means -> Id: 7438LIh_0; prompt length: 423; output_length: 357

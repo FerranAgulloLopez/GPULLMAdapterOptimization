@@ -1,0 +1,66 @@
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[rank0]:     return _run_code(code, main_globals, None,
+[rank0]:   File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/entrypoints/openai/api_server.py", line 196, in <module>
+[rank0]:     engine = AsyncLLMEngine.from_engine_args(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 400, in from_engine_args
+[rank0]:     engine = cls(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 351, in __init__
+[rank0]:     self.engine = self._init_engine(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/async_llm_engine.py", line 475, in _init_engine
+[rank0]:     return engine_class(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 242, in __init__
+[rank0]:     self._initialize_kv_caches()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/engine/llm_engine.py", line 333, in _initialize_kv_caches
+[rank0]:     self.model_executor.determine_num_available_blocks())
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py", line 75, in determine_num_available_blocks
+[rank0]:     return self.driver_worker.determine_num_available_blocks()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/worker.py", line 162, in determine_num_available_blocks
+[rank0]:     self.model_runner.profile_run()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/model_runner.py", line 844, in profile_run
+[rank0]:     self.execute_model(seqs, kv_caches)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/worker/model_runner.py", line 749, in execute_model
+[rank0]:     hidden_states = model_executable(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/models/llama.py", line 371, in forward
+[rank0]:     hidden_states = self.model(input_ids, positions, kv_caches,
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/models/llama.py", line 288, in forward
+[rank0]:     hidden_states, residual = layer(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/models/llama.py", line 227, in forward
+[rank0]:     hidden_states = self.self_attn(
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/models/llama.py", line 158, in forward
+[rank0]:     qkv, _ = self.qkv_proj(hidden_states)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/lora/layers.py", line 470, in forward
+[rank0]:     output_parallel = self.apply(input_, bias)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/lora/layers.py", line 853, in apply
+[rank0]:     output = self.base_layer.quant_method.apply(self.base_layer, x, bias)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/vllm/model_executor/layers/linear.py", line 111, in apply
+[rank0]:     return F.linear(x, weight, bias)
+[rank0]: RuntimeError: CUDA error: CUBLAS_STATUS_ALLOC_FAILED when calling `cublasCreate(handle)`

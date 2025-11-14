@@ -1,0 +1,718 @@
+INFO 04-24 16:43:09 api_server.py:177] vLLM API server version 0.5.0
+INFO 04-24 16:43:09 api_server.py:178] args: Namespace(host=None, port=3048, uvicorn_log_level='info', allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, chat_template=None, response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_cert_reqs=0, root_path=None, middleware=[], dummy_lora_modules='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/', model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, download_dir=None, load_format='auto', dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=None, guided_decoding_backend='outlines', distributed_executor_backend=None, worker_use_ray=False, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, swap_space=4, gpu_memory_utilization=0.9, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=4096, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, enforce_eager=False, max_context_len_to_capture=None, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, sched_policy='default', sched_policy_parameters=None, enable_lora=True, max_loras=128, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, device='auto', image_input_type=None, image_token_id=None, image_input_shape=None, image_feature_size=None, image_processor=None, image_processor_revision=None, disable_image_processor=False, scheduler_delay_factor=0.0, enable_chunked_prefill=False, speculative_model=None, num_speculative_tokens=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, model_loader_extra_config=None, preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, engine_use_ray=False, disable_log_requests=True, max_log_len=None)
+INFO 04-24 16:43:09 llm_engine.py:167] Initializing an LLM engine (v0.5.0) with config: model='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', speculative_config=None, tokenizer='/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b)
+INFO 04-24 16:43:34 model_runner.py:160] Loading model weights took 12.8042 GB
+INFO 04-24 16:43:39 gpu_executor.py:83] # GPU blocks: 3757, # CPU blocks: 512
+INFO 04-24 16:43:40 model_runner.py:894] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 04-24 16:43:40 model_runner.py:898] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 04-24 16:43:48 model_runner.py:970] Graph capturing finished in 7 secs.
+Adapters. Values: ['/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/']. Counts: [128]
+WARNING 04-24 16:43:48 serving_chat.py:101] No chat template provided. Chat API will not work.
+Adapters. Values: ['/gpfs/scratch/bsc98/bsc098069/llm_benchmarking/models/llama/llama-2-7b/lora/yard1_sql-lora-test_dummy_rank_16/']. Counts: [128]
+WARNING 04-24 16:43:48 serving_embedding.py:141] embedding_mode is False. Embedding API will not work.
+INFO:     127.0.0.1:37100 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37102 - "GET /v1/models/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:37102 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37104 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37120 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:43:53 metrics.py:355] Avg prompt throughput: 50.0 tokens/s, Avg generation throughput: 20.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads from disk: 0.0, Total LoRA loads from memory: 128.0, Total LoRA loading time from disk: 0.000000 seconds, Total LoRA loading time from memory: 3.566647 seconds, Mean LoRAs by batch: 0.0.
+INFO:     127.0.0.1:58846 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58860 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58876 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:43:58 metrics.py:355] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 24.2 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads from disk: 0.0, Total LoRA loads from memory: 128.0, Total LoRA loading time from disk: 0.000000 seconds, Total LoRA loading time from memory: 3.566647 seconds, Mean LoRAs by batch: 0.0.
+INFO:     127.0.0.1:58880 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58926 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58928 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58936 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42716 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42732 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:44:06 metrics.py:355] Avg prompt throughput: 29.6 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads from disk: 1.0, Total LoRA loads from memory: 129.0, Total LoRA loading time from disk: 6.470255 seconds, Total LoRA loading time from memory: 3.574208 seconds, Mean LoRAs by batch: 0.0.
+INFO:     127.0.0.1:42744 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42754 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42770 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42774 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42778 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42784 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42788 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42798 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42812 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42818 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42824 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42830 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42838 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:44:11 metrics.py:355] Avg prompt throughput: 974.5 tokens/s, Avg generation throughput: 323.2 tokens/s, Running: 21 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.6%, CPU KV cache usage: 0.0%, Total scheduling time: 0.0 seconds, Total LoRA loads from disk: 21.0, Total LoRA loads from memory: 149.0, Total LoRA loading time from disk: 8.091493 seconds, Total LoRA loading time from memory: 3.723468 seconds, Mean LoRAs by batch: 5.3.
+INFO:     127.0.0.1:42846 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42854 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35142 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35144 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35154 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35164 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35168 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35170 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:16 metrics.py:355] Avg prompt throughput: 249.9 tokens/s, Avg generation throughput: 774.4 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.1 seconds, Total LoRA loads from disk: 25.0, Total LoRA loads from memory: 153.0, Total LoRA loading time from disk: 8.418291 seconds, Total LoRA loading time from memory: 3.754739 seconds, Mean LoRAs by batch: 10.1.
+INFO:     127.0.0.1:35176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35182 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35184 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35192 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35206 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35212 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:22 metrics.py:355] Avg prompt throughput: 249.5 tokens/s, Avg generation throughput: 260.9 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%, Total scheduling time: 0.1 seconds, Total LoRA loads from disk: 29.0, Total LoRA loads from memory: 157.0, Total LoRA loading time from disk: 8.740913 seconds, Total LoRA loading time from memory: 3.786107 seconds, Mean LoRAs by batch: 8.3.
+INFO:     127.0.0.1:35226 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35230 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35238 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44234 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44242 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44254 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44262 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44286 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44310 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:27 metrics.py:355] Avg prompt throughput: 399.9 tokens/s, Avg generation throughput: 254.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.1 seconds, Total LoRA loads from disk: 36.0, Total LoRA loads from memory: 164.0, Total LoRA loading time from disk: 9.300102 seconds, Total LoRA loading time from memory: 3.839051 seconds, Mean LoRAs by batch: 7.6.
+INFO:     127.0.0.1:44318 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44320 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44336 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44350 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44356 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44360 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44362 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44384 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44404 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44410 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44418 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44430 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44444 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:44:32 metrics.py:355] Avg prompt throughput: 698.8 tokens/s, Avg generation throughput: 513.5 tokens/s, Running: 15 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.7%, CPU KV cache usage: 0.0%, Total scheduling time: 0.1 seconds, Total LoRA loads from disk: 43.0, Total LoRA loads from memory: 171.0, Total LoRA loading time from disk: 9.986349 seconds, Total LoRA loading time from memory: 3.893434 seconds, Mean LoRAs by batch: 8.3.
+INFO:     127.0.0.1:44450 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44458 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56034 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56050 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56056 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56060 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56080 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:37 metrics.py:355] Avg prompt throughput: 249.4 tokens/s, Avg generation throughput: 410.6 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%, Total scheduling time: 0.2 seconds, Total LoRA loads from disk: 46.0, Total LoRA loads from memory: 174.0, Total LoRA loading time from disk: 10.224652 seconds, Total LoRA loading time from memory: 3.916499 seconds, Mean LoRAs by batch: 8.0.
+INFO:     127.0.0.1:56096 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56112 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56114 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56124 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:42 metrics.py:355] Avg prompt throughput: 99.8 tokens/s, Avg generation throughput: 182.4 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.0%, Total scheduling time: 0.2 seconds, Total LoRA loads from disk: 48.0, Total LoRA loads from memory: 176.0, Total LoRA loading time from disk: 10.384622 seconds, Total LoRA loading time from memory: 3.931985 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:56128 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56142 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56150 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57848 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57864 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57866 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57878 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57884 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57886 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57888 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57890 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57922 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57926 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:47 metrics.py:355] Avg prompt throughput: 598.7 tokens/s, Avg generation throughput: 248.1 tokens/s, Running: 12 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.9%, CPU KV cache usage: 0.0%, Total scheduling time: 0.2 seconds, Total LoRA loads from disk: 55.0, Total LoRA loads from memory: 183.0, Total LoRA loading time from disk: 10.948255 seconds, Total LoRA loading time from memory: 3.984907 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:57938 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57940 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57956 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57960 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57968 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57976 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57994 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:44:52 metrics.py:355] Avg prompt throughput: 349.2 tokens/s, Avg generation throughput: 504.1 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.5%, CPU KV cache usage: 0.0%, Total scheduling time: 0.3 seconds, Total LoRA loads from disk: 60.0, Total LoRA loads from memory: 188.0, Total LoRA loading time from disk: 11.364286 seconds, Total LoRA loading time from memory: 4.022657 seconds, Mean LoRAs by batch: 7.3.
+INFO:     127.0.0.1:58008 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58010 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49662 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49676 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49678 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49684 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:44:57 metrics.py:355] Avg prompt throughput: 249.7 tokens/s, Avg generation throughput: 294.4 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%, Total scheduling time: 0.3 seconds, Total LoRA loads from disk: 61.0, Total LoRA loads from memory: 189.0, Total LoRA loading time from disk: 11.442083 seconds, Total LoRA loading time from memory: 4.030562 seconds, Mean LoRAs by batch: 7.0.
+INFO:     127.0.0.1:49688 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49696 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49708 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49718 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49734 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49748 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49756 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:02 metrics.py:355] Avg prompt throughput: 349.0 tokens/s, Avg generation throughput: 252.1 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.6%, CPU KV cache usage: 0.0%, Total scheduling time: 0.3 seconds, Total LoRA loads from disk: 64.0, Total LoRA loads from memory: 192.0, Total LoRA loading time from disk: 11.682640 seconds, Total LoRA loading time from memory: 4.053573 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:49770 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49784 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48290 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48318 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48330 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48342 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48352 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48354 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:07 metrics.py:355] Avg prompt throughput: 400.0 tokens/s, Avg generation throughput: 384.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.4%, CPU KV cache usage: 0.0%, Total scheduling time: 0.3 seconds, Total LoRA loads from disk: 67.0, Total LoRA loads from memory: 195.0, Total LoRA loading time from disk: 11.926547 seconds, Total LoRA loading time from memory: 4.077392 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:48362 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48366 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48382 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48396 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48412 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48426 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48434 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48446 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48462 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48468 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48480 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48490 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:12 metrics.py:355] Avg prompt throughput: 598.2 tokens/s, Avg generation throughput: 401.8 tokens/s, Running: 14 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.9%, CPU KV cache usage: 0.0%, Total scheduling time: 0.4 seconds, Total LoRA loads from disk: 76.0, Total LoRA loads from memory: 204.0, Total LoRA loading time from disk: 12.642617 seconds, Total LoRA loading time from memory: 4.145115 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:48492 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48508 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48512 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55912 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55922 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55936 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55952 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55968 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55980 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55986 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55996 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:45:17 metrics.py:355] Avg prompt throughput: 548.3 tokens/s, Avg generation throughput: 457.0 tokens/s, Running: 14 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.5%, CPU KV cache usage: 0.0%, Total scheduling time: 0.4 seconds, Total LoRA loads from disk: 82.0, Total LoRA loads from memory: 210.0, Total LoRA loading time from disk: 13.147165 seconds, Total LoRA loading time from memory: 4.190414 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:56018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56034 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56042 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56058 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56064 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56066 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:22 metrics.py:355] Avg prompt throughput: 199.9 tokens/s, Avg generation throughput: 430.8 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%, Total scheduling time: 0.4 seconds, Total LoRA loads from disk: 83.0, Total LoRA loads from memory: 211.0, Total LoRA loading time from disk: 13.230588 seconds, Total LoRA loading time from memory: 4.198379 seconds, Mean LoRAs by batch: 7.2.
+INFO:     127.0.0.1:56078 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56090 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33992 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34000 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34022 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34032 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34042 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34050 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34062 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34066 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34080 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34094 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34106 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:27 metrics.py:355] Avg prompt throughput: 648.8 tokens/s, Avg generation throughput: 348.9 tokens/s, Running: 13 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 7.7%, CPU KV cache usage: 0.0%, Total scheduling time: 0.4 seconds, Total LoRA loads from disk: 87.0, Total LoRA loads from memory: 215.0, Total LoRA loading time from disk: 13.548910 seconds, Total LoRA loading time from memory: 4.228880 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:34118 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34122 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34152 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34166 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34174 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34188 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34214 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34218 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34220 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34230 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34246 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34274 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34288 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:32 metrics.py:355] Avg prompt throughput: 747.5 tokens/s, Avg generation throughput: 621.1 tokens/s, Running: 19 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.5 seconds, Total LoRA loads from disk: 92.0, Total LoRA loads from memory: 220.0, Total LoRA loading time from disk: 13.997430 seconds, Total LoRA loading time from memory: 4.267588 seconds, Mean LoRAs by batch: 7.5.
+INFO:     127.0.0.1:34296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34300 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34312 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34318 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59954 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59962 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59982 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60008 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:45:37 metrics.py:355] Avg prompt throughput: 499.4 tokens/s, Avg generation throughput: 682.2 tokens/s, Running: 12 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.5 seconds, Total LoRA loads from disk: 96.0, Total LoRA loads from memory: 224.0, Total LoRA loading time from disk: 14.335116 seconds, Total LoRA loading time from memory: 4.297745 seconds, Mean LoRAs by batch: 7.9.
+INFO:     127.0.0.1:60012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60014 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60040 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60042 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60044 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60060 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60072 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60082 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60088 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:42 metrics.py:355] Avg prompt throughput: 399.4 tokens/s, Avg generation throughput: 347.9 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.5 seconds, Total LoRA loads from disk: 98.0, Total LoRA loads from memory: 226.0, Total LoRA loading time from disk: 14.494327 seconds, Total LoRA loading time from memory: 4.313392 seconds, Mean LoRAs by batch: 7.8.
+INFO:     127.0.0.1:60092 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46138 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46154 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46162 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46170 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46180 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:45:47 metrics.py:355] Avg prompt throughput: 149.7 tokens/s, Avg generation throughput: 268.8 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.6 seconds, Total LoRA loads from disk: 100.0, Total LoRA loads from memory: 228.0, Total LoRA loading time from disk: 14.651485 seconds, Total LoRA loading time from memory: 4.328875 seconds, Mean LoRAs by batch: 7.6.
+INFO:     127.0.0.1:46192 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46208 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46216 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46222 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46236 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46242 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46254 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46258 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46262 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46278 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46308 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:45:52 metrics.py:355] Avg prompt throughput: 549.3 tokens/s, Avg generation throughput: 390.9 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.2%, CPU KV cache usage: 0.0%, Total scheduling time: 0.6 seconds, Total LoRA loads from disk: 101.0, Total LoRA loads from memory: 229.0, Total LoRA loading time from disk: 14.731565 seconds, Total LoRA loading time from memory: 4.336380 seconds, Mean LoRAs by batch: 7.5.
+INFO:     127.0.0.1:46318 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46322 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46324 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46336 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46340 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44308 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44310 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44326 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44336 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44338 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44352 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:45:57 metrics.py:355] Avg prompt throughput: 498.5 tokens/s, Avg generation throughput: 518.0 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.9%, CPU KV cache usage: 0.0%, Total scheduling time: 0.6 seconds, Total LoRA loads from disk: 101.0, Total LoRA loads from memory: 229.0, Total LoRA loading time from disk: 14.731565 seconds, Total LoRA loading time from memory: 4.336380 seconds, Mean LoRAs by batch: 7.6.
+INFO:     127.0.0.1:44354 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44384 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44396 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44398 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44408 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44420 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44424 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44432 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44444 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44456 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44460 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44468 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44484 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:02 metrics.py:355] Avg prompt throughput: 598.7 tokens/s, Avg generation throughput: 373.0 tokens/s, Running: 12 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 7.2%, CPU KV cache usage: 0.0%, Total scheduling time: 0.7 seconds, Total LoRA loads from disk: 104.0, Total LoRA loads from memory: 232.0, Total LoRA loading time from disk: 14.976075 seconds, Total LoRA loading time from memory: 4.359599 seconds, Mean LoRAs by batch: 7.6.
+INFO:     127.0.0.1:44490 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53632 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53646 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53664 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53670 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53686 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53702 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:46:07 metrics.py:355] Avg prompt throughput: 349.9 tokens/s, Avg generation throughput: 401.0 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%, Total scheduling time: 0.7 seconds, Total LoRA loads from disk: 105.0, Total LoRA loads from memory: 233.0, Total LoRA loading time from disk: 15.056858 seconds, Total LoRA loading time from memory: 4.367093 seconds, Mean LoRAs by batch: 7.5.
+INFO:     127.0.0.1:53730 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53754 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53762 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53772 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53800 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53804 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:12 metrics.py:355] Avg prompt throughput: 298.2 tokens/s, Avg generation throughput: 382.7 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.7 seconds, Total LoRA loads from disk: 106.0, Total LoRA loads from memory: 234.0, Total LoRA loading time from disk: 15.143220 seconds, Total LoRA loading time from memory: 4.374686 seconds, Mean LoRAs by batch: 7.5.
+INFO:     127.0.0.1:53808 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53822 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51346 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51354 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51356 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51376 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51386 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51414 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:46:17 metrics.py:355] Avg prompt throughput: 398.9 tokens/s, Avg generation throughput: 365.2 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%, Total scheduling time: 0.7 seconds, Total LoRA loads from disk: 107.0, Total LoRA loads from memory: 235.0, Total LoRA loading time from disk: 15.220661 seconds, Total LoRA loading time from memory: 4.382561 seconds, Mean LoRAs by batch: 7.4.
+INFO:     127.0.0.1:51422 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51424 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51440 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51444 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51460 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51464 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51478 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51480 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51488 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51496 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:22 metrics.py:355] Avg prompt throughput: 398.7 tokens/s, Avg generation throughput: 266.7 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%, Total scheduling time: 0.8 seconds, Total LoRA loads from disk: 109.0, Total LoRA loads from memory: 237.0, Total LoRA loading time from disk: 15.388073 seconds, Total LoRA loading time from memory: 4.397735 seconds, Mean LoRAs by batch: 7.3.
+INFO:     127.0.0.1:51508 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51514 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51522 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51530 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46624 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46632 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46640 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46654 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46656 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46668 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46672 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46680 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46688 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:46:27 metrics.py:355] Avg prompt throughput: 549.4 tokens/s, Avg generation throughput: 545.8 tokens/s, Running: 9 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.8%, CPU KV cache usage: 0.0%, Total scheduling time: 0.8 seconds, Total LoRA loads from disk: 111.0, Total LoRA loads from memory: 239.0, Total LoRA loading time from disk: 15.551718 seconds, Total LoRA loading time from memory: 4.413529 seconds, Mean LoRAs by batch: 7.4.
+INFO:     127.0.0.1:46704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46710 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46712 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46726 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46730 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46734 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46742 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46748 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46760 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46766 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46776 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:32 metrics.py:355] Avg prompt throughput: 448.7 tokens/s, Avg generation throughput: 475.1 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.9%, CPU KV cache usage: 0.0%, Total scheduling time: 0.8 seconds, Total LoRA loads from disk: 112.0, Total LoRA loads from memory: 240.0, Total LoRA loading time from disk: 15.635349 seconds, Total LoRA loading time from memory: 4.421210 seconds, Mean LoRAs by batch: 7.5.
+INFO:     127.0.0.1:53670 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53678 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53686 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53702 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:37 metrics.py:355] Avg prompt throughput: 249.8 tokens/s, Avg generation throughput: 240.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%, Total scheduling time: 0.9 seconds, Total LoRA loads from disk: 112.0, Total LoRA loads from memory: 240.0, Total LoRA loading time from disk: 15.635349 seconds, Total LoRA loading time from memory: 4.421210 seconds, Mean LoRAs by batch: 7.3.
+INFO:     127.0.0.1:53722 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53732 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53746 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53752 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53762 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53778 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53802 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53804 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:46:42 metrics.py:355] Avg prompt throughput: 299.8 tokens/s, Avg generation throughput: 312.2 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%, Total scheduling time: 0.9 seconds, Total LoRA loads from disk: 112.0, Total LoRA loads from memory: 240.0, Total LoRA loading time from disk: 15.635349 seconds, Total LoRA loading time from memory: 4.421210 seconds, Mean LoRAs by batch: 7.2.
+INFO:     127.0.0.1:53810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53830 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53842 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50934 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50950 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50964 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50976 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50990 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:47 metrics.py:355] Avg prompt throughput: 399.2 tokens/s, Avg generation throughput: 375.9 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%, Total scheduling time: 0.9 seconds, Total LoRA loads from disk: 113.0, Total LoRA loads from memory: 241.0, Total LoRA loading time from disk: 15.718954 seconds, Total LoRA loading time from memory: 4.428977 seconds, Mean LoRAs by batch: 7.2.
+INFO:     127.0.0.1:50992 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50994 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51004 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51006 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51008 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51010 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51020 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51028 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51040 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51048 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:52 metrics.py:355] Avg prompt throughput: 399.7 tokens/s, Avg generation throughput: 258.4 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.3%, CPU KV cache usage: 0.0%, Total scheduling time: 0.9 seconds, Total LoRA loads from disk: 115.0, Total LoRA loads from memory: 243.0, Total LoRA loading time from disk: 15.878064 seconds, Total LoRA loading time from memory: 4.444740 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:51054 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51060 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57554 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57570 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57582 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57594 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57604 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57610 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57622 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57632 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57636 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:46:57 metrics.py:355] Avg prompt throughput: 548.5 tokens/s, Avg generation throughput: 446.3 tokens/s, Running: 9 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.4%, CPU KV cache usage: 0.0%, Total scheduling time: 1.0 seconds, Total LoRA loads from disk: 115.0, Total LoRA loads from memory: 243.0, Total LoRA loading time from disk: 15.878064 seconds, Total LoRA loading time from memory: 4.444740 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:57652 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57664 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57678 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57692 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57718 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57728 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57742 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:47:02 metrics.py:355] Avg prompt throughput: 349.6 tokens/s, Avg generation throughput: 490.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.0%, Total scheduling time: 1.0 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 7.1.
+INFO:     127.0.0.1:57750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53756 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53766 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53768 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53776 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53790 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:07 metrics.py:355] Avg prompt throughput: 299.3 tokens/s, Avg generation throughput: 230.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%, Total scheduling time: 1.0 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 7.0.
+INFO:     127.0.0.1:53804 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53818 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53820 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53822 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53830 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53840 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53848 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53864 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53870 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:12 metrics.py:355] Avg prompt throughput: 499.3 tokens/s, Avg generation throughput: 283.4 tokens/s, Running: 9 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.0%, CPU KV cache usage: 0.0%, Total scheduling time: 1.1 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:36148 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36158 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36174 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36190 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36196 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36212 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36220 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36232 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36248 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:17 metrics.py:355] Avg prompt throughput: 349.7 tokens/s, Avg generation throughput: 388.5 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%, Total scheduling time: 1.1 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:36252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36256 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36258 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36268 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36274 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36284 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36308 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36324 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36336 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:22 metrics.py:355] Avg prompt throughput: 449.2 tokens/s, Avg generation throughput: 484.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%, Total scheduling time: 1.1 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 7.0.
+INFO:     127.0.0.1:36348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43672 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43678 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43686 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43694 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43704 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43716 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:27 metrics.py:355] Avg prompt throughput: 349.0 tokens/s, Avg generation throughput: 337.4 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%, Total scheduling time: 1.2 seconds, Total LoRA loads from disk: 116.0, Total LoRA loads from memory: 244.0, Total LoRA loading time from disk: 15.959435 seconds, Total LoRA loading time from memory: 4.452497 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:43734 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43742 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43758 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43764 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43772 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43784 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43792 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:32 metrics.py:355] Avg prompt throughput: 249.7 tokens/s, Avg generation throughput: 262.4 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%, Total scheduling time: 1.2 seconds, Total LoRA loads from disk: 118.0, Total LoRA loads from memory: 246.0, Total LoRA loading time from disk: 16.144356 seconds, Total LoRA loading time from memory: 4.468610 seconds, Mean LoRAs by batch: 6.9.
+INFO:     127.0.0.1:43798 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43802 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53414 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53426 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53454 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53472 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53486 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:37 metrics.py:355] Avg prompt throughput: 449.9 tokens/s, Avg generation throughput: 314.5 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.3%, CPU KV cache usage: 0.0%, Total scheduling time: 1.2 seconds, Total LoRA loads from disk: 118.0, Total LoRA loads from memory: 246.0, Total LoRA loading time from disk: 16.144356 seconds, Total LoRA loading time from memory: 4.468610 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:53502 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53508 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53524 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53526 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53534 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53546 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53558 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53568 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53598 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53608 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:47:42 metrics.py:355] Avg prompt throughput: 399.8 tokens/s, Avg generation throughput: 470.1 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.0%, CPU KV cache usage: 0.0%, Total scheduling time: 1.2 seconds, Total LoRA loads from disk: 118.0, Total LoRA loads from memory: 246.0, Total LoRA loading time from disk: 16.144356 seconds, Total LoRA loading time from memory: 4.468610 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:53618 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48168 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48184 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48192 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48208 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48220 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48230 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48240 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48258 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:47 metrics.py:355] Avg prompt throughput: 449.3 tokens/s, Avg generation throughput: 248.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.4%, CPU KV cache usage: 0.0%, Total scheduling time: 1.3 seconds, Total LoRA loads from disk: 118.0, Total LoRA loads from memory: 246.0, Total LoRA loading time from disk: 16.144356 seconds, Total LoRA loading time from memory: 4.468610 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:48262 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48266 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48270 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48290 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48302 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48322 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48344 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48358 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:52 metrics.py:355] Avg prompt throughput: 499.5 tokens/s, Avg generation throughput: 462.1 tokens/s, Running: 9 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.3%, CPU KV cache usage: 0.0%, Total scheduling time: 1.3 seconds, Total LoRA loads from disk: 120.0, Total LoRA loads from memory: 248.0, Total LoRA loading time from disk: 16.324261 seconds, Total LoRA loading time from memory: 4.484681 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:34938 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34948 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34950 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34966 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34978 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34990 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35000 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35014 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:47:57 metrics.py:355] Avg prompt throughput: 299.4 tokens/s, Avg generation throughput: 389.2 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%, Total scheduling time: 1.3 seconds, Total LoRA loads from disk: 120.0, Total LoRA loads from memory: 248.0, Total LoRA loading time from disk: 16.324261 seconds, Total LoRA loading time from memory: 4.484681 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:35016 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35028 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35036 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35052 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35066 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35072 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35084 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35102 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35114 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:02 metrics.py:355] Avg prompt throughput: 399.4 tokens/s, Avg generation throughput: 280.6 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%, Total scheduling time: 1.4 seconds, Total LoRA loads from disk: 120.0, Total LoRA loads from memory: 248.0, Total LoRA loading time from disk: 16.324261 seconds, Total LoRA loading time from memory: 4.484681 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:35130 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42994 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43006 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43042 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43058 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43068 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43082 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43086 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43096 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43104 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43112 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:07 metrics.py:355] Avg prompt throughput: 549.5 tokens/s, Avg generation throughput: 514.1 tokens/s, Running: 11 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 7.1%, CPU KV cache usage: 0.0%, Total scheduling time: 1.4 seconds, Total LoRA loads from disk: 121.0, Total LoRA loads from memory: 249.0, Total LoRA loading time from disk: 16.417119 seconds, Total LoRA loading time from memory: 4.492759 seconds, Mean LoRAs by batch: 6.8.
+INFO:     127.0.0.1:43128 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43130 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43144 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43150 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43158 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43164 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:12 metrics.py:355] Avg prompt throughput: 199.5 tokens/s, Avg generation throughput: 288.3 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%, Total scheduling time: 1.4 seconds, Total LoRA loads from disk: 122.0, Total LoRA loads from memory: 250.0, Total LoRA loading time from disk: 16.506627 seconds, Total LoRA loading time from memory: 4.500789 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:43186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43206 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43210 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59730 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59736 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59740 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59748 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59764 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59796 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:17 metrics.py:355] Avg prompt throughput: 499.9 tokens/s, Avg generation throughput: 407.5 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.5%, CPU KV cache usage: 0.0%, Total scheduling time: 1.4 seconds, Total LoRA loads from disk: 122.0, Total LoRA loads from memory: 250.0, Total LoRA loading time from disk: 16.506627 seconds, Total LoRA loading time from memory: 4.500789 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:59814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59828 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59840 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59848 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59854 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59864 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59874 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59888 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59902 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59908 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59922 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59938 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:22 metrics.py:355] Avg prompt throughput: 449.0 tokens/s, Avg generation throughput: 459.0 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%, Total scheduling time: 1.5 seconds, Total LoRA loads from disk: 123.0, Total LoRA loads from memory: 251.0, Total LoRA loading time from disk: 16.595815 seconds, Total LoRA loading time from memory: 4.508875 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:59942 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50932 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50948 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50954 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50996 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50998 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51002 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:27 metrics.py:355] Avg prompt throughput: 449.2 tokens/s, Avg generation throughput: 334.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.9%, CPU KV cache usage: 0.0%, Total scheduling time: 1.5 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:51026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51036 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51042 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51058 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51072 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51076 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51082 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51086 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51098 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:48:32 metrics.py:355] Avg prompt throughput: 299.9 tokens/s, Avg generation throughput: 392.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%, Total scheduling time: 1.5 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:51100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39700 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39708 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39734 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39738 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39748 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:37 metrics.py:355] Avg prompt throughput: 399.9 tokens/s, Avg generation throughput: 346.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%, Total scheduling time: 1.6 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.7.
+INFO:     127.0.0.1:39750 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39764 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39784 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39788 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39800 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39804 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:42 metrics.py:355] Avg prompt throughput: 199.8 tokens/s, Avg generation throughput: 204.0 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%, Total scheduling time: 1.6 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.6.
+INFO:     127.0.0.1:45430 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45442 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45444 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45454 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45464 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45472 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45484 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45498 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-24 16:48:47 metrics.py:355] Avg prompt throughput: 249.8 tokens/s, Avg generation throughput: 202.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%, Total scheduling time: 1.6 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.5.
+INFO:     127.0.0.1:45500 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45508 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45514 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45520 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45522 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45526 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45534 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45540 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45556 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45562 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45578 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45584 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45596 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45602 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:48:52 metrics.py:355] Avg prompt throughput: 648.1 tokens/s, Avg generation throughput: 468.6 tokens/s, Running: 10 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.1%, CPU KV cache usage: 0.0%, Total scheduling time: 1.6 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.6.
+INFO:     127.0.0.1:45610 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51762 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51774 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51786 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51798 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:48:57 metrics.py:355] Avg prompt throughput: 150.0 tokens/s, Avg generation throughput: 366.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%, Total scheduling time: 1.7 seconds, Total LoRA loads from disk: 124.0, Total LoRA loads from memory: 252.0, Total LoRA loading time from disk: 16.684583 seconds, Total LoRA loading time from memory: 4.516916 seconds, Mean LoRAs by batch: 6.6.
+INFO:     127.0.0.1:51802 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51822 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51832 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51844 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51848 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47652 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47656 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47666 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO 04-24 16:49:08 metrics.py:355] Avg prompt throughput: 68.2 tokens/s, Avg generation throughput: 19.5 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%, Total scheduling time: 1.7 seconds, Total LoRA loads from disk: 125.0, Total LoRA loads from memory: 253.0, Total LoRA loading time from disk: 16.774174 seconds, Total LoRA loading time from memory: 4.524910 seconds, Mean LoRAs by batch: 6.5.
+INFO:     127.0.0.1:47672 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47676 - "GET /metrics/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59500 - "GET /metrics/ HTTP/1.1" 200 OK

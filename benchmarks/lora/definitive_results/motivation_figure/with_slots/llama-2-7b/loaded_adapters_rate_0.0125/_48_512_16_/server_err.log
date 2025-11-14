@@ -1,0 +1,6 @@
+/usr/local/lib/python3.10/dist-packages/vllm/executor/gpu_executor.py:34: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+INFO:     Started server process [236946]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:12719 (Press CTRL+C to quit)
